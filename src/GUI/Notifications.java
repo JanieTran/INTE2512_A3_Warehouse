@@ -6,7 +6,7 @@ import javafx.scene.image.Image;
 
 import java.sql.Timestamp;
 
-import static GUI.Phuong_Home_update1.ICON_DIMEN;
+import static GUI.Main.ICON_DIMEN;
 
 public class Notifications {
     private String title;
@@ -17,23 +17,16 @@ public class Notifications {
         this.title = title;
         this.timestamp = new Timestamp(System.currentTimeMillis()).toString();
 
-        switch (type) {
-            case "input":
-                icon = new Image("file:src/image/ic_receiver", ICON_DIMEN, ICON_DIMEN, true, true);
-                break;
-
-            case "output":
-                icon = new Image("file:src/image/ic_deliver", ICON_DIMEN, ICON_DIMEN, true, true);
-                break;
-
-            case "map":
-                icon = new Image("file:src/image/ic_map", ICON_DIMEN, ICON_DIMEN, true, true);
-                break;
-
-            case "statistics":
-                icon = new Image("file:src/image/ic_statistics", ICON_DIMEN, ICON_DIMEN, true, true);
-                break;
-        }
+        if (type.equals("input"))
+            icon = fetchImg("ic_receiver.png");
+        else if (type.equals("output"))
+            icon = fetchImg("ic_deliver.png");
+        else if (type.equals("map"))
+            icon = fetchImg("ic_map.png");
+        else if (type.equals("statistics"))
+            icon = fetchImg("ic_statistics.png");
+        else
+            icon = fetchImg("ic_home.png");
     }
 
     public String getTitle() {
@@ -46,5 +39,9 @@ public class Notifications {
 
     public Image getIcon() {
         return icon;
+    }
+
+    private Image fetchImg(String imgName) {
+        return new Image("file:src/image/" + imgName, ICON_DIMEN, ICON_DIMEN, true, true);
     }
 }

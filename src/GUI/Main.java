@@ -13,19 +13,19 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
-public class Phuong_Home_update1 extends Application{
+public class Main extends Application{
     ////////////////////////////////////////////////////////
     // PROPERTIES
     ////////////////////////////////////////////////////////
 
     // Int constants
-    public static final int WIDTH = 1280;
-    public static final int HEIGHT = 720;
-    public static final int TITLE_BAR_HEIGHT = 50;
-    public static final int TAB_WIDTH = 200;
-    public static final int TAB_HEIGHT = 80;
-    public static final int SPACING = 20;
-    public static final int ICON_DIMEN = 35;
+    static final int WIDTH = 1280;
+    static final int HEIGHT = 720;
+    static final int TITLE_BAR_HEIGHT = 50;
+    static final int TAB_WIDTH = 200;
+    static final int TAB_HEIGHT = 80;
+    static final int SPACING = 20;
+    static final int ICON_DIMEN = 35;
 
     // String constants
     private final String APP_TITLE = "Warehouse Management";
@@ -42,32 +42,29 @@ public class Phuong_Home_update1 extends Application{
     // Tab buttons + icons
     VBox tabs = new VBox();
 
-    Image ic_home = new Image("file:src/image/ic_home.png", ICON_DIMEN, ICON_DIMEN, true, true);
+    Image ic_home = fetchImg("ic_home.png");
     Button home = new Button("Home", new ImageView(ic_home));
 
-    Image ic_order = new Image("file:src/image/ic_order.png", ICON_DIMEN, ICON_DIMEN,true,true);
+    Image ic_order = fetchImg("ic_order.png");
     Button order = new Button("Order", new ImageView(ic_order));
 
-    Image ic_receiver = new Image("file:src/image/ic_receiver.png", ICON_DIMEN, ICON_DIMEN,true,true);
+    Image ic_receiver = fetchImg("ic_receiver.png");
     Button receiver = new Button("Receiver", new ImageView(ic_receiver));
 
-    Image ic_deliver = new Image("file:src/image/ic_deliver.png", ICON_DIMEN, ICON_DIMEN,true,true);
+    Image ic_deliver = fetchImg("ic_deliver.png");
     Button deliver = new Button("Deliver", new ImageView(ic_deliver));
 
-    Image ic_statistics = new Image("file:src/image/ic_statistics.png", ICON_DIMEN, ICON_DIMEN,true,true);
+    Image ic_statistics = fetchImg("ic_statistics.png");
     Button statistics = new Button("Statistics", new ImageView(ic_statistics));
 
-    Image ic_map = new Image("file:src/image/ic_map.png", ICON_DIMEN, ICON_DIMEN,true,true);
+    Image ic_map = fetchImg("ic_map.png");
     Button map = new Button("Map", new ImageView(ic_map));
 
-
     // Contents
+    HBox boxTabsContents = new HBox();
     VBox contents = new VBox();
     Label noti = new Label("Notifications");
-    Label notiTitle = new Label("ABC1232 Input Completed");
-    Label notiSub = new Label("7:22 PM 31/12/2017");
-    Button view = new Button("View");
-    Button dismiss = new Button("Dismiss");
+
 
     ////////////////////////////////////////////////////////
     // MAIN FUNCTION
@@ -78,11 +75,16 @@ public class Phuong_Home_update1 extends Application{
         // Set Title Bar
         setTitleBar();
 
-        // TABS
+        // Tabs column
         setTabsColumn();
 
+        // Box containing tabs column and tab contents
+//        contents = TabHome.getTabHome();
+        boxTabsContents.setMinSize(WIDTH, HEIGHT - TITLE_BAR_HEIGHT);
+        boxTabsContents.getChildren().addAll(tabs, contents);
+
         // Add all to Screen box
-        screen.getChildren().addAll(titleBar, tabs);
+        screen.getChildren().addAll(titleBar, boxTabsContents);
 
         Scene scene = new Scene(screen);
         setStage(primaryStage, scene);
@@ -146,6 +148,15 @@ public class Phuong_Home_update1 extends Application{
         button.setFont(Font.font(20));
         button.setGraphicTextGap(SPACING);
         button.setAlignment(Pos.CENTER_LEFT);
+    }
+
+    ////////////////////////////////////////////////////////
+    // OTHER METHODS
+    ////////////////////////////////////////////////////////
+
+    // Get images from resources using img name
+    private Image fetchImg(String imgName) {
+        return new Image("file:src/image/" + imgName, ICON_DIMEN, ICON_DIMEN, true, true);
     }
 
 }
