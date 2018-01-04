@@ -19,13 +19,13 @@ public class Main extends Application{
     ////////////////////////////////////////////////////////
 
     // Int constants
-    public static final int WIDTH = 1280;
-    public static final int HEIGHT = 720;
-    public static final int TITLE_BAR_HEIGHT = 50;
-    public static final int TAB_WIDTH = 200;
-    public static final int TAB_HEIGHT = 80;
-    public static final int SPACING = 20;
-    public static final int ICON_DIMEN = 35;
+    static final int WIDTH = 1280;
+    static final int HEIGHT = 720;
+    static final int TITLE_BAR_HEIGHT = 50;
+    static final int TAB_WIDTH = 200;
+    static final int TAB_HEIGHT = 80;
+    static final int SPACING = 20;
+    static final int ICON_DIMEN = 35;
 
     // String constants
     private final String APP_TITLE = "Warehouse Management";
@@ -42,22 +42,22 @@ public class Main extends Application{
     // Tab buttons + icons
     VBox tabs = new VBox();
 
-    Image ic_home = new Image("file:src/image/ic_home.png", ICON_DIMEN, ICON_DIMEN, true, true);
+    Image ic_home = fetchImg("ic_home.png");
     Button home = new Button("Home", new ImageView(ic_home));
 
-    Image ic_order = new Image("file:src/image/ic_order.png", ICON_DIMEN, ICON_DIMEN,true,true);
+    Image ic_order = fetchImg("ic_order.png");
     Button order = new Button("Order", new ImageView(ic_order));
 
-    Image ic_receiver = new Image("file:src/image/ic_receiver.png", ICON_DIMEN, ICON_DIMEN,true,true);
+    Image ic_receiver = fetchImg("ic_receiver.png");
     Button receiver = new Button("Receiver", new ImageView(ic_receiver));
 
-    Image ic_deliver = new Image("file:src/image/ic_deliver.png", ICON_DIMEN, ICON_DIMEN,true,true);
+    Image ic_deliver = fetchImg("ic_deliver.png");
     Button deliver = new Button("Deliver", new ImageView(ic_deliver));
 
-    Image ic_statistics = new Image("file:src/image/ic_statistics.png", ICON_DIMEN, ICON_DIMEN,true,true);
+    Image ic_statistics = fetchImg("ic_statistics.png");
     Button statistics = new Button("Statistics", new ImageView(ic_statistics));
 
-    Image ic_map = new Image("file:src/image/ic_map.png", ICON_DIMEN, ICON_DIMEN,true,true);
+    Image ic_map = fetchImg("ic_map.png");
     Button map = new Button("Map", new ImageView(ic_map));
 
 
@@ -146,6 +146,11 @@ public class Main extends Application{
         button.setFont(Font.font(20));
         button.setGraphicTextGap(SPACING);
         button.setAlignment(Pos.CENTER_LEFT);
+    }
+
+    // Get images from resources using img name
+    private Image fetchImg(String imgName) {
+        return new Image("file:src/image/" + imgName, ICON_DIMEN, ICON_DIMEN, true, true);
     }
 
 }
