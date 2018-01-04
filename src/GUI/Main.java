@@ -60,14 +60,11 @@ public class Main extends Application{
     Image ic_map = fetchImg("ic_map.png");
     Button map = new Button("Map", new ImageView(ic_map));
 
-
     // Contents
+    HBox boxTabsContents = new HBox();
     VBox contents = new VBox();
     Label noti = new Label("Notifications");
-    Label notiTitle = new Label("ABC1232 Input Completed");
-    Label notiSub = new Label("7:22 PM 31/12/2017");
-    Button view = new Button("View");
-    Button dismiss = new Button("Dismiss");
+
 
     ////////////////////////////////////////////////////////
     // MAIN FUNCTION
@@ -78,11 +75,16 @@ public class Main extends Application{
         // Set Title Bar
         setTitleBar();
 
-        // TABS
+        // Tabs column
         setTabsColumn();
 
+        // Box containing tabs column and tab contents
+//        contents = TabHome.getTabHome();
+        boxTabsContents.setMinSize(WIDTH, HEIGHT - TITLE_BAR_HEIGHT);
+        boxTabsContents.getChildren().addAll(tabs, contents);
+
         // Add all to Screen box
-        screen.getChildren().addAll(titleBar, tabs);
+        screen.getChildren().addAll(titleBar, boxTabsContents);
 
         Scene scene = new Scene(screen);
         setStage(primaryStage, scene);
@@ -147,6 +149,10 @@ public class Main extends Application{
         button.setGraphicTextGap(SPACING);
         button.setAlignment(Pos.CENTER_LEFT);
     }
+
+    ////////////////////////////////////////////////////////
+    // OTHER METHODS
+    ////////////////////////////////////////////////////////
 
     // Get images from resources using img name
     private Image fetchImg(String imgName) {

@@ -6,19 +6,26 @@ package GUI;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 
-import static GUI.Main.SPACING;
+import static GUI.Main.*;
 
-public class CustomListCell extends ListCell {
+public class CustomListCell extends ListCell<Notifications> {
     GridPane grid = new GridPane();
     ImageView icon;
     Label title, subtitle;
-    Notifications[] notifications;
 
+    @Override
     protected void updateItem(Notifications noti, boolean empty) {
         super.updateItem(noti, empty);
+
+        System.out.println("here");
+
+        icon = new ImageView(noti.getIcon());
+        title.setText(noti.getTitle());
+        subtitle.setText(noti.getTimestamp());
 
         if (empty) {
             setText(null);
@@ -26,7 +33,9 @@ public class CustomListCell extends ListCell {
         }
 
         else {
-            setText(null);
+//            setText(null);
+
+            grid.setMinSize(WIDTH - TAB_WIDTH, HEIGHT - TITLE_BAR_HEIGHT);
 
             grid.setHgap(SPACING);
             grid.setVgap(SPACING);
