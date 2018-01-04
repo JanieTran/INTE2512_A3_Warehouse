@@ -1,10 +1,12 @@
 package GUI;
 
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.control.Button;
@@ -17,6 +19,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 import java.awt.*;
+import java.util.ArrayList;
 
 
 public class LoginLayout extends Application {
@@ -35,11 +38,18 @@ public class LoginLayout extends Application {
     private final int RECT_WIDTH = 150;
     private final int RECT_HEIGHT = 40;
 
-
+    private ArrayList<Rectangle> rectMap = new ArrayList<>();
+    private ArrayList<VBox> vbMap = new ArrayList<>();
+    private ArrayList<String> boxName = new ArrayList<>();
 
     @Override
     public void start(Stage primaryStage) throws Exception {
 
+        for (int i = 0; i < 31; i++) {
+            boxName.add("" + i);
+            System.out.println(boxName.toString());
+
+        }
         // Login Layout
         // Images
         Image imgUser = new Image("image/ic_user.png");
@@ -47,60 +57,42 @@ public class LoginLayout extends Application {
         Image imgLogin = new Image("image/ic_login.png");
 
         ImageView imgVUser = new ImageView();
-        imgVUser.setImage(imgUser);
-        imgVUser.setFitWidth(25);
-        imgVUser.setFitHeight(25);
-        imgVUser.setPreserveRatio(true);
-        imgVUser.setSmooth(true);
-        imgVUser.setCache(true);
+        createImageView(imgVUser, imgUser, 25, 25);
 
         ImageView imgVPassword = new ImageView();
-        imgVPassword.setImage(imgPassword);
-        imgVPassword.setFitWidth(25);
-        imgVPassword.setFitHeight(25);
-        imgVPassword.setPreserveRatio(true);
-        imgVPassword.setSmooth(true);
-        imgVPassword.setCache(true);
+        createImageView(imgVPassword, imgPassword, 25, 25);
 
         ImageView imgVLogin = new ImageView();
-        imgVLogin.setImage(imgLogin);
-        imgVLogin.setFitWidth(100);
-        imgVLogin.setFitHeight(100);
-        imgVLogin.setPreserveRatio(true);
-        imgVLogin.setSmooth(true);
-        imgVLogin.setCache(true);
+        createImageView(imgVLogin, imgLogin, 100, 100);
+
 
         // Grid layout
-        GridPane grid = new GridPane();
-        grid.setAlignment(Pos.CENTER);
-        grid.setHgap(SPACING);
-        grid.setVgap(SPACING);
-        grid.setPadding(new Insets(PADDING, PADDING, PADDING, PADDING));
-
+        GridPane gridLogin = new GridPane();
+        createGridLayout(gridLogin);
 
         // Rectangle
-        Rectangle rect = new Rectangle(200,200);
+        Rectangle rect = new Rectangle(200, 200);
         rect.setFill(Color.LIGHTGREY);
-        grid.add(rect, 0, 0,3,14);
+        gridLogin.add(rect, 0, 0, 3, 14);
 
 
         // Login Icon
         HBox hbImgLogin = new HBox(SPACING);
         hbImgLogin.setAlignment(Pos.BOTTOM_CENTER);
         hbImgLogin.getChildren().add(imgVLogin);
-        grid.add(hbImgLogin, 0, 1,3,1);
+        gridLogin.add(hbImgLogin, 0, 1, 3, 1);
 
         // User name
-        grid.add(imgVUser, 0, 4);
+        gridLogin.add(imgVUser, 0, 4);
         TextField txtUserName = new TextField();
         txtUserName.setPromptText(USER_NAME_HINT);
-        grid.add(txtUserName, 1, 4);
+        gridLogin.add(txtUserName, 1, 4);
 
         // User password
-        grid.add(imgVPassword, 0, 5);
+        gridLogin.add(imgVPassword, 0, 5);
         TextField txtPassword = new TextField();
         txtPassword.setPromptText(USER_PASSWORD_HINT);
-        grid.add(txtPassword, 1, 5);
+        gridLogin.add(txtPassword, 1, 5);
 
 
         // Login button
@@ -108,34 +100,20 @@ public class LoginLayout extends Application {
         HBox hbLogin = new HBox(SPACING);
         hbLogin.setAlignment(Pos.BOTTOM_CENTER);
         hbLogin.getChildren().add(btnLogin);
-        grid.add(hbLogin, 0, 7,3,1);
+        gridLogin.add(hbLogin, 0, 7, 3, 1);
 
-        // Map Layout
-        VBox vbMap1 = new VBox(0);
+        createVBMap(vbMap);
+        createRectMap(rectMap);
 
-        Rectangle rectMap1 = new Rectangle();
-        Rectangle rectMap2 = new Rectangle();
-        Rectangle rectMap3 = new Rectangle();
-        Rectangle rectMap4 = new Rectangle();
-        Rectangle rectMap5 = new Rectangle();
-
-        createRect(rectMap1);
-        createRect(rectMap2);
-        createRect(rectMap3);
-        createRect(rectMap4);
-        createRect(rectMap5);
-
-        Label lblA = new Label("A");
-
-        vbMap1.getChildren().addAll(lblA,rectMap1,rectMap2,rectMap3,rectMap4,rectMap5);
-        vbMap1.setPadding(new Insets(PADDING,PADDING,PADDING,PADDING));
+        // Show information of rect
+        showRectInfo();
 
         // Stage
         window = primaryStage;
         window.setTitle(WINDOW_TITLE);
-        Scene sceneLogin = new Scene(grid, WINDOW_WIDTH, WINDOW_HEIGHT);
-        Scene sceneMap = new Scene(vbMap1,1280,720);
-        window.setScene(sceneLogin);
+        Scene sceneLogin = new Scene(gridLogin, WINDOW_WIDTH, WINDOW_HEIGHT);
+        Scene sceneMap = new Scene(createGridMap(), 1280, 720);
+        window.setScene(sceneMap);
         window.show();
     }
 
@@ -143,11 +121,98 @@ public class LoginLayout extends Application {
         launch(args);
     }
 
-    private void createRect(Rectangle rectMap){
+    // Init rectangles' properties
+    private void initRect(Rectangle rectMap) {
         rectMap.setHeight(RECT_HEIGHT);
         rectMap.setWidth(RECT_WIDTH);
         rectMap.setFill(Color.GREEN);
         rectMap.setStroke(Color.GRAY);
         rectMap.setStrokeWidth(STROKE_WIDTH);
     }
+
+    // Create rectangles
+    private void createRectMap(ArrayList<Rectangle> rectMap) {
+        for (int j = 0; j < 30; j++) {
+            int i = 0;
+            rectMap.add(new Rectangle());
+            initRect(rectMap.get(j));
+            if (j < 5) {
+                vbMap.get(0).getChildren().add(rectMap.get(j));
+
+            } else if (j > 5 && j < 11) {
+                vbMap.get(1).getChildren().add(rectMap.get(j));
+
+            } else if (j > 10 && j < 16) {
+                vbMap.get(2).getChildren().add(rectMap.get(j));
+
+            } else if (j > 15 && j < 21) {
+                vbMap.get(3).getChildren().add(rectMap.get(j));
+
+            } else if (j > 20 && j < 26) {
+                vbMap.get(4).getChildren().add(rectMap.get(j));
+
+            } else {
+                vbMap.get(5).getChildren().add(rectMap.get(j));
+            }
+
+
+        }
+    }
+
+    // Create VBoxes containing rectangles
+    private void createVBMap(ArrayList<VBox> vbMap) {
+        for (int i = 0; i < 7; i++) {
+            vbMap.add(new VBox());
+            vbMap.get(i).setPadding(new Insets(PADDING, PADDING, PADDING, PADDING));
+        }
+    }
+
+    // Create Grid pane containing VBoxes on map
+    private GridPane createGridMap() {
+        GridPane gridMap = new GridPane();
+        createGridLayout(gridMap);
+        int col = 0;
+        int row = 0;
+        for (int i = 0; i < 6; i++) {
+            gridMap.add(vbMap.get(i), col, row);
+            col++;
+            if (i == 2) {
+                col = 0;
+                row = 1;
+            }
+
+        }
+        return gridMap;
+    }
+
+    // Create Image View
+    private void createImageView(ImageView imgView, Image img, int width, int height) {
+        imgView.setImage(img);
+        imgView.setFitWidth(width);
+        imgView.setFitHeight(height);
+        imgView.setPreserveRatio(true);
+        imgView.setSmooth(true);
+        imgView.setCache(true);
+    }
+
+    // Create grid layout
+    private void createGridLayout(GridPane gridPane) {
+        gridPane.setAlignment(Pos.CENTER);
+        gridPane.setHgap(SPACING);
+        gridPane.setVgap(SPACING);
+        gridPane.setPadding(new Insets(PADDING, PADDING, PADDING, PADDING));
+    }
+
+    private void showRectInfo() {
+        for (int i = 0; i < 30; i++) {
+            int finalI = i;
+            rectMap.get(i).setOnMouseClicked(new EventHandler<MouseEvent>() {
+                @Override
+                public void handle(MouseEvent event) {
+                    System.out.println(boxName.get(finalI));
+                }
+            });
+        }
+    }
+
 }
