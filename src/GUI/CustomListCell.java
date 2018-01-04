@@ -21,19 +21,16 @@ public class CustomListCell extends ListCell<Notifications> {
     protected void updateItem(Notifications noti, boolean empty) {
         super.updateItem(noti, empty);
 
-        System.out.println("here");
-
-        icon = new ImageView(noti.getIcon());
-        title.setText(noti.getTitle());
-        subtitle.setText(noti.getTimestamp());
-
-        if (empty) {
+        if (empty || noti == null) {
             setText(null);
             setGraphic(null);
-        }
+        } else {
+            setText(null);
 
-        else {
-//            setText(null);
+            System.out.println(noti.getTitle());
+            icon = new ImageView(noti.getIcon());
+            title = new Label(noti.getTitle());
+            subtitle = new Label(noti.getTimestamp());
 
             grid.setMinSize(WIDTH - TAB_WIDTH, HEIGHT - TITLE_BAR_HEIGHT);
 

@@ -63,8 +63,6 @@ public class Main extends Application{
     // Contents
     HBox boxTabsContents = new HBox();
     VBox contents = new VBox();
-    Label noti = new Label("Notifications");
-
 
     ////////////////////////////////////////////////////////
     // MAIN FUNCTION
@@ -79,7 +77,7 @@ public class Main extends Application{
         setTabsColumn();
 
         // Box containing tabs column and tab contents
-//        contents = TabHome.getTabHome();
+        contents = TabHome.getTabHome();
         boxTabsContents.setMinSize(WIDTH, HEIGHT - TITLE_BAR_HEIGHT);
         boxTabsContents.getChildren().addAll(tabs, contents);
 
@@ -107,11 +105,12 @@ public class Main extends Application{
         titleBar.setPadding(new Insets(0,0,0,10));
         titleBar.getChildren().addAll(title, username, logOut);
         titleBar.setMinSize(WIDTH, TITLE_BAR_HEIGHT);
-        titleBar.setStyle("-fx-background-color: #5495ff");
+        titleBar.setStyle("-fx-background-color: #2196f3");
 
         // Set properties for Title
         title.setMinSize(1000, TITLE_BAR_HEIGHT);
         title.setFont(Font.font(30));
+        title.setStyle("-fx-font-weight: bold");
 
         // Set properties for Username
         username.setMinSize(140, TITLE_BAR_HEIGHT);
@@ -155,7 +154,7 @@ public class Main extends Application{
     ////////////////////////////////////////////////////////
 
     // Get images from resources using img name
-    private Image fetchImg(String imgName) {
+    static Image fetchImg(String imgName) {
         return new Image("file:src/image/" + imgName, ICON_DIMEN, ICON_DIMEN, true, true);
     }
 
