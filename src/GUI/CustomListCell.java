@@ -6,11 +6,10 @@ package GUI;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 
-import static GUI.Phuong_Home_update1.SPACING;
+import static GUI.Main.SPACING;
 
 public class CustomListCell extends ListCell {
     GridPane grid = new GridPane();

@@ -13,7 +13,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
-public class Phuong_Home_update1 extends Application{
+public class Main extends Application{
     ////////////////////////////////////////////////////////
     // PROPERTIES
     ////////////////////////////////////////////////////////

@@ -6,7 +6,7 @@ import javafx.scene.image.Image;
 
 import java.sql.Timestamp;
 
-import static GUI.Phuong_Home_update1.ICON_DIMEN;
+import static GUI.Main.ICON_DIMEN;
 
 public class Notifications {
     private String title;
