@@ -66,8 +66,8 @@ public class Notifications {
         grid.add(labelTitle, 1, 0);
         grid.add(labelTime, 1, 1);
 
-        grid.setHgap(SPACING);
-        grid.setPadding(new Insets(0,0, SPACING, SPACING));
+        grid.setHgap(SPACING * 2);
+        grid.setPadding(new Insets(0,0, SPACING, SPACING * 2));
 
         return grid;
     }

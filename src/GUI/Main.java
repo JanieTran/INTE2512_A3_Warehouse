@@ -28,7 +28,9 @@ public class Main extends Application{
     static final int ICON_DIMEN = 35;
 
     // String constants
-    private final String APP_TITLE = "Warehouse Management";
+    static final String APP_TITLE = "Warehouse Management";
+    static final String NO_NOTIFICATION = "There is currently no notification";
+
 
     // Screen box
     VBox screen = new VBox();
