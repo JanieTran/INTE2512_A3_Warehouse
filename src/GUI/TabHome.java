@@ -12,6 +12,10 @@ import javafx.scene.text.Font;
 import static GUI.Main.*;
 
 public class TabHome {
+    //------------------------------------------------------
+    // PROPERTIES
+    //------------------------------------------------------
+
     static VBox tabHome = new VBox();
     static Label tabTitle = new Label("NOTIFICATIONS");
     static VBox boxNoti = new VBox();
@@ -27,6 +31,10 @@ public class TabHome {
     static GridPane notiOutputGrid = notiOutput.getGrid();
 
     static Label noNoti = new Label(NO_NOTIFICATION);
+
+    //------------------------------------------------------
+    // METHODS
+    //------------------------------------------------------
 
     public static VBox getTabHome() {
         boxNoti.getChildren().addAll(notiInputGrid, notiStatsGrid, notiMapGrid, notiOutputGrid);
@@ -53,12 +61,9 @@ public class TabHome {
     }
 
     private static void setGridOnClick(GridPane grid) {
-        grid.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                boxNoti.getChildren().remove(grid);
-                updateTabHome();
-            }
+        grid.setOnMouseClicked(event -> {
+            boxNoti.getChildren().remove(grid);
+            updateTabHome();
         });
     }
 

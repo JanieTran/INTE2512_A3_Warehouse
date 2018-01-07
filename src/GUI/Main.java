@@ -1,6 +1,7 @@
 package GUI;
 
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -8,21 +9,22 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 public class Main extends Application{
-    ////////////////////////////////////////////////////////
+    //------------------------------------------------------
     // PROPERTIES
-    ////////////////////////////////////////////////////////
+    //------------------------------------------------------
 
     // Int constants
     static final int WIDTH = 1280;
     static final int HEIGHT = 720;
-    static final int TITLE_BAR_HEIGHT = 50;
-    static final int TAB_WIDTH = 200;
+    static final int TITLE_BAR_HEIGHT = 80;
+    static final int TAB_WIDTH = 250;
     static final int TAB_HEIGHT = 80;
     static final int SPACING = 20;
     static final int ICON_DIMEN = 35;
@@ -30,7 +32,6 @@ public class Main extends Application{
     // String constants
     static final String APP_TITLE = "Warehouse Management";
     static final String NO_NOTIFICATION = "There is currently no notification";
-
 
     // Screen box
     VBox screen = new VBox();
@@ -66,9 +67,9 @@ public class Main extends Application{
     HBox boxTabsContents = new HBox();
     VBox contents = new VBox();
 
-    ////////////////////////////////////////////////////////
+    //------------------------------------------------------
     // MAIN FUNCTION
-    ////////////////////////////////////////////////////////
+    //------------------------------------------------------
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -79,7 +80,22 @@ public class Main extends Application{
         setTabsColumn();
 
         // Box containing tabs column and tab contents
-        contents = TabHome.getTabHome();
+//        contents = TabHome.getTabHome();
+        chosenTab(home);
+
+        chosenTab(order);
+        TabOrder tabOrder = new TabOrder();
+        contents = tabOrder.getTabOrder();
+
+        order.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                chosenTab(order);
+                TabOrder tabOrder = new TabOrder();
+                contents = tabOrder.getTabOrder();
+            }
+        });
+
         boxTabsContents.setMinSize(WIDTH, HEIGHT - TITLE_BAR_HEIGHT);
         boxTabsContents.getChildren().addAll(tabs, contents);
 
@@ -90,9 +106,9 @@ public class Main extends Application{
         setStage(primaryStage, scene);
     }
 
-    ////////////////////////////////////////////////////////
+    //------------------------------------------------------
     // SETTING METHODS
-    ////////////////////////////////////////////////////////
+    //------------------------------------------------------
 
     // Settings for Primary Stage
     private void setStage(Stage primaryStage, Scene scene) {
@@ -131,33 +147,36 @@ public class Main extends Application{
         tabs.setMaxWidth(TAB_WIDTH);
         tabs.setMinHeight(HEIGHT - TITLE_BAR_HEIGHT);
         tabs.setStyle("-fx-background-color: #bababa");
-        tabs.setPadding(new Insets(0,SPACING,0,SPACING));
-
-        //set properties for Tab Buttons
-        setPropertiesTabButton(home);
-        setPropertiesTabButton(order);
-        setPropertiesTabButton(receiver);
-        setPropertiesTabButton(deliver);
-        setPropertiesTabButton(statistics);
-        setPropertiesTabButton(map);
     }
 
     // Settings for buttons in Tabs Column
-    private void setPropertiesTabButton(Button button) {
+    private void setTabButton(Button button) {
         button.setMinSize(TAB_WIDTH, TAB_HEIGHT);
         button.setStyle("-fx-background-color: transparent");
         button.setFont(Font.font(20));
         button.setGraphicTextGap(SPACING);
         button.setAlignment(Pos.CENTER_LEFT);
+        button.setPadding(new Insets(0,0,0,SPACING * 2));
     }
 
-    ////////////////////////////////////////////////////////
+    //------------------------------------------------------
     // OTHER METHODS
-    ////////////////////////////////////////////////////////
+    //------------------------------------------------------
 
     // Get images from resources using img name
     static Image fetchImg(String imgName) {
         return new Image("file:src/image/" + imgName, ICON_DIMEN, ICON_DIMEN, true, true);
+    }
+
+    private void chosenTab(Button button) {
+        setTabButton(home);
+        setTabButton(order);
+        setTabButton(receiver);
+        setTabButton(deliver);
+        setTabButton(statistics);
+        setTabButton(map);
+
+        button.setStyle("-fx-background-color: #999999");
     }
 
 }
