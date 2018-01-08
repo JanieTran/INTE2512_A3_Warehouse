@@ -37,6 +37,7 @@ public class TabHome {
     //------------------------------------------------------
 
     public static VBox getTabHome() {
+        boxNoti.getChildren().clear();
         boxNoti.getChildren().addAll(notiInputGrid, notiStatsGrid, notiMapGrid, notiOutputGrid);
 
         noNoti.setFont(Font.font(20));

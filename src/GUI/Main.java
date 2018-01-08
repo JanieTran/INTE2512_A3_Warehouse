@@ -23,7 +23,7 @@ public class Main extends Application{
     // Int constants
     static final int WIDTH = 1280;
     static final int HEIGHT = 720;
-    static final int TITLE_BAR_HEIGHT = 80;
+    static final int TITLE_BAR_HEIGHT = 50;
     static final int TAB_WIDTH = 250;
     static final int TAB_HEIGHT = 80;
     static final int SPACING = 20;
@@ -80,20 +80,24 @@ public class Main extends Application{
         setTabsColumn();
 
         // Box containing tabs column and tab contents
-//        contents = TabHome.getTabHome();
+        contents = TabHome.getTabHome();
         chosenTab(home);
 
-        chosenTab(order);
-        TabOrder tabOrder = new TabOrder();
-        contents = tabOrder.getTabOrder();
+//        chosenTab(order);
+//        TabOrder tabOrder = new TabOrder();
+//        contents = tabOrder.getTabOrder();
 
-        order.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                chosenTab(order);
-                TabOrder tabOrder = new TabOrder();
-                contents = tabOrder.getTabOrder();
-            }
+        home.setOnMouseClicked(event -> {
+            chosenTab(home);
+            contents.getChildren().clear();
+            contents = TabHome.getTabHome();
+        });
+
+        order.setOnMouseClicked(event -> {
+            chosenTab(order);
+            TabOrder tabOrder1 = new TabOrder();
+            contents.getChildren().clear();
+            contents = tabOrder1.getTabOrder();
         });
 
         boxTabsContents.setMinSize(WIDTH, HEIGHT - TITLE_BAR_HEIGHT);

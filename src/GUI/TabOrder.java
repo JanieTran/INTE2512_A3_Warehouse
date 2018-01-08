@@ -16,18 +16,20 @@ public class TabOrder {
     private VBox tabOrder;
     private VBox boxOrder;
     private Label tabTitle;
-    private Order order;
+    private Order kabylake;
     private GridPane gpOrder;
 
     public TabOrder() {
         tabOrder = new VBox();
         boxOrder = new VBox();
         tabTitle = new Label("ORDERS");
-        order = new Order("KABYLAKE", "ABC2345", 1000, "Intel", true);
-        gpOrder = order.getGridOrder();
+        kabylake = new Order("KABYLAKE", "ABC2345", 1000, "Intel", true);
+        gpOrder = kabylake.getGridOrder();
     }
 
     public VBox getTabOrder() {
+        tabOrder.getChildren().clear();
+
         tabTitle.setFont(Font.font(30));
         tabTitle.setStyle("-fx-font-weight: bold; -fx-text-fill: #2196f3");
 
