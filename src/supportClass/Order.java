@@ -1,13 +1,11 @@
-package GUI;
+package supportClass;
 
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
-import product.Product;
 
 import java.sql.Timestamp;
 

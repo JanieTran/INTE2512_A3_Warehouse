@@ -1,6 +1,6 @@
 // - Get timestamp: https://www.mkyong.com/java/how-to-get-current-timestamps-in-java/
 
-package GUI;
+package supportClass;
 
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
@@ -17,12 +17,14 @@ import static GUI.Main.SPACING;
 public class Notifications {
     private String title;
     private String timestamp;
+    private String type;
     private Image icon;
     private GridPane grid = new GridPane();
 
     public Notifications(String title, String type) {
         this.title = title;
         this.timestamp = new Timestamp(System.currentTimeMillis()).toString();
+        this.type = type;
 
         if (type.equals("input"))
             icon = fetchImg("ic_receiver.png");

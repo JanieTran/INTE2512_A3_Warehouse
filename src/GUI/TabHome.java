@@ -1,13 +1,11 @@
 package GUI;
 
-import javafx.event.EventHandler;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.control.Label;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
+import supportClass.Notifications;
 
 import static GUI.Main.*;
 
@@ -16,27 +14,31 @@ public class TabHome {
     // PROPERTIES
     //------------------------------------------------------
 
-    static VBox tabHome = new VBox();
-    static Label tabTitle = new Label("NOTIFICATIONS");
-    static VBox boxNoti = new VBox();
+    private VBox tabHome = new VBox();
+    private Label tabTitle = new Label("NOTIFICATIONS");
+    private VBox boxNoti = new VBox();
 
-    static Notifications notiInput = new Notifications("ABC1232 Input Complete", "input");
-    static Notifications notiStats = new Notifications("Traffic Jam at Block A", "map");
-    static Notifications notiMap = new Notifications("ABC1230 Not Found at E5", "statistics");
-    static Notifications notiOutput = new Notifications("XYZ1231 Output Complete", "output");
+    private Notifications notiInput = new Notifications("ABC1232 Input Complete", "input");
+    private Notifications notiStats = new Notifications("Traffic Jam at Block A", "map");
+    private Notifications notiMap = new Notifications("ABC1230 Not Found at E5", "statistics");
+    private Notifications notiOutput = new Notifications("XYZ1231 Output Complete", "output");
 
-    static GridPane notiInputGrid = notiInput.getGrid();
-    static GridPane notiStatsGrid = notiStats.getGrid();
-    static GridPane notiMapGrid = notiMap.getGrid();
-    static GridPane notiOutputGrid = notiOutput.getGrid();
+    private GridPane notiInputGrid = notiInput.getGrid();
+    private GridPane notiStatsGrid = notiStats.getGrid();
+    private GridPane notiMapGrid = notiMap.getGrid();
+    private GridPane notiOutputGrid = notiOutput.getGrid();
 
-    static Label noNoti = new Label(NO_NOTIFICATION);
+    private Label noNoti = new Label(NO_NOTIFICATION);
 
     //------------------------------------------------------
     // METHODS
     //------------------------------------------------------
 
-    public static VBox getTabHome() {
+    public TabHome() {
+
+    }
+
+    public VBox getTabHome() {
         boxNoti.getChildren().clear();
         boxNoti.getChildren().addAll(notiInputGrid, notiStatsGrid, notiMapGrid, notiOutputGrid);
 
@@ -61,14 +63,14 @@ public class TabHome {
         return tabHome;
     }
 
-    private static void setGridOnClick(GridPane grid) {
+    private void setGridOnClick(GridPane grid) {
         grid.setOnMouseClicked(event -> {
             boxNoti.getChildren().remove(grid);
             updateTabHome();
         });
     }
 
-    private static void updateTabHome() {
+    private void updateTabHome() {
         tabHome.getChildren().clear();
 
         if (boxNoti.getChildren().isEmpty())

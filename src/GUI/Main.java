@@ -11,6 +11,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
@@ -21,13 +22,13 @@ public class Main extends Application{
     //------------------------------------------------------
 
     // Int constants
-    static final int WIDTH = 1280;
-    static final int HEIGHT = 720;
-    static final int TITLE_BAR_HEIGHT = 50;
-    static final int TAB_WIDTH = 250;
-    static final int TAB_HEIGHT = 80;
-    static final int SPACING = 20;
-    static final int ICON_DIMEN = 35;
+    public static final int WIDTH = 1280;
+    public static final int HEIGHT = 720;
+    public static final int TITLE_BAR_HEIGHT = 50;
+    public static final int TAB_WIDTH = 250;
+    public static final int TAB_HEIGHT = 80;
+    public static final int SPACING = 20;
+    public static final int ICON_DIMEN = 35;
 
     // String constants
     static final String APP_TITLE = "Warehouse Management";
@@ -65,7 +66,9 @@ public class Main extends Application{
 
     // Contents
     HBox boxTabsContents = new HBox();
-    VBox contents = new VBox();
+    Pane contents = new Pane();
+    TabHome tabHome = new TabHome();
+    TabOrder tabOrder = new TabOrder();
 
     //------------------------------------------------------
     // MAIN FUNCTION
@@ -80,24 +83,36 @@ public class Main extends Application{
         setTabsColumn();
 
         // Box containing tabs column and tab contents
-        contents = TabHome.getTabHome();
+        contents.getChildren().clear();
+        contents.getChildren().add(tabHome.getTabHome());
         chosenTab(home);
-
-//        chosenTab(order);
-//        TabOrder tabOrder = new TabOrder();
-//        contents = tabOrder.getTabOrder();
 
         home.setOnMouseClicked(event -> {
             chosenTab(home);
             contents.getChildren().clear();
-            contents = TabHome.getTabHome();
+            contents.getChildren().add(tabHome.getTabHome());
         });
 
         order.setOnMouseClicked(event -> {
             chosenTab(order);
-            TabOrder tabOrder1 = new TabOrder();
             contents.getChildren().clear();
-            contents = tabOrder1.getTabOrder();
+            contents.getChildren().add(tabOrder.getTabOrder());
+        });
+
+        receiver.setOnMouseClicked(event -> {
+            chosenTab(receiver);
+        });
+
+        deliver.setOnMouseClicked(event -> {
+            chosenTab(deliver);
+        });
+
+        statistics.setOnMouseClicked(event -> {
+            chosenTab(statistics);
+        });
+
+        map.setOnMouseClicked(event -> {
+            chosenTab(map);
         });
 
         boxTabsContents.setMinSize(WIDTH, HEIGHT - TITLE_BAR_HEIGHT);
@@ -168,7 +183,7 @@ public class Main extends Application{
     //------------------------------------------------------
 
     // Get images from resources using img name
-    static Image fetchImg(String imgName) {
+    public static Image fetchImg(String imgName) {
         return new Image("file:src/image/" + imgName, ICON_DIMEN, ICON_DIMEN, true, true);
     }
 

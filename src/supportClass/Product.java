@@ -1,4 +1,4 @@
-package product;
+package supportClass;
 
 import java.util.Date;
 
