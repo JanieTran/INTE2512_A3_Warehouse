@@ -1,18 +1,17 @@
 package GUI;
 
-import javafx.scene.control.Tab;
+import csv.writeCSV;
+import javafx.geometry.Insets;
+import javafx.scene.control.*;
+import javafx.scene.layout.HBox;
 import product.Product;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.Scene;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-
-import javax.crypto.spec.PSource;
 
 public class StatisticsLayout extends Application {
     Stage window;
@@ -22,10 +21,14 @@ public class StatisticsLayout extends Application {
         launch(args);
     }
 
+    TextField nameIn, idIn, qtyIn, descIn, producerIn, locationIn, statusIn, inputDateIn, outputDateIn;
+
+
     @Override
     public void start(Stage primaryStage) throws Exception {
         window = primaryStage;
-        window.setTitle("v17_Table View");
+        window.setTitle("Statistics");
+        Button addButton, deleteButton;
 
         //name column
         TableColumn<Product, String> nameCol = addStringColumn("Name", 100, "name");
@@ -56,12 +59,66 @@ public class StatisticsLayout extends Application {
         //outputDare
         TableColumn<Product, String> outputDateCol = addStringColumn("Output Date", 100, "outputDate");
 
+        //---------------------add new item--------------------
+        //textfield
+        //name input
+        nameIn = new TextField();
+        nameIn.setPromptText("Name");
+        nameIn.setPrefWidth(100);
+        //ID input
+        idIn = new TextField();
+        idIn.setPromptText("ID");
+        idIn.setPrefWidth(100);
+        //quantity input
+        qtyIn = new TextField();
+        qtyIn.setPromptText("Quantity");
+        qtyIn.setPrefWidth(100);
+        //description input
+        descIn = new TextField();
+        descIn.setPromptText("Description");
+        descIn.setPrefWidth(100);
+        //producer input
+        producerIn = new TextField();
+        producerIn.setPromptText("Producer");
+        producerIn.setPrefWidth(100);
+        //location input
+        locationIn = new TextField();
+        locationIn.setPromptText("Location");
+        locationIn.setPrefWidth(100);
+        //status input
+        statusIn = new TextField();
+        statusIn.setPromptText("Status");
+        //location input
+        inputDateIn = new TextField();
+        inputDateIn.setPromptText("Input date");
+        //location input
+        outputDateIn = new TextField();
+        outputDateIn.setPromptText("Output Date");
+
+
+
+
+
+
+        //button
+        addButton = new Button("Add");
+        addButton.setOnAction(e -> addButtonClicked());
+        deleteButton = new Button("Delete");
+        deleteButton.setOnAction(e -> deleteButtonClicked());
+
+        HBox hBox = new HBox();
+        hBox.setPadding(new Insets(20,20,20,20));
+        hBox.setSpacing(10);
+        hBox.getChildren().addAll(nameIn, idIn, qtyIn, descIn, producerIn, locationIn,
+                statusIn, inputDateIn, outputDateIn,addButton, deleteButton);
+
+        //set up table view
         table = new TableView<>();
         table.setItems(getProduct());
         table.getColumns().addAll(nameCol, idCol, qtyCol, descCol, producerCol, locationCol, statusCol, inputDateCol, outputDateCol);
 
         VBox vBox = new VBox();
-        vBox.getChildren().addAll(table);
+        vBox.getChildren().addAll(table, hBox);
 
         Scene scene = new Scene(vBox);
         window.setScene(scene);
@@ -86,5 +143,36 @@ public class StatisticsLayout extends Application {
         column.setCellValueFactory(new PropertyValueFactory<>(propertyValue));
 
         return column;
+    }
+
+    //add new item addButtonClicked()
+    private void addButtonClicked() {
+        Product product = new Product();
+        product.setName(nameIn.getText());
+        product.setId(idIn.getText());
+        product.setQty(Integer.parseInt(qtyIn.getText()));
+        product.setDesc(descIn.getText());
+        product.setProducer(producerIn.getText());
+        product.setLocation(locationIn.getText());
+        product.setStatus(statusIn.getText());
+
+        table.getItems().add(product);
+        writeCSV.writeData("data.csv", product);
+
+        nameIn.clear();
+        idIn.clear();
+        qtyIn.clear();
+        descIn.clear();
+        producerIn.clear();
+        locationIn.clear();
+        statusIn.clear();
+    }
+
+    private void deleteButtonClicked() {
+        ObservableList<Product> productsSelected, allProducts;
+        allProducts = table.getItems();
+        productsSelected = table.getSelectionModel().getSelectedItems();
+
+        productsSelected.forEach(allProducts::remove);
     }
 }
