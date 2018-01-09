@@ -1,2 +1,2 @@
-id,name,qty,desc,producer,location,status,inputDate,outputDate
-test,test,1234,test,test,test,test,null,null,
+id;name;qty;desc;producer;location;status;inputDate;outputDate
+tran;tran;123;tran;tran;tran;tran;null;null
