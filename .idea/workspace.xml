@@ -2,13 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52480c72-3b6b-4176-ba4f-f9ede518ca3d" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/INTE2512_A3_Warehouse/GUI/data.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/INTE2512_A3_Warehouse/functions/readCSV.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/INTE2512_A3_Warehouse/functions/writeCSV.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/INTE2512_A3_Warehouse/GUI/StatisticsLayout.class" afterPath="$PROJECT_DIR$/out/production/INTE2512_A3_Warehouse/GUI/StatisticsLayout.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/INTE2512_A3_Warehouse/GUI/Order.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/INTE2512_A3_Warehouse/GUI/TabHome.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/INTE2512_A3_Warehouse/GUI/TabOrder.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/INTE2512_A3_Warehouse/database/notifications.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/INTE2512_A3_Warehouse/database/orders.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/GUI/TabHome.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/GUI/TabOrder.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/database/notifications.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/database/orders.csv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/supportClass/Notifications.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/supportClass/Order.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/INTE2512_A3_Warehouse/GUI/CustomListCell.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/GUI/CustomListCell.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/GUI/Notifications.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/csv/readCSV.java" afterPath="$PROJECT_DIR$/src/supportClass/readCSV.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/csv/writeCSV.java" afterPath="$PROJECT_DIR$/src/supportClass/writeCSV.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/product/Product.java" afterPath="$PROJECT_DIR$/src/supportClass/Product.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/INTE2512_A3_Warehouse/GUI/Main.class" afterPath="$PROJECT_DIR$/out/production/INTE2512_A3_Warehouse/GUI/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/INTE2512_A3_Warehouse/GUI/Notifications.class" afterPath="$PROJECT_DIR$/out/production/INTE2512_A3_Warehouse/GUI/Notifications.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data.csv" afterPath="$PROJECT_DIR$/data.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/csv/writeCSV.java" afterPath="$PROJECT_DIR$/src/csv/writeCSV.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI/Main.java" afterPath="$PROJECT_DIR$/src/GUI/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI/StatisticsLayout.java" afterPath="$PROJECT_DIR$/src/GUI/StatisticsLayout.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,10 +38,10 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUI/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1132">
-              <caret line="94" column="33" lean-forward="false" selection-start-line="94" selection-start-column="33" selection-end-line="94" selection-end-column="33" />
+            <state relative-caret-position="163">
+              <caret line="131" column="33" lean-forward="false" selection-start-line="131" selection-start-column="33" selection-end-line="131" selection-end-column="33" />
               <folding>
-                <marker date="1515472785462" expanded="true" signature="5160:5168" ph="{...}" />
+                <marker date="1515489328006" expanded="true" signature="6539:6547" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -45,12 +60,32 @@
       <file leaf-file-name="StatisticsLayout.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUI/StatisticsLayout.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-210">
-              <caret line="12" column="32" lean-forward="true" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+            <state relative-caret-position="245">
+              <caret line="7" column="28" lean-forward="true" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
               <folding>
-                <element signature="e#563#564#0" expanded="true" />
-                <element signature="e#591#592#0" expanded="true" />
+                <element signature="e#578#579#0" expanded="true" />
+                <element signature="e#606#607#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="readCSV.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/supportClass/readCSV.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="70">
+              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="writeCSV.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/supportClass/writeCSV.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="6" column="27" lean-forward="true" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -61,18 +96,6 @@
             <state relative-caret-position="-210">
               <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="writeCSV.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/csv/writeCSV.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="34" column="41" lean-forward="true" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -114,10 +137,12 @@
         <option value="$PROJECT_DIR$/src/functions/readCSV.java" />
         <option value="$PROJECT_DIR$/src/functions/writeCSV.java" />
         <option value="$PROJECT_DIR$/src/GUI/ReceiverLayout.java" />
-        <option value="$PROJECT_DIR$/src/GUI/StatisticsLayout.java" />
         <option value="$PROJECT_DIR$/src/csv/readCSV.java" />
         <option value="$PROJECT_DIR$/src/csv/CSVWriter.java" />
         <option value="$PROJECT_DIR$/src/csv/writeCSV.java" />
+        <option value="$PROJECT_DIR$/src/GUI/StatisticsLayout.java" />
+        <option value="$PROJECT_DIR$/src/supportClass/readCSV.java" />
+        <option value="$PROJECT_DIR$/src/supportClass/writeCSV.java" />
       </list>
     </option>
   </component>
@@ -126,12 +151,6 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="375" />
-    <option name="y" value="60" />
-    <option name="width" value="1400" />
-    <option name="height" value="1000" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -163,13 +182,12 @@
             <path>
               <item name="INTE2512_A3_Warehouse" type="b2602c69:ProjectViewProjectNode" />
               <item name="INTE2512_A3_Warehouse" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="INTE2512_A3_Warehouse" type="b2602c69:ProjectViewProjectNode" />
               <item name="INTE2512_A3_Warehouse" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="csv" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="INTE2512_A3_Warehouse" type="b2602c69:ProjectViewProjectNode" />
@@ -181,7 +199,7 @@
               <item name="INTE2512_A3_Warehouse" type="b2602c69:ProjectViewProjectNode" />
               <item name="INTE2512_A3_Warehouse" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="product" type="462c0819:PsiDirectoryNode" />
+              <item name="supportClass" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="INTE2512_A3_Warehouse" type="b2602c69:ProjectViewProjectNode" />
@@ -397,9 +415,6 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
-  <component name="SvnConfiguration">
-    <configuration />
-  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="52480c72-3b6b-4176-ba4f-f9ede518ca3d" name="Default" comment="" />
@@ -414,10 +429,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14856000" />
+    <option name="totallyTimeSpent" value="15701000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -432,7 +448,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15416667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15416667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294979" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -510,165 +526,60 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/supportClass/Notifications.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1113">
-          <caret line="69" column="50" lean-forward="true" selection-start-line="69" selection-start-column="50" selection-end-line="69" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/supportClass/Notifications.java" />
     <entry file="file://$PROJECT_DIR$/src/GUI/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1533">
           <caret line="86" column="41" lean-forward="false" selection-start-line="86" selection-start-column="41" selection-end-line="86" selection-end-column="41" />
           <folding>
-            <marker date="1515472785462" expanded="true" signature="5160:5168" ph="{...}" />
+            <marker date="1515489328006" expanded="true" signature="6539:6547" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/TabOrder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="26" column="11" lean-forward="false" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/TabHome.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="39" column="38" lean-forward="true" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/supportClass/Product.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/supportClass/Notifications.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="903">
-          <caret line="59" column="8" lean-forward="false" selection-start-line="59" selection-start-column="8" selection-end-line="62" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/supportClass/Order.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1764">
-          <caret line="96" column="57" lean-forward="false" selection-start-line="96" selection-start-column="57" selection-end-line="96" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/TabOrder.java" />
+    <entry file="file://$PROJECT_DIR$/src/GUI/TabHome.java" />
+    <entry file="file://$PROJECT_DIR$/src/supportClass/Product.java" />
+    <entry file="file://$PROJECT_DIR$/src/supportClass/Notifications.java" />
+    <entry file="file://$PROJECT_DIR$/src/supportClass/Order.java" />
     <entry file="file://$PROJECT_DIR$/src/GUI/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3066">
           <caret line="159" column="5" lean-forward="false" selection-start-line="159" selection-start-column="5" selection-end-line="159" selection-end-column="5" />
           <folding>
-            <marker date="1515472785462" expanded="true" signature="5160:5168" ph="{...}" />
+            <marker date="1515489328006" expanded="true" signature="6539:6547" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/supportClass/Order.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1239">
-          <caret line="70" column="43" lean-forward="false" selection-start-line="70" selection-start-column="43" selection-end-line="70" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/TabHome.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="987">
-          <caret line="56" column="8" lean-forward="true" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/supportClass/Product.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/supportClass/Notifications.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="903">
-          <caret line="59" column="8" lean-forward="false" selection-start-line="59" selection-start-column="8" selection-end-line="62" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/TabOrder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/supportClass/Order.java" />
+    <entry file="file://$PROJECT_DIR$/src/GUI/TabHome.java" />
+    <entry file="file://$PROJECT_DIR$/src/supportClass/Product.java" />
+    <entry file="file://$PROJECT_DIR$/src/supportClass/Notifications.java" />
+    <entry file="file://$PROJECT_DIR$/src/GUI/TabOrder.java" />
     <entry file="file://$PROJECT_DIR$/src/GUI/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1515472785462" expanded="true" signature="5160:5168" ph="{...}" />
+            <marker date="1515489328006" expanded="true" signature="6539:6547" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/TabHome.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="945">
-          <caret line="45" column="72" lean-forward="false" selection-start-line="45" selection-start-column="72" selection-end-line="45" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/TabHome.java" />
     <entry file="file://$PROJECT_DIR$/src/GUI/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1515472785462" expanded="true" signature="5160:5168" ph="{...}" />
+            <marker date="1515489328006" expanded="true" signature="6539:6547" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/TabHome.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="22" column="37" lean-forward="false" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/supportClass/Notifications.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="903">
-          <caret line="59" column="50" lean-forward="false" selection-start-line="59" selection-start-column="50" selection-end-line="59" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/TabHome.java" />
+    <entry file="file://$PROJECT_DIR$/src/supportClass/Notifications.java" />
     <entry file="file://$PROJECT_DIR$/src/GUI/LoginLayout.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-257">
@@ -722,84 +633,35 @@
         <state relative-caret-position="618">
           <caret line="85" column="5" lean-forward="false" selection-start-line="85" selection-start-column="5" selection-end-line="85" selection-end-column="5" />
           <folding>
-            <element signature="e#563#564#0" expanded="true" />
-            <element signature="e#591#592#0" expanded="true" />
+            <element signature="e#578#579#0" expanded="true" />
+            <element signature="e#606#607#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/TabOrder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="19" column="11" lean-forward="false" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/supportClass/Notifications.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="50" column="5" lean-forward="true" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/supportClass/Product.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/supportClass/Order.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/TabOrder.java" />
+    <entry file="file://$PROJECT_DIR$/src/supportClass/Notifications.java" />
+    <entry file="file://$PROJECT_DIR$/src/supportClass/Product.java" />
+    <entry file="file://$PROJECT_DIR$/src/supportClass/Order.java" />
     <entry file="file://$PROJECT_DIR$/src/GUI/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="163">
           <caret line="131" column="33" lean-forward="false" selection-start-line="131" selection-start-column="33" selection-end-line="131" selection-end-column="33" />
           <folding>
-            <marker date="1515472785462" expanded="true" signature="5160:5168" ph="{...}" />
+            <marker date="1515489328006" expanded="true" signature="6539:6547" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/TabHome.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="34" column="60" lean-forward="true" selection-start-line="34" selection-start-column="60" selection-end-line="34" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/notifications.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/database/orders.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/TabHome.java" />
+    <entry file="file://$PROJECT_DIR$/src/database/notifications.csv" />
+    <entry file="file://$PROJECT_DIR$/src/database/orders.csv" />
     <entry file="file://$PROJECT_DIR$/src/GUI/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1515472785462" expanded="true" signature="5160:5168" ph="{...}" />
+            <marker date="1515489328006" expanded="true" signature="6539:6547" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -817,7 +679,7 @@
         <state relative-caret-position="315">
           <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
           <folding>
-            <marker date="1515472785462" expanded="true" signature="5160:5168" ph="{...}" />
+            <marker date="1515489328006" expanded="true" signature="6539:6547" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -841,19 +703,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/csv/readCSV.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1132">
-          <caret line="94" column="33" lean-forward="false" selection-start-line="94" selection-start-column="33" selection-end-line="94" selection-end-column="33" />
+        <state relative-caret-position="163">
+          <caret line="131" column="33" lean-forward="false" selection-start-line="131" selection-start-column="33" selection-end-line="131" selection-end-column="33" />
           <folding>
-            <marker date="1515472785462" expanded="true" signature="5160:5168" ph="{...}" />
+            <marker date="1515489328006" expanded="true" signature="6539:6547" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -882,22 +737,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/csv/CSVWriter.java">
+    <entry file="file://$PROJECT_DIR$/src/csv/CSVWriter.java" />
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="-20895">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/StatisticsLayout.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-210">
-          <caret line="12" column="32" lean-forward="true" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
-          <folding>
-            <element signature="e#563#564#0" expanded="true" />
-            <element signature="e#591#592#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -909,31 +754,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/csv/writeCSV.java">
+    <entry file="file://$PROJECT_DIR$/src/GUI/StatisticsLayout.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="34" column="41" lean-forward="true" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
+        <state relative-caret-position="245">
+          <caret line="7" column="28" lean-forward="true" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#578#579#0" expanded="true" />
+            <element signature="e#606#607#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>9.0</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
+    <entry file="file://$PROJECT_DIR$/src/supportClass/readCSV.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="70">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/supportClass/writeCSV.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="6" column="27" lean-forward="true" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

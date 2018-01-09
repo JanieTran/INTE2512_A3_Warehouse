@@ -1,10 +1,11 @@
 package GUI;
 
-import csv.writeCSV;
+
+import supportClass.writeCSV;
 import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
-import product.Product;
+import supportClass.Product;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

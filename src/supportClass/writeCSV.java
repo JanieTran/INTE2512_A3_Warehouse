@@ -1,6 +1,6 @@
-package csv;
+package supportClass;
 
-import product.Product;
+import supportClass.Product;
 
 import java.io.FileWriter;
 import java.io.IOException;
