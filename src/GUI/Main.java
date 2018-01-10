@@ -40,7 +40,10 @@ public class Main extends Application{
     // Objects for title bar: title label, username label, log out button
     HBox titleBar = new HBox();
     Label title = new Label(APP_TITLE);
-    Label username = new Label("Username");
+
+    Image ic_user = fetchImg("ic_user.png");
+    Button username = new Button("Username", new ImageView(ic_user));
+
     Button logOut = new Button("Log Out");
 
     // Tab buttons + icons
@@ -154,8 +157,10 @@ public class Main extends Application{
         title.setStyle("-fx-font-weight: bold");
 
         // Set properties for Username
+        username.setStyle("-fx-background-color: transparent");
         username.setMinSize(140, TITLE_BAR_HEIGHT);
         username.setFont(Font.font(20));
+        username.setGraphicTextGap(SPACING/2);
 
         // Set properties for Log Out button
         logOut.setMinSize(140, TITLE_BAR_HEIGHT);

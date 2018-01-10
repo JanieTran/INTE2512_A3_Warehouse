@@ -14,7 +14,7 @@ import static GUI.Main.fetchImg;
 
 public class Order {
     private Product product;
-    private boolean input;
+    private String type;
     private boolean expanded;
 
     private GridPane gridOrder;
@@ -22,15 +22,7 @@ public class Order {
     private Button accept, decline;
     private Label productID, timestamp, producer, quantity, productName;
 
-    public Order() {
-        product = new Product();
-        input = true;
-        accept = new Button("Accept");
-        decline = new Button("Decline");
-        gridOrder = new GridPane();
-    }
-
-    public Order(String name, String id, int qty, String producer, boolean input) {
+    public Order(String name, String id, int qty, String producer, String type) {
         this.product = new Product(name, id, qty);
         product.setProducer(producer);
 
@@ -41,10 +33,10 @@ public class Order {
         this.producer = new Label("From: " + product.getProducer());
         quantity = new Label("Quantity: " + product.getQty());
 
-        accept = new Button("Accept");
-        decline = new Button("Decline");
+        accept = new Button("", new ImageView(fetchImg("ic_accept.png")));
+        decline = new Button("", new ImageView(fetchImg("ic_decline.png")));
 
-        if (input)
+        if (type.equals("input"))
             icon = new ImageView(fetchImg("ic_receiver.png"));
         else
             icon = new ImageView(fetchImg("ic_deliver.png"));
@@ -56,7 +48,7 @@ public class Order {
         productID.setStyle("-fx-font-weight: bold");
         productID.setFont(Font.font(20));
         productID.setMinWidth(700);
-        productID.setPadding(new Insets(0,SPACING,0,SPACING));
+        productID.setPadding(new Insets(SPACING/2,SPACING,0,SPACING));
 
         timestamp.setFont(Font.font(15));
         timestamp.setMinWidth(600);
@@ -74,10 +66,10 @@ public class Order {
         producer.setStyle("-fx-font-style: italic");
         producer.setPadding(new Insets(0, SPACING, 0, SPACING));
 
-        accept.setStyle("-fx-background-color: #00e676");
+        accept.setStyle("-fx-background-color: #b9f6ca");
         accept.setPadding(new Insets(SPACING, SPACING, SPACING, SPACING));
 
-        decline.setStyle("-fx-background-color: #ff1744; -fx-text-fill: #ffffff");
+        decline.setStyle("-fx-background-color: #ffcdd2");
         decline.setPadding(new Insets(SPACING, SPACING, SPACING, SPACING));
 
         gridCollapse();

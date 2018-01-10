@@ -38,18 +38,6 @@ public class Notifications {
             icon = fetchImg("ic_home.png");
     }
 
-    public String getTitle() {
-        return title;
-    }
-
-    public String getTimestamp() {
-        return timestamp;
-    }
-
-    public Image getIcon() {
-        return icon;
-    }
-
     private Image fetchImg(String imgName) {
         return new Image("file:src/image/" + imgName, ICON_DIMEN, ICON_DIMEN, true, true);
     }
@@ -69,7 +57,12 @@ public class Notifications {
         grid.add(labelTime, 1, 1);
 
         grid.setHgap(SPACING * 2);
-        grid.setPadding(new Insets(0,0, SPACING, SPACING * 2));
+        grid.setPadding(new Insets(0,0, 0, SPACING * 2));
+
+        if (type.equals("input") || type.equals("output"))
+            grid.setStyle("-fx-background-color: #b9f6ca");
+        else
+            grid.setStyle("-fx-background-color: #ffcdd2");
 
         return grid;
     }

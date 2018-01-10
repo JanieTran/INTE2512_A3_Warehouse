@@ -1,5 +1,6 @@
 package GUI;
 
+import csv.readCSV;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
@@ -7,26 +8,21 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import supportClass.Notifications;
 
+import java.util.ArrayList;
+
 import static GUI.Main.*;
 
 public class TabHome {
     //------------------------------------------------------
     // PROPERTIES
     //------------------------------------------------------
+    private final String NOTIFICATIONS_FILE = "src/database/notifications.csv";
 
     private VBox tabHome;
     private Label tabTitle;
     private VBox boxNoti;
 
-    private Notifications notiInput = new Notifications("ABC1232 Input Complete", "input");
-    private Notifications notiStats = new Notifications("Traffic Jam at Block A", "map");
-    private Notifications notiMap = new Notifications("ABC1230 Not Found at E5", "statistics");
-    private Notifications notiOutput = new Notifications("XYZ1231 Output Complete", "output");
-
-    private GridPane notiInputGrid = notiInput.getGrid();
-    private GridPane notiStatsGrid = notiStats.getGrid();
-    private GridPane notiMapGrid = notiMap.getGrid();
-    private GridPane notiOutputGrid = notiOutput.getGrid();
+    private ArrayList<Notifications> notifications;
 
     private Label noNoti = new Label(NO_NOTIFICATION);
 
@@ -38,22 +34,25 @@ public class TabHome {
         tabHome = new VBox();
         tabTitle = new Label("NOTIFICATIONS");
         boxNoti = new VBox();
+        notifications = readCSV.readCSVtoNotifications(NOTIFICATIONS_FILE);
     }
 
     public VBox getTabHome() {
         boxNoti.getChildren().clear();
-        boxNoti.getChildren().addAll(notiInputGrid, notiStatsGrid, notiMapGrid, notiOutputGrid);
+
+        for (Notifications noti : notifications) {
+            GridPane gridNoti = noti.getGrid();
+            boxNoti.getChildren().add(gridNoti);
+            setGridOnClick(gridNoti);
+        }
+
+        boxNoti.setSpacing(SPACING);
 
         noNoti.setFont(Font.font(20));
         noNoti.setPadding(new Insets(SPACING, SPACING, SPACING, SPACING * 2));
         noNoti.setStyle("-fx-text-fill: #ababab");
 
         updateTabHome();
-
-        setGridOnClick(notiInputGrid);
-        setGridOnClick(notiStatsGrid);
-        setGridOnClick(notiMapGrid);
-        setGridOnClick(notiOutputGrid);
 
         tabTitle.setFont(Font.font(30));
         tabTitle.setStyle("-fx-font-weight: bold; -fx-text-fill: #2196f3");

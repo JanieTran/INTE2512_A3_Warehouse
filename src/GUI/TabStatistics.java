@@ -48,6 +48,8 @@ public class TabStatistics {
 
     public VBox getTabStatistics() {
         tabStatistics.getChildren().clear();
+//        table.getItems().clear();
+        table.getColumns().clear();
 
         //---------------------CUSTOM tabTitle---------------------
         tabTitle.setFont(Font.font(30));
@@ -181,7 +183,7 @@ public class TabStatistics {
         ObservableList<Product> productsSelected, allProducts;
         allProducts = table.getItems();
         productsSelected = table.getSelectionModel().getSelectedItems();
-        allProducts.removeAll(productsSelected);
+        productsSelected.forEach(allProducts::remove);
     }
 
     private TextField addTextField (String hint, int width) {
