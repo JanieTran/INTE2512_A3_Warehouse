@@ -55,7 +55,7 @@ public class Order {
     public GridPane getGridOrder() {
         productID.setStyle("-fx-font-weight: bold");
         productID.setFont(Font.font(20));
-        productID.setMinWidth(600);
+        productID.setMinWidth(700);
         productID.setPadding(new Insets(0,SPACING,0,SPACING));
 
         timestamp.setFont(Font.font(15));
