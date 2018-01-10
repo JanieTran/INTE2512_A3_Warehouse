@@ -169,7 +169,7 @@ public class Main extends Application{
         tabs.getChildren().addAll(home, order, receiver, deliver, statistics, map);
         tabs.setMaxWidth(TAB_WIDTH);
         tabs.setMinHeight(HEIGHT - TITLE_BAR_HEIGHT);
-        tabs.setStyle("-fx-background-color: #bababa");
+        tabs.setStyle("-fx-background-color: #e0e0e0");
     }
 
     // Settings for buttons in Tabs Column
@@ -199,7 +199,7 @@ public class Main extends Application{
         setTabButton(statistics);
         setTabButton(map);
 
-        button.setStyle("-fx-background-color: #999999");
+        button.setStyle("-fx-background-color: #c0c0c0");
     }
 
 }
