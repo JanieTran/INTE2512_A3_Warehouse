@@ -69,6 +69,7 @@ public class Main extends Application{
     Pane contents = new Pane();
     TabHome tabHome = new TabHome();
     TabOrder tabOrder = new TabOrder();
+    TabStatistics tabStatistics = new TabStatistics();
 
     //------------------------------------------------------
     // MAIN FUNCTION
@@ -101,6 +102,7 @@ public class Main extends Application{
 
         receiver.setOnMouseClicked(event -> {
             chosenTab(receiver);
+
         });
 
         deliver.setOnMouseClicked(event -> {
@@ -109,6 +111,8 @@ public class Main extends Application{
 
         statistics.setOnMouseClicked(event -> {
             chosenTab(statistics);
+            contents.getChildren().clear();
+            contents.getChildren().add(tabStatistics.getTabStatistics());
         });
 
         map.setOnMouseClicked(event -> {

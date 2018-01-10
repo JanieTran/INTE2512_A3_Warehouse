@@ -3,6 +3,27 @@ package supportClass;
 import java.util.Date;
 
 public class Product {
+    //--------------------Constant--------------------
+    public static final String[] PRODUCT_LABEL = {"ID", "Name", "Quantity", "Description", "Producer",
+            "Location", "Status", "Input Date", "Output Date"};
+    public static final String[] PRODUCT_PROPERTIES = {"id", "name", "qty", "desc", "producer",
+            "location", "status", "inputDate", "outputDate"};
+    public static final int TOTAL_ATTRIBUTES = PRODUCT_LABEL.length;
+
+    public static final int ID_INDEX = 0;
+    public static final int NAME_INDEX = 1;
+    public static final int QTY_INDEX = 2;
+    public static final int DESC_INDEX = 3;
+    public static final int PRODUCER_INDEX = 4;
+    public static final int LOCATION_INDEX = 5;
+    public static final int STATUS_INDEX = 6;
+    public static final int INPUTDATE_INDEX = 7;
+    public static final int OUTPUDATE_INDEX = 8;
+
+
+
+
+    //--------------------Product Properties--------------------
     private String name;
     private String id;
     private int qty;
@@ -103,4 +124,5 @@ public class Product {
     public void setOutputDate(Date outputDate) {
         this.outputDate = outputDate;
     }
+
 }
