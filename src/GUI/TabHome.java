@@ -14,9 +14,9 @@ public class TabHome {
     // PROPERTIES
     //------------------------------------------------------
 
-    private VBox tabHome = new VBox();
-    private Label tabTitle = new Label("NOTIFICATIONS");
-    private VBox boxNoti = new VBox();
+    private VBox tabHome;
+    private Label tabTitle;
+    private VBox boxNoti;
 
     private Notifications notiInput = new Notifications("ABC1232 Input Complete", "input");
     private Notifications notiStats = new Notifications("Traffic Jam at Block A", "map");
@@ -35,7 +35,9 @@ public class TabHome {
     //------------------------------------------------------
 
     public TabHome() {
-
+        tabHome = new VBox();
+        tabTitle = new Label("NOTIFICATIONS");
+        boxNoti = new VBox();
     }
 
     public VBox getTabHome() {

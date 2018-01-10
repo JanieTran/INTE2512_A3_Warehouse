@@ -73,6 +73,14 @@ public class StatisticsLayout extends Application {
         products.add(new Product("IPHONE X", "IPX2345", 500));
         products.add(new Product());
 
+        // Searching testing
+        int count = 0;
+
+        for (Product product : products) {
+            if (product.getName().matches(".*O.*"))
+                System.out.println(product.getName());
+        }
+
         return products;
     }
 
