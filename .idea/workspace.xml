@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="52480c72-3b6b-4176-ba4f-f9ede518ca3d" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/INTE2512_A3_Warehouse_Lib/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,60 +12,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="LoginLayout.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/GUI/LoginLayout.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="307" column="38" lean-forward="true" selection-start-line="307" selection-start-column="38" selection-end-line="307" selection-end-column="38" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#989#998#0" expanded="true" />
-                <element signature="method#initRect#0;class#LoginLayout#0" expanded="false" />
-                <element signature="method#createRectMap#0;class#LoginLayout#0" expanded="false" />
-                <element signature="method#createVBMap#0;class#LoginLayout#0" expanded="false" />
-                <element signature="method#createGridMap#0;class#LoginLayout#0" expanded="false" />
-                <element signature="method#createImageView#0;class#LoginLayout#0" expanded="false" />
-                <element signature="method#createGridLayout#0;class#LoginLayout#0" expanded="false" />
-                <element signature="method#addStringColumn#0;class#LoginLayout#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BlockInfo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUI/BlockInfo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="445">
-              <caret line="80" column="7" lean-forward="true" selection-start-line="80" selection-start-column="7" selection-end-line="80" selection-end-column="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Product.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/product/Product.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StatisticsLayout.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUI/StatisticsLayout.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="816">
-              <caret line="73" column="36" lean-forward="false" selection-start-line="73" selection-start-column="36" selection-end-line="73" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -85,11 +33,13 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/GUI/Main.java" />
+        <option value="$PROJECT_DIR$/src/product/ProductBlock.java" />
         <option value="$PROJECT_DIR$/src/GUI/StatisticsLayout.java" />
         <option value="$PROJECT_DIR$/src/product/Product.java" />
-        <option value="$PROJECT_DIR$/src/product/ProductBlock.java" />
-        <option value="$PROJECT_DIR$/src/GUI/BlockInfo.java" />
         <option value="$PROJECT_DIR$/src/GUI/LoginLayout.java" />
+        <option value="$PROJECT_DIR$/product.csv" />
+        <option value="$PROJECT_DIR$/src/GUI/BlockInfo.java" />
+        <option value="$PROJECT_DIR$/src/GUI/MapLayout.java" />
       </list>
     </option>
   </component>
@@ -99,7 +49,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="133" />
     <option name="y" value="105" />
     <option name="width" value="1612" />
@@ -120,8 +70,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -147,10 +95,16 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="product" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="INTE2512_A3_Warehouse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -158,7 +112,20 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/product.csv" />
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\sjtth\OneDrive\Documents\GitHub\INTE2512_A3_Warehouse" />
+      <recent name="C:\Users\sjtth\OneDrive\Documents\GitHub\INTE2512_A3_Warehouse\src\Data" />
+      <recent name="C:\Users\sjtth\OneDrive\Documents\GitHub\INTE2512_A3_Warehouse\Data" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -172,7 +139,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.LoginLayout">
+  <component name="RunManager" selected="Application.MapLayout">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -207,6 +174,25 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="GUI.Main" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="INTE2512_A3_Warehouse" />
+      <envs />
+    </configuration>
+    <configuration name="MapLayout" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="GUI.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="GUI.MapLayout" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -311,16 +297,18 @@
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
-    <list size="3">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Application.LoginLayout" />
       <item index="1" class="java.lang.String" itemvalue="Application.Main" />
       <item index="2" class="java.lang.String" itemvalue="Application.StatisticsLayout" />
+      <item index="3" class="java.lang.String" itemvalue="Application.MapLayout" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Application.LoginLayout" />
-        <item index="1" class="java.lang.String" itemvalue="Application.StatisticsLayout" />
-        <item index="2" class="java.lang.String" itemvalue="Application.Main" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Application.MapLayout" />
+        <item index="1" class="java.lang.String" itemvalue="Application.LoginLayout" />
+        <item index="2" class="java.lang.String" itemvalue="Application.StatisticsLayout" />
+        <item index="3" class="java.lang.String" itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -340,16 +328,17 @@
       <workItem from="1514987138492" duration="764000" />
       <workItem from="1515033918857" duration="457000" />
       <workItem from="1515036640669" duration="15061000" />
-      <workItem from="1515407150563" duration="15993000" />
+      <workItem from="1515407150563" duration="16610000" />
+      <workItem from="1515492321482" duration="9592000" />
+      <workItem from="1515528043616" duration="7102000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32275000" />
+    <option name="totallyTimeSpent" value="49586000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -359,19 +348,19 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17106652" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29461458" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13385417" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13385417" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39915523" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39915523" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -388,25 +377,189 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="8" />
+      <option name="time" value="15" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/GUI/LoginLayout.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3944">
+          <caret line="363" column="31" lean-forward="false" selection-start-line="363" selection-start-column="31" selection-end-line="363" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="method#createImageView#0;class#LoginLayout#0" expanded="false" />
+            <element signature="method#createGridLayout#0;class#LoginLayout#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Downloads/opencsv-4.1.jar!/com/opencsv/CSVParser.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1037">
+          <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+          <folding>
+            <marker date="1515524034900" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1515524034900" expanded="false" signature="135:408" ph="..." />
+            <marker date="1515524034900" expanded="false" signature="968:979" ph=" { " />
+            <marker date="1515524034900" expanded="false" signature="1000:1006" ph=" }" />
+            <marker date="1515524034900" expanded="true" signature="1012:1030" ph="/**...*/" />
+            <marker date="1515524034900" expanded="false" signature="1083:1094" ph=" { " />
+            <marker date="1515524034900" expanded="false" signature="1121:1127" ph=" }" />
+            <marker date="1515524034900" expanded="true" signature="1133:1151" ph="/**...*/" />
+            <marker date="1515524034900" expanded="false" signature="1220:1231" ph=" { " />
+            <marker date="1515524034900" expanded="false" signature="1264:1270" ph=" }" />
+            <marker date="1515524034900" expanded="true" signature="1276:1294" ph="/**...*/" />
+            <marker date="1515524034900" expanded="false" signature="1376:1387" ph=" { " />
+            <marker date="1515524034900" expanded="false" signature="1429:1435" ph=" }" />
+            <marker date="1515524034900" expanded="true" signature="1441:1459" ph="/**...*/" />
+            <marker date="1515524034900" expanded="true" signature="1564:1635" ph="{...}" />
+            <marker date="1515524034900" expanded="true" signature="1641:1659" ph="/**...*/" />
+            <marker date="1515524034900" expanded="true" signature="1797:1894" ph="{...}" />
+            <marker date="1515524034900" expanded="true" signature="1900:1918" ph="/**...*/" />
+            <marker date="1515524034900" expanded="true" signature="2082:2220" ph="{...}" />
+            <marker date="1515524034900" expanded="true" signature="2226:2244" ph="/**...*/" />
+            <marker date="1515524034900" expanded="true" signature="2449:2598" ph="{...}" />
+            <marker date="1515524034900" expanded="true" signature="2808:3753" ph="{...}" />
+            <marker date="1515524034900" expanded="false" signature="3785:3796" ph=" { " />
+            <marker date="1515524034900" expanded="false" signature="3818:3824" ph=" }" />
+            <marker date="1515524034900" expanded="false" signature="3856:3867" ph=" { " />
+            <marker date="1515524034900" expanded="false" signature="3889:3895" ph=" }" />
+            <marker date="1515524034900" expanded="false" signature="3924:3935" ph=" { " />
+            <marker date="1515524034900" expanded="false" signature="3954:3960" ph=" }" />
+            <marker date="1515524034900" expanded="false" signature="3997:4008" ph=" { " />
+            <marker date="1515524034900" expanded="false" signature="4033:4039" ph=" }" />
+            <marker date="1515524034900" expanded="false" signature="4087:4098" ph=" { " />
+            <marker date="1515524034900" expanded="false" signature="4134:4140" ph=" }" />
+            <marker date="1515524034900" expanded="false" signature="4181:4192" ph=" { " />
+            <marker date="1515524034900" expanded="false" signature="4221:4227" ph=" }" />
+            <marker date="1515524034900" expanded="true" signature="4318:4470" ph="{...}" />
+            <marker date="1515524034900" expanded="false" signature="4525:4536" ph=" { " />
+            <marker date="1515524034900" expanded="false" signature="4563:4569" ph=" }" />
+            <marker date="1515524034900" expanded="false" signature="4601:4612" ph=" { " />
+            <marker date="1515524034900" expanded="false" signature="4640:4646" ph=" }" />
+            <marker date="1515524034900" expanded="true" signature="4719:4773" ph="{...}" />
+            <marker date="1515524034900" expanded="true" signature="4841:4896" ph="{...}" />
+            <marker date="1515524034900" expanded="true" signature="4945:5276" ph="{...}" />
+            <marker date="1515524034900" expanded="true" signature="5329:6695" ph="{...}" />
+            <marker date="1515524034900" expanded="true" signature="6779:7056" ph="{...}" />
+            <marker date="1515524034900" expanded="true" signature="7142:10957" ph="{...}" />
+            <marker date="1515524034900" expanded="true" signature="11040:11136" ph="{...}" />
+            <marker date="1515524034900" expanded="true" signature="11208:11485" ph="{...}" />
+            <marker date="1515524034900" expanded="false" signature="11533:11544" ph=" { " />
+            <marker date="1515524034900" expanded="false" signature="11602:11608" ph=" }" />
+            <marker date="1515524034900" expanded="true" signature="11700:11819" ph="{...}" />
+            <marker date="1515524034900" expanded="false" signature="11874:11885" ph=" { " />
+            <marker date="1515524034900" expanded="false" signature="11912:11918" ph=" }" />
+            <marker date="1515524034900" expanded="false" signature="11974:11985" ph=" { " />
+            <marker date="1515524034900" expanded="false" signature="12009:12015" ph=" }" />
+            <marker date="1515524034900" expanded="true" signature="12066:12161" ph="{...}" />
+            <marker date="1515524034900" expanded="true" signature="12252:12366" ph="{...}" />
+            <marker date="1515524034900" expanded="false" signature="12427:12438" ph=" { " />
+            <marker date="1515524034900" expanded="false" signature="12469:12475" ph=" }" />
+            <marker date="1515524034900" expanded="false" signature="12511:12522" ph=" { " />
+            <marker date="1515524034900" expanded="false" signature="12569:12575" ph=" }" />
+            <marker date="1515524034900" expanded="true" signature="12623:14945" ph="{...}" />
+            <marker date="1515524034900" expanded="false" signature="12856:12871" ph=" { " />
+            <marker date="1515524034900" expanded="false" signature="12890:12900" ph=" }" />
+            <marker date="1515524034900" expanded="false" signature="12939:12954" ph=" { " />
+            <marker date="1515524034900" expanded="false" signature="12991:13001" ph=" }" />
+            <marker date="1515524034900" expanded="false" signature="13034:13049" ph=" { " />
+            <marker date="1515524034900" expanded="false" signature="13084:13094" ph=" }" />
+            <marker date="1515524034900" expanded="true" signature="13147:13550" ph="{...}" />
+            <marker date="1515524034900" expanded="false" signature="13594:13609" ph=" { " />
+            <marker date="1515524034900" expanded="false" signature="13651:13661" ph=" }" />
+            <marker date="1515524034900" expanded="false" signature="13703:13718" ph=" { " />
+            <marker date="1515524034900" expanded="false" signature="13760:13770" ph=" }" />
+            <marker date="1515524034900" expanded="true" signature="13805:14200" ph="{...}" />
+            <marker date="1515524034900" expanded="true" signature="14241:14365" ph="{...}" />
+            <marker date="1515524034900" expanded="true" signature="14401:14568" ph="{...}" />
+            <marker date="1515524034900" expanded="true" signature="14605:14785" ph="{...}" />
+            <marker date="1515524034900" expanded="true" signature="14822:14939" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/product/Product.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1224">
+          <caret line="98" column="5" lean-forward="true" selection-start-line="98" selection-start-column="5" selection-end-line="98" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/BlockInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="3" lean-forward="false" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/StatisticsLayout.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1003">
+          <caret line="73" column="36" lean-forward="false" selection-start-line="73" selection-start-column="36" selection-end-line="73" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/product.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="27" lean-forward="false" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/LoginLayout.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#989#998#0" expanded="true" />
-            <element signature="method#initRect#0;class#LoginLayout#0" expanded="false" />
-            <element signature="method#createRectMap#0;class#LoginLayout#0" expanded="false" />
-            <element signature="method#createVBMap#0;class#LoginLayout#0" expanded="false" />
-            <element signature="method#createGridMap#0;class#LoginLayout#0" expanded="false" />
+            <element signature="imports" expanded="false" />
             <element signature="method#createImageView#0;class#LoginLayout#0" expanded="false" />
             <element signature="method#createGridLayout#0;class#LoginLayout#0" expanded="false" />
-            <element signature="method#addStringColumn#0;class#LoginLayout#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/BlockInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1360">
+          <caret line="80" column="7" lean-forward="true" selection-start-line="80" selection-start-column="7" selection-end-line="80" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/product/Product.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/StatisticsLayout.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1003">
+          <caret line="73" column="36" lean-forward="false" selection-start-line="73" selection-start-column="36" selection-end-line="73" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/LoginLayout.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="method#createImageView#0;class#LoginLayout#0" expanded="false" />
+            <element signature="method#createGridLayout#0;class#LoginLayout#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -423,15 +576,9 @@
         <state relative-caret-position="2604">
           <caret line="124" column="29" lean-forward="false" selection-start-line="124" selection-start-column="29" selection-end-line="124" selection-end-column="29" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#989#998#0" expanded="true" />
-            <element signature="method#initRect#0;class#LoginLayout#0" expanded="false" />
-            <element signature="method#createRectMap#0;class#LoginLayout#0" expanded="false" />
-            <element signature="method#createVBMap#0;class#LoginLayout#0" expanded="false" />
-            <element signature="method#createGridMap#0;class#LoginLayout#0" expanded="false" />
+            <element signature="imports" expanded="false" />
             <element signature="method#createImageView#0;class#LoginLayout#0" expanded="false" />
             <element signature="method#createGridLayout#0;class#LoginLayout#0" expanded="false" />
-            <element signature="method#addStringColumn#0;class#LoginLayout#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -461,7 +608,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="42" column="15" lean-forward="false" selection-start-line="42" selection-start-column="15" selection-end-line="42" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -469,66 +615,166 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/product/ProductBlock.java">
+    <entry file="file://$PROJECT_DIR$/src/product/ProductBlock.java" />
+    <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/javafx.graphics/com/sun/glass/ui/View.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="-717">
+          <caret line="943" column="0" lean-forward="true" selection-start-line="943" selection-start-column="0" selection-end-line="943" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/INTE2512_A3_Warehouse_Lib/pom.xml" />
+    <entry file="jar://$USER_HOME$/Downloads/opencsv-4.1.jar!/com/opencsv/CSVParser.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1037">
+          <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+          <folding>
+            <marker date="1515524034900" expanded="false" signature="0:104" ph="/.../" />
+            <marker date="1515524034900" expanded="false" signature="135:408" ph="..." />
+            <marker date="1515524034900" expanded="false" signature="968:979" ph=" { " />
+            <marker date="1515524034900" expanded="false" signature="1000:1006" ph=" }" />
+            <marker date="1515524034900" expanded="true" signature="1012:1030" ph="/**...*/" />
+            <marker date="1515524034900" expanded="false" signature="1083:1094" ph=" { " />
+            <marker date="1515524034900" expanded="false" signature="1121:1127" ph=" }" />
+            <marker date="1515524034900" expanded="true" signature="1133:1151" ph="/**...*/" />
+            <marker date="1515524034900" expanded="false" signature="1220:1231" ph=" { " />
+            <marker date="1515524034900" expanded="false" signature="1264:1270" ph=" }" />
+            <marker date="1515524034900" expanded="true" signature="1276:1294" ph="/**...*/" />
+            <marker date="1515524034900" expanded="false" signature="1376:1387" ph=" { " />
+            <marker date="1515524034900" expanded="false" signature="1429:1435" ph=" }" />
+            <marker date="1515524034900" expanded="true" signature="1441:1459" ph="/**...*/" />
+            <marker date="1515524034900" expanded="true" signature="1564:1635" ph="{...}" />
+            <marker date="1515524034900" expanded="true" signature="1641:1659" ph="/**...*/" />
+            <marker date="1515524034900" expanded="true" signature="1797:1894" ph="{...}" />
+            <marker date="1515524034900" expanded="true" signature="1900:1918" ph="/**...*/" />
+            <marker date="1515524034900" expanded="true" signature="2082:2220" ph="{...}" />
+            <marker date="1515524034900" expanded="true" signature="2226:2244" ph="/**...*/" />
+            <marker date="1515524034900" expanded="true" signature="2449:2598" ph="{...}" />
+            <marker date="1515524034900" expanded="true" signature="2808:3753" ph="{...}" />
+            <marker date="1515524034900" expanded="false" signature="3785:3796" ph=" { " />
+            <marker date="1515524034900" expanded="false" signature="3818:3824" ph=" }" />
+            <marker date="1515524034900" expanded="false" signature="3856:3867" ph=" { " />
+            <marker date="1515524034900" expanded="false" signature="3889:3895" ph=" }" />
+            <marker date="1515524034900" expanded="false" signature="3924:3935" ph=" { " />
+            <marker date="1515524034900" expanded="false" signature="3954:3960" ph=" }" />
+            <marker date="1515524034900" expanded="false" signature="3997:4008" ph=" { " />
+            <marker date="1515524034900" expanded="false" signature="4033:4039" ph=" }" />
+            <marker date="1515524034900" expanded="false" signature="4087:4098" ph=" { " />
+            <marker date="1515524034900" expanded="false" signature="4134:4140" ph=" }" />
+            <marker date="1515524034900" expanded="false" signature="4181:4192" ph=" { " />
+            <marker date="1515524034900" expanded="false" signature="4221:4227" ph=" }" />
+            <marker date="1515524034900" expanded="true" signature="4318:4470" ph="{...}" />
+            <marker date="1515524034900" expanded="false" signature="4525:4536" ph=" { " />
+            <marker date="1515524034900" expanded="false" signature="4563:4569" ph=" }" />
+            <marker date="1515524034900" expanded="false" signature="4601:4612" ph=" { " />
+            <marker date="1515524034900" expanded="false" signature="4640:4646" ph=" }" />
+            <marker date="1515524034900" expanded="true" signature="4719:4773" ph="{...}" />
+            <marker date="1515524034900" expanded="true" signature="4841:4896" ph="{...}" />
+            <marker date="1515524034900" expanded="true" signature="4945:5276" ph="{...}" />
+            <marker date="1515524034900" expanded="true" signature="5329:6695" ph="{...}" />
+            <marker date="1515524034900" expanded="true" signature="6779:7056" ph="{...}" />
+            <marker date="1515524034900" expanded="true" signature="7142:10957" ph="{...}" />
+            <marker date="1515524034900" expanded="true" signature="11040:11136" ph="{...}" />
+            <marker date="1515524034900" expanded="true" signature="11208:11485" ph="{...}" />
+            <marker date="1515524034900" expanded="false" signature="11533:11544" ph=" { " />
+            <marker date="1515524034900" expanded="false" signature="11602:11608" ph=" }" />
+            <marker date="1515524034900" expanded="true" signature="11700:11819" ph="{...}" />
+            <marker date="1515524034900" expanded="false" signature="11874:11885" ph=" { " />
+            <marker date="1515524034900" expanded="false" signature="11912:11918" ph=" }" />
+            <marker date="1515524034900" expanded="false" signature="11974:11985" ph=" { " />
+            <marker date="1515524034900" expanded="false" signature="12009:12015" ph=" }" />
+            <marker date="1515524034900" expanded="true" signature="12066:12161" ph="{...}" />
+            <marker date="1515524034900" expanded="true" signature="12252:12366" ph="{...}" />
+            <marker date="1515524034900" expanded="false" signature="12427:12438" ph=" { " />
+            <marker date="1515524034900" expanded="false" signature="12469:12475" ph=" }" />
+            <marker date="1515524034900" expanded="false" signature="12511:12522" ph=" { " />
+            <marker date="1515524034900" expanded="false" signature="12569:12575" ph=" }" />
+            <marker date="1515524034900" expanded="true" signature="12623:14945" ph="{...}" />
+            <marker date="1515524034900" expanded="false" signature="12856:12871" ph=" { " />
+            <marker date="1515524034900" expanded="false" signature="12890:12900" ph=" }" />
+            <marker date="1515524034900" expanded="false" signature="12939:12954" ph=" { " />
+            <marker date="1515524034900" expanded="false" signature="12991:13001" ph=" }" />
+            <marker date="1515524034900" expanded="false" signature="13034:13049" ph=" { " />
+            <marker date="1515524034900" expanded="false" signature="13084:13094" ph=" }" />
+            <marker date="1515524034900" expanded="true" signature="13147:13550" ph="{...}" />
+            <marker date="1515524034900" expanded="false" signature="13594:13609" ph=" { " />
+            <marker date="1515524034900" expanded="false" signature="13651:13661" ph=" }" />
+            <marker date="1515524034900" expanded="false" signature="13703:13718" ph=" { " />
+            <marker date="1515524034900" expanded="false" signature="13760:13770" ph=" }" />
+            <marker date="1515524034900" expanded="true" signature="13805:14200" ph="{...}" />
+            <marker date="1515524034900" expanded="true" signature="14241:14365" ph="{...}" />
+            <marker date="1515524034900" expanded="true" signature="14401:14568" ph="{...}" />
+            <marker date="1515524034900" expanded="true" signature="14605:14785" ph="{...}" />
+            <marker date="1515524034900" expanded="true" signature="14822:14939" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/StatisticsLayout.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="73" column="36" lean-forward="false" selection-start-line="73" selection-start-column="36" selection-end-line="73" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/javafx.graphics/com/sun/glass/ui/View.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-717">
-          <caret line="943" column="0" lean-forward="true" selection-start-line="943" selection-start-column="0" selection-end-line="943" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/BlockInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="80" column="7" lean-forward="true" selection-start-line="80" selection-start-column="7" selection-end-line="80" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/product/Product.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+        <state relative-caret-position="748">
+          <caret line="58" column="34" lean-forward="true" selection-start-line="58" selection-start-column="34" selection-end-line="58" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/LoginLayout.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="307" column="38" lean-forward="true" selection-start-line="307" selection-start-column="38" selection-end-line="307" selection-end-column="38" />
+        <state relative-caret-position="1530">
+          <caret line="90" column="22" lean-forward="true" selection-start-line="90" selection-start-column="22" selection-end-line="90" selection-end-column="22" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#989#998#0" expanded="true" />
-            <element signature="method#initRect#0;class#LoginLayout#0" expanded="false" />
-            <element signature="method#createRectMap#0;class#LoginLayout#0" expanded="false" />
-            <element signature="method#createVBMap#0;class#LoginLayout#0" expanded="false" />
-            <element signature="method#createGridMap#0;class#LoginLayout#0" expanded="false" />
+            <element signature="imports" expanded="false" />
             <element signature="method#createImageView#0;class#LoginLayout#0" expanded="false" />
             <element signature="method#createGridLayout#0;class#LoginLayout#0" expanded="false" />
-            <element signature="method#addStringColumn#0;class#LoginLayout#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/product.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="22" lean-forward="false" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/MapLayout.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="212" column="9" lean-forward="true" selection-start-line="212" selection-start-column="9" selection-end-line="212" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#start#0;class#MapLayout#0" expanded="false" />
+            <element signature="method#initRect#0;class#MapLayout#0" expanded="false" />
+            <element signature="method#createRectMap#0;class#MapLayout#0" expanded="false" />
+            <element signature="method#createVBMap#0;class#MapLayout#0" expanded="false" />
+            <element signature="method#createGridMap#0;class#MapLayout#0" expanded="false" />
+            <element signature="method#createGridLayout#0;class#MapLayout#0" expanded="false" />
+            <element signature="method#showRectInfo#0;class#MapLayout#0" expanded="false" />
+            <element signature="method#readProductsFromCSV#0;class#MapLayout#0" expanded="false" />
+            <element signature="method#createProduct#0;class#MapLayout#0" expanded="false" />
+            <element signature="method#checkQuantity#0;class#MapLayout#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/product/Product.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/BlockInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -536,9 +782,79 @@
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>9.0</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>INTE2512_A3_Warehouse</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>9.0</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
           <splitter-proportions>
             <option name="proportions">
               <list>

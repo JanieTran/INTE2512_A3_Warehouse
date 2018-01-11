@@ -57,7 +57,7 @@ public class StatisticsLayout extends Application {
         TableColumn<Product, String> outputDateCol = addStringColumn("Output Date", 100, "outputDate");
 
         table = new TableView<>();
-        table.setItems(getProduct());
+//        table.setItems(getProduct());
         table.getColumns().addAll(nameCol, idCol, qtyCol, descCol, producerCol, locationCol, statusCol, inputDateCol, outputDateCol);
 
         VBox vBox = new VBox();
@@ -68,16 +68,16 @@ public class StatisticsLayout extends Application {
         window.show();
     }
 
-    //get all the products
-    public ObservableList<Product> getProduct() {
-        ObservableList<Product> products = FXCollections.observableArrayList();
-        products.add(new Product("KABY LAKE", "ABC2345", 1000));
-        products.add(new Product("SAMSUNG NOTE 8", "SSN2345", 2000));
-        products.add(new Product("IPHONE X", "IPX2345", 500));
-        products.add(new Product());
-
-        return products;
-    }
+//    //get all the products
+//    public ObservableList<Product> getProduct() {
+//        ObservableList<Product> products = FXCollections.observableArrayList();
+//        products.add(new Product("KABY LAKE", "ABC2345", 1000));
+//        products.add(new Product("SAMSUNG NOTE 8", "SSN2345", 2000));
+//        products.add(new Product("IPHONE X", "IPX2345", 500));
+//        products.add(new Product());
+//
+//        return products;
+//    }
 
     //create column for TableView
     public TableColumn<Product, String> addStringColumn(String colName, int minWidth, String propertyValue) {

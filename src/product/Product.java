@@ -5,18 +5,18 @@ import java.util.Date;
 public class Product {
     private String name;
     private String id;
-    private int qty;
+    private String qty;
     private String desc;
     private String producer;
     private String location;
     private String status;
-    private Date inputDate;
-    private Date outputDate;
+    private String inputDate;
+    private String outputDate;
 
     public Product() {
         this.name = "unknown";
         this.id = "unknown";
-        this.qty = 0;
+        this.qty = "0";
         this.desc = "no description";
         this.producer = "unknown";
         this.location = "unknown";
@@ -25,11 +25,25 @@ public class Product {
         this.outputDate = null;
     }
 
-    public Product(String name, String id, int qty) {
+    public Product(String name, String id, String qty) {
         this.name = name;
         this.id = id;
         this.qty = qty;
     }
+
+    public Product( String id,String name, String qty, String desc, String producer, String location, String status, String inputDate, String outputDate) {
+        this.id = id;
+        this.name = name;
+        this.qty = qty;
+        this.desc = desc;
+        this.producer = producer;
+        this.location = location;
+        this.status = status;
+        this.inputDate = inputDate;
+        this.outputDate = outputDate;
+    }
+
+
 
     //set and get parameters
     public String getName() {
@@ -48,11 +62,11 @@ public class Product {
         this.id = id;
     }
 
-    public int getQty() {
+    public String getQty() {
         return qty;
     }
 
-    public void setQty(int qty) {
+    public void setQty(String qty) {
         this.qty = qty;
     }
 
@@ -88,19 +102,23 @@ public class Product {
         this.status = status;
     }
 
-    public Date getInputDate() {
+    public String getInputDate() {
         return inputDate;
     }
 
-    public void setInputDate(Date inputDate) {
+    public void setInputDate(String inputDate) {
         this.inputDate = inputDate;
     }
 
-    public Date getOutputDate() {
+    public String getOutputDate() {
         return outputDate;
     }
 
-    public void setOutputDate(Date outputDate) {
+    public void setOutputDate(String outputDate) {
         this.outputDate = outputDate;
     }
+
+    @Override public String toString()
+    { return "Book [id=" + id + ", name=" + name + ", quantity=" + qty + ", desc=" + desc +", producer=" + producer +", location=" + location +", status=" + status +", inputdate=" + inputDate +", outputdate=" + outputDate + "]"; }
+
 }
