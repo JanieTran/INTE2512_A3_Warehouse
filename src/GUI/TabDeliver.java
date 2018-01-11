@@ -56,6 +56,7 @@ public class TabDeliver {
         int size = 0;
 
         size = readCSV.readCSV_deliver(PRODUCT_DATA_DIR).size();
+        System.out.println("888888888888888888888888888888888888");
 
         rFull = new Rectangle[size];
         rPercentage = new Rectangle[size];

@@ -1,29 +1,5 @@
-<<<<<<< HEAD
-id,name,qty,desc,producer,location,status,inputDate,outputDate
-ABC2345,KABYLAKE,1000,desc,Intel,1,input,10/1/2018,12/1/2018
-XYZ2345,iPhoneX,2000,desc,Apple,2,input,10/1/2018,12/1/2018
-ABC3456,GalaxyS8,500,desc,Samsung,3,output,10/1/2018,12/1/2018
-ABC2345,KABYLAKE,1000,desc,Intel,1,input,10/1/2018,12/1/2018
-XYZ2345,iPhoneX,2000,desc,Apple,2,input,10/1/2018,12/1/2018
-ABC3456,GalaxyS8,500,desc,Samsung,3,output,10/1/2018,12/1/2018
-ABC2345,KABYLAKE,1000,desc,Intel,1,input,10/1/2018,12/1/2018
-XYZ2345,iPhoneX,2000,desc,Apple,2,input,10/1/2018,12/1/2018
-ABC3456,GalaxyS8,500,desc,Samsung,3,output,10/1/2018,12/1/2018
-ABC2345,KABYLAKE,1000,desc,Intel,1,input,10/1/2018,12/1/2018
-XYZ2345,iPhoneX,2000,desc,Apple,2,input,10/1/2018,12/1/2018
-ABC3456,GalaxyS8,500,desc,Samsung,3,output,10/1/2018,12/1/2018
-ABC2345,KABYLAKE,1000,desc,Intel,1,input,10/1/2018,12/1/2018
-XYZ2345,iPhoneX,2000,desc,Apple,2,input,10/1/2018,12/1/2018
-ABC3456,GalaxyS8,500,desc,Samsung,3,output,10/1/2018,12/1/2018
-ABC2345,KABYLAKE,1000,desc,Intel,1,input,10/1/2018,12/1/2018
-XYZ2345,iPhoneX,2000,desc,Apple,2,input,10/1/2018,12/1/2018
-ABC3456,GalaxyS8,500,desc,Samsung,3,output,10/1/2018,12/1/2018
-
-
-=======
 id,name,qty,desc,producer,location,status,inputDate,outputDate,image
 01,Samsung Galaxy S8,0,Samsung Phone,Samsung,1,Good,10/01/2018,20/01/2018,image/samsunggalaxys8.jpg
-<<<<<<< HEAD
 02,Samsung Galaxy S8,20,Samsung Phone,Samsung,1,Good,10/01/2018,20/01/2018,image/samsunggalaxys8.jpg
 03,Samsung Galaxy S8,30,Samsung Phone,Samsung,1,Good,10/01/2018,20/01/2018,image/samsunggalaxys8.jpg
 04,Samsung Galaxy S8,9,Samsung Phone,Samsung,1,Good,10/01/2018,20/01/2018,image/ic_user.png
@@ -53,39 +29,3 @@ id,name,qty,desc,producer,location,status,inputDate,outputDate,image
 28,Samsung Galaxy S8,20,Samsung Phone,Samsung,1,Good,10/01/2018,20/01/2018,image/samsunggalaxys8.jpg
 29,Samsung Galaxy S8,20,Samsung Phone,Samsung,1,Good,10/01/2018,20/01/2018,image/samsunggalaxys8.jpg
 30,Samsung Galaxy S8,20,Samsung Phone,Samsung,1,Good,10/01/2018,20/01/2018,image/samsunggalaxys8.jpg
->>>>>>> cadd281a5ba6ca07709e57282bca8bed8e81b2ea
-<<<<<<< HEAD
-=======
-02,Samsung Galaxy S8,20,Samsung Phone,Samsung,2,Good,10/01/2018,20/01/2018,image/samsunggalaxys8.jpg
-03,iPhone 8,20,iPhone,Apple,3,Good,10/01/2018,20/01/2018,image/iphone8.jpg
-04,Samsung Galaxy S8,9,Samsung Phone,Samsung,4,Good,10/01/2018,20/01/2018,image/ic_user.png
-05,Samsung Galaxy S8,20,Samsung Phone,Samsung,5,Good,10/01/2018,20/01/2018,image/samsunggalaxys8.jpg
-06,Samsung Galaxy S8,20,Samsung Phone,Samsung,6,Good,10/01/2018,20/01/2018,image/samsunggalaxys8.jpg
-07,iPhone 8,20,iPhone,Apple,7,Good,10/01/2018,20/01/2018,image/iphone8.jpg
-08,Samsung Galaxy S8,20,Samsung Phone,Samsung,8,Good,10/01/2018,20/01/2018,image/samsunggalaxys8.jpg
-09,Samsung Galaxy S8,20,Samsung Phone,Samsung,9,Good,10/01/2018,20/01/2018,image/samsunggalaxys8.jpg
-10,Samsung Galaxy S8,20,Samsung Phone,Samsung,10,Good,10/01/2018,20/01/2018,image/samsunggalaxys8.jpg
-11,Samsung Galaxy S8,20,Samsung Phone,Samsung,11,Good,10/01/2018,20/01/2018,image/samsunggalaxys8.jpg
-12,Samsung Galaxy S8,20,Samsung Phone,Samsung,12,Good,10/01/2018,20/01/2018,image/samsunggalaxys8.jpg
-13,Samsung Galaxy S8,20,Samsung Phone,Samsung,13,Good,10/01/2018,20/01/2018,image/samsunggalaxys8.jpg
-14,Samsung Galaxy S8,20,Samsung Phone,Samsung,14,Good,10/01/2018,20/01/2018,image/samsunggalaxys8.jpg
-15,Samsung Galaxy S8,20,Samsung Phone,Samsung,15,Good,10/01/2018,20/01/2018,image/samsunggalaxys8.jpg
-16,iPhone 8,20,iPhone,Apple,16,Good,10/01/2018,20/01/2018,image/iphone8.jpg
-17,Samsung Galaxy S8,20,Samsung Phone,Samsung,17,Good,10/01/2018,20/01/2018,image/samsunggalaxys8.jpg
-18,Samsung Galaxy S8,20,Samsung Phone,Samsung,18,Good,10/01/2018,20/01/2018,image/samsunggalaxys8.jpg
-19,Samsung Galaxy S8,20,Samsung Phone,Samsung,19,Good,10/01/2018,20/01/2018,image/samsunggalaxys8.jpg
-20,Samsung Galaxy S8,20,Samsung Phone,Samsung,20,Good,10/01/2018,20/01/2018,image/samsunggalaxys8.jpg
-21,iPhone 8,20,iPhone,Apple,21,Good,10/01/2018,20/01/2018,image/iphone8.jpg
-22,Samsung Galaxy S8,20,Samsung Phone,Samsung,22,Good,10/01/2018,20/01/2018,image/samsunggalaxys8.jpg
-23,Samsung Galaxy S8,20,Samsung Phone,Samsung,23,Good,10/01/2018,20/01/2018,image/samsunggalaxys8.jpg
-24,Samsung Galaxy S8,20,Samsung Phone,Samsung,24,Good,10/01/2018,20/01/2018,image/samsunggalaxys8.jpg
-25,iPhone 8,20,iPhone,Apple,25,Good,10/01/2018,20/01/2018,image/iphone8.jpg
-26,Samsung Galaxy S8,20,Samsung Phone,Samsung,26,Good,10/01/2018,20/01/2018,image/samsunggalaxys8.jpg
-27,Samsung Galaxy S8,20,Samsung Phone,Samsung,27,Good,10/01/2018,20/01/2018,image/samsunggalaxys8.jpg
-28,Samsung Galaxy S8,20,Samsung Phone,Samsung,28,Good,10/01/2018,20/01/2018,image/samsunggalaxys8.jpg
-29,Samsung Galaxy S8,20,Samsung Phone,Samsung,29,Good,10/01/2018,20/01/2018,image/samsunggalaxys8.jpg
-30,Samsung Galaxy S8,20,Samsung Phone,Samsung,30,Good,10/01/2018,20/01/2018,image/samsunggalaxys8.jpg
->>>>>>> 8158159f41dd68fb02733886e6a5800da44c2284
-=======
-null,null,0,null,null,null,null,null,nullnull,null,0,null,null,null,null,null,nullnull,null,0,null,null,null,null,null,null
->>>>>>> TranTran

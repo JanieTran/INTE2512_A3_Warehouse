@@ -171,7 +171,7 @@ public class Main extends Application {
         deliver.setOnMouseClicked(event -> {
             chosenTab(deliver);
             contents.getChildren().clear();
-            contents.getChildren().add(tabDeliver.getTabReceiver());
+            contents.getChildren().add(tabDeliver.getTabDeliver());
         });
 
         statistics.setOnMouseClicked(event -> {
