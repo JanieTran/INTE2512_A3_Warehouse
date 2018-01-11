@@ -1,6 +1,7 @@
 
 package GUI;
 
+import csv.readCSV;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
