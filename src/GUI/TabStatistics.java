@@ -1,6 +1,5 @@
 package GUI;
 
-import csv.readCSV;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Pos;
@@ -9,12 +8,10 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.text.Font;
 import javafx.geometry.Insets;
 import javafx.scene.control.*;
-import javafx.scene.layout.HBox;
 import supportClass.Product;
 import javafx.scene.layout.VBox;
 import csv.writeCSV;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import static GUI.Main.*;
