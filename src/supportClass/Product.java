@@ -1,5 +1,7 @@
 package supportClass;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Product {
@@ -18,9 +20,9 @@ public class Product {
     public static final int LOCATION_INDEX = 5;
     public static final int STATUS_INDEX = 6;
     public static final int INPUTDATE_INDEX = 7;
-    public static final int OUTPUDATE_INDEX = 8;
-
-
+    public static final int OUTPUTDATE_INDEX = 8;
+    public static final int CURRENTINPUT_INDEX = 9;
+    public static final int CURRENTOUTPUT_INDEX = 10;
 
 
     //--------------------Product Properties--------------------
@@ -31,8 +33,12 @@ public class Product {
     private String producer;
     private String location;
     private String status;
-    private Date inputDate;
-    private Date outputDate;
+    private String inputDate;
+    private String outputDate;
+    private int currentInput;
+    private int currentOutput;
+
+    private DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
     public Product() {
         this.name = "unknown";
@@ -44,12 +50,27 @@ public class Product {
         this.status = "unknown";
         this.inputDate = null;
         this.outputDate = null;
+        this.currentInput = 0;
+        this.currentOutput = 0;
     }
 
     public Product(String name, String id, int qty) {
         this.name = name;
         this.id = id;
         this.qty = qty;
+    }
+
+    public Product(String name, String id, int qty, String desc, String producer, String location,
+                   String status, String inputDate, String outputDate) {
+        this.name = name;
+        this.id = id;
+        this.qty = qty;
+        this.desc = desc;
+        this.producer = producer;
+        this.location = location;
+        this.status = status;
+        this.inputDate = inputDate;
+        this.outputDate = outputDate;
     }
 
     //set and get parameters
@@ -109,20 +130,36 @@ public class Product {
         this.status = status;
     }
 
-    public Date getInputDate() {
+    public String getInputDate() {
         return inputDate;
     }
 
-    public void setInputDate(Date inputDate) {
+    public void setInputDate(String inputDate) {
         this.inputDate = inputDate;
     }
 
-    public Date getOutputDate() {
+    public String getOutputDate() {
         return outputDate;
     }
 
-    public void setOutputDate(Date outputDate) {
+    public void setOutputDate(String outputDate) {
         this.outputDate = outputDate;
+    }
+
+    public int getCurrentInput() {
+        return currentInput;
+    }
+
+    public void setCurrentInput(int currentInput) {
+        this.currentInput = currentInput;
+    }
+
+    public int getCurrentOutput() {
+        return currentOutput;
+    }
+
+    public void setCurrentOutput(int currentOutput) {
+        this.currentOutput = currentOutput;
     }
 
 }
