@@ -1,7 +1,25 @@
+/*
+  RMIT University Vietnam
+  Course: INTE2512 Object-Oriented Programming
+  Semester: 2017C
+  Assignment: 3 - Warehouse Management Application
+
+  Authors:
+    - Nguyen Tan Thanh          s3580014
+    - Tran le Nha Tran          s3533562
+    - Tran Thi Hong Phuong      s3623385
+
+  Created date: 04/01/2018
+
+  Description: This app gives the overview and statistics of a warehouse so that
+  the manager can monitor and control the delivery of packages inside that warehouse.
+
+  Acknowledgement:
+*/
+
 package GUI;
 
 import javafx.application.Application;
-import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -9,12 +27,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import supportClass.User;
 
 public class Main extends Application{
     //------------------------------------------------------
@@ -22,7 +40,7 @@ public class Main extends Application{
     //------------------------------------------------------
 
     // Int constants
-    public static final int WIDTH = 1280;
+    public static final int WIDTH = 1400;
     public static final int HEIGHT = 720;
     public static final int TITLE_BAR_HEIGHT = 50;
     public static final int TAB_WIDTH = 250;
@@ -71,11 +89,13 @@ public class Main extends Application{
     // Contents
     HBox boxTabsContents = new HBox();
     Pane contents = new Pane();
+    LoginLayout loginLayout = new LoginLayout();
     TabHome tabHome = new TabHome();
     TabOrder tabOrder = new TabOrder();
     TabStatistics tabStatistics = new TabStatistics();
     TabReceiver tabReceiver = new TabReceiver();
     TabDeliver tabDeliver = new TabDeliver();
+    TabMap tabMap = new TabMap();
 
     //------------------------------------------------------
     // MAIN FUNCTION
@@ -83,6 +103,29 @@ public class Main extends Application{
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        screen.getChildren().clear();
+        screen.setMinSize(WIDTH, HEIGHT);
+        screen.getChildren().add(loginLayout.getScreenLogin());
+
+        loginLayout.getBtnLogin().setOnMouseClicked(event -> {
+            String userName = loginLayout.getTxtUserName().getText().toString();
+            String password = loginLayout.getTxtPassword().getText().toString();
+
+            for (User user : loginLayout.getUsers()) {
+                if (user.getUserName().equals(userName) && user.getPassword().equals(password)) {
+                    screen.getChildren().clear();
+                    screen.getChildren().addAll(titleBar, boxTabsContents);
+                    username.setText(userName);
+                    break;
+                }
+            }
+        });
+
+        logOut.setOnMouseClicked(event -> {
+            screen.getChildren().clear();
+            screen.getChildren().add(loginLayout.getScreenLogin());
+        });
+
         // Set Title Bar
         setTitleBar();
 
@@ -90,9 +133,14 @@ public class Main extends Application{
         setTabsColumn();
 
         // Box containing tabs column and tab contents
+        // Default tab when initialised is tab Home
         contents.getChildren().clear();
         contents.getChildren().add(tabHome.getTabHome());
         chosenTab(home);
+
+        // Event listener for each tab button
+        // When a tab is clicked, that tab is highlighted and contents is fetched from
+        // corresponding class
 
         home.setOnMouseClicked(event -> {
             chosenTab(home);
@@ -127,13 +175,16 @@ public class Main extends Application{
 
         map.setOnMouseClicked(event -> {
             chosenTab(map);
+            contents.getChildren().clear();
+            contents.getChildren().add(tabMap.getTabMap());
         });
 
+        // Settings for HBox containing tab column and contents
         boxTabsContents.setMinSize(WIDTH, HEIGHT - TITLE_BAR_HEIGHT);
         boxTabsContents.getChildren().addAll(tabs, contents);
 
         // Add all to Screen box
-        screen.getChildren().addAll(titleBar, boxTabsContents);
+//        screen.getChildren().addAll(titleBar, boxTabsContents);
 
         Scene scene = new Scene(screen);
         setStage(primaryStage, scene);
@@ -198,11 +249,12 @@ public class Main extends Application{
     // OTHER METHODS
     //------------------------------------------------------
 
-    // Get images from resources using img name
+    // Get images from resources using image name name
     public static Image fetchImg(String imgName) {
         return new Image("file:src/image/" + imgName, ICON_DIMEN, ICON_DIMEN, true, true);
     }
 
+    // Highlight chosen tab
     private void chosenTab(Button button) {
         setTabButton(home);
         setTabButton(order);

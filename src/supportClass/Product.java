@@ -21,8 +21,10 @@ public class Product {
     public static final int STATUS_INDEX = 6;
     public static final int INPUTDATE_INDEX = 7;
     public static final int OUTPUTDATE_INDEX = 8;
-    public static final int CURRENTINPUT_INDEX = 9;
-    public static final int CURRENTOUTPUT_INDEX = 10;
+    public static final int IMAGE_INDEX = 9;
+
+//    public static final int CURRENTINPUT_INDEX = 9;
+//    public static final int CURRENTOUTPUT_INDEX = 10;
 
 
     //--------------------Product Properties--------------------
@@ -37,6 +39,7 @@ public class Product {
     private String outputDate;
     private int currentInput;
     private int currentOutput;
+    private String image;
 
     private DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
@@ -52,6 +55,7 @@ public class Product {
         this.outputDate = null;
         this.currentInput = 0;
         this.currentOutput = 0;
+        this.image = "";
     }
 
     public Product(String name, String id, int qty) {
@@ -61,7 +65,7 @@ public class Product {
     }
 
     public Product(String name, String id, int qty, String desc, String producer, String location,
-                   String status, String inputDate, String outputDate) {
+                   String status, String inputDate, String outputDate,String image) {
         this.name = name;
         this.id = id;
         this.qty = qty;
@@ -71,6 +75,7 @@ public class Product {
         this.status = status;
         this.inputDate = inputDate;
         this.outputDate = outputDate;
+        this.image = image;
     }
 
     //set and get parameters
@@ -144,6 +149,14 @@ public class Product {
 
     public void setOutputDate(String outputDate) {
         this.outputDate = outputDate;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public int getCurrentInput() {

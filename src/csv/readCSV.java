@@ -4,6 +4,8 @@ import supportClass.Product;
 
 import supportClass.Notifications;
 import supportClass.Order;
+import supportClass.User;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -54,6 +56,7 @@ public class readCSV {
                 product.setStatus(elements[STATUS_INDEX]);
                 product.setInputDate(elements[INPUTDATE_INDEX]);
                 product.setOutputDate(elements[OUTPUTDATE_INDEX]);
+                product.setImage(elements[IMAGE_INDEX]);
                 products.add(product);
             }
         } catch (Exception e) {
@@ -161,6 +164,7 @@ public class readCSV {
         return orders;
     }
 
+<<<<<<< HEAD
     public static ArrayList<Order> readCSV_receiver(String fileName) {
         BufferedReader fileReader = null;
         ArrayList<Order> receiver = new ArrayList<>();
@@ -213,6 +217,33 @@ public class readCSV {
             System.out.println("Error in CSVreader");
             e.printStackTrace();
         } finally {
+=======
+    public static ArrayList<User> readCSVtoUser(String fileName) {
+        BufferedReader fileReader = null;
+        ArrayList<User> users = new ArrayList<>();
+
+        try {
+            String line = "";
+
+            //create a file reader
+            fileReader = new BufferedReader(new FileReader(fileName));
+
+            //read the CSV header (1st line) and skip it
+            fileReader.readLine();
+
+            while ((line = fileReader.readLine()) != null) {
+                String[] elements = line.split(COMMA);
+                users.add(new User(elements[0], elements[1]));
+            }
+        }
+
+        catch (Exception e) {
+            System.out.println("Error in CSVreader");
+            e.printStackTrace();
+        }
+
+        finally {
+>>>>>>> cadd281a5ba6ca07709e57282bca8bed8e81b2ea
             try {
                 fileReader.close();
             } catch (IOException e) {
@@ -220,6 +251,7 @@ public class readCSV {
                 e.printStackTrace();
             }
         }
+<<<<<<< HEAD
         return deliver;
     }
 
@@ -228,5 +260,9 @@ public class readCSV {
         System.out.println(readCSV_receiver(PRODUCT_DATA_DIR).get(0).getQty());
         System.out.println(readCSV_receiver(PRODUCT_DATA_DIR).get(1).getQty());
 
+=======
+
+        return users;
+>>>>>>> cadd281a5ba6ca07709e57282bca8bed8e81b2ea
     }
 }
