@@ -15,6 +15,7 @@
   the manager can monitor and control the delivery of packages inside that warehouse.
 
   Acknowledgement:
+
 */
 
 package GUI;
@@ -34,7 +35,7 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import supportClass.User;
 
-public class Main extends Application{
+public class Main extends Application {
     //------------------------------------------------------
     // PROPERTIES
     //------------------------------------------------------
@@ -54,48 +55,48 @@ public class Main extends Application{
     static final String NO_ORDER = "There is currently no order";
 
     // Screen box
-    VBox screen = new VBox();
+    private VBox screen = new VBox();
 
     // Objects for title bar: title label, username label, log out button
-    HBox titleBar = new HBox();
-    Label title = new Label(APP_TITLE);
+    private HBox titleBar = new HBox();
+    private Label title = new Label(APP_TITLE);
 
-    Image ic_user = fetchImg("ic_user.png");
-    Button username = new Button("Username", new ImageView(ic_user));
+    private Image ic_user = fetchImg("ic_user.png");
+    private Button username = new Button("Username", new ImageView(ic_user));
 
-    Button logOut = new Button("Log Out");
+    private Button logOut = new Button("Log Out");
 
     // Tab buttons + icons
-    VBox tabs = new VBox();
+    private VBox tabs = new VBox();
 
-    Image ic_home = fetchImg("ic_home.png");
-    Button home = new Button("Home", new ImageView(ic_home));
+    private Image ic_home = fetchImg("ic_home.png");
+    private Button home = new Button("Home", new ImageView(ic_home));
 
-    Image ic_order = fetchImg("ic_order.png");
-    Button order = new Button("Order", new ImageView(ic_order));
+    private Image ic_order = fetchImg("ic_order.png");
+    private Button order = new Button("Order", new ImageView(ic_order));
 
-    Image ic_receiver = fetchImg("ic_receiver.png");
-    Button receiver = new Button("Receiver", new ImageView(ic_receiver));
+    private Image ic_receiver = fetchImg("ic_receiver.png");
+    private Button receiver = new Button("Receiver", new ImageView(ic_receiver));
 
-    Image ic_deliver = fetchImg("ic_deliver.png");
-    Button deliver = new Button("Deliver", new ImageView(ic_deliver));
+    private Image ic_deliver = fetchImg("ic_deliver.png");
+    private Button deliver = new Button("Deliver", new ImageView(ic_deliver));
 
-    Image ic_statistics = fetchImg("ic_statistics.png");
-    Button statistics = new Button("Statistics", new ImageView(ic_statistics));
+    private Image ic_statistics = fetchImg("ic_statistics.png");
+    private Button statistics = new Button("Statistics", new ImageView(ic_statistics));
 
-    Image ic_map = fetchImg("ic_map.png");
-    Button map = new Button("Map", new ImageView(ic_map));
+    private Image ic_map = fetchImg("ic_map.png");
+    private Button map = new Button("Map", new ImageView(ic_map));
 
     // Contents
-    HBox boxTabsContents = new HBox();
-    Pane contents = new Pane();
-    LoginLayout loginLayout = new LoginLayout();
-    TabHome tabHome = new TabHome();
-    TabOrder tabOrder = new TabOrder();
-    TabStatistics tabStatistics = new TabStatistics();
-    TabReceiver tabReceiver = new TabReceiver();
-    TabDeliver tabDeliver = new TabDeliver();
-    TabMap tabMap = new TabMap();
+    private HBox boxTabsContents = new HBox();
+    private Pane contents = new Pane();
+    private LoginLayout loginLayout = new LoginLayout();
+    private TabHome tabHome = new TabHome();
+    private TabOrder tabOrder = new TabOrder();
+    private TabStatistics tabStatistics = new TabStatistics();
+    private TabReceiver tabReceiver = new TabReceiver();
+    private TabDeliver tabDeliver = new TabDeliver();
+    private TabMap tabMap = new TabMap();
 
     //------------------------------------------------------
     // MAIN FUNCTION
@@ -103,10 +104,15 @@ public class Main extends Application{
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        // Refresh the screen and set to appropriate size
         screen.getChildren().clear();
         screen.setMinSize(WIDTH, HEIGHT);
+
+        // Default screen is Log In screen
         screen.getChildren().add(loginLayout.getScreenLogin());
 
+        // When Log In button is clicked, check if username and password is correct
+        // If yes, switch to Main screen
         loginLayout.getBtnLogin().setOnMouseClicked(event -> {
             String userName = loginLayout.getTxtUserName().getText().toString();
             String password = loginLayout.getTxtPassword().getText().toString();
@@ -121,6 +127,7 @@ public class Main extends Application{
             }
         });
 
+        // When Log Out button is clicked, return to Log In screen
         logOut.setOnMouseClicked(event -> {
             screen.getChildren().clear();
             screen.getChildren().add(loginLayout.getScreenLogin());
@@ -183,9 +190,6 @@ public class Main extends Application{
         boxTabsContents.setMinSize(WIDTH, HEIGHT - TITLE_BAR_HEIGHT);
         boxTabsContents.getChildren().addAll(tabs, contents);
 
-        // Add all to Screen box
-//        screen.getChildren().addAll(titleBar, boxTabsContents);
-
         Scene scene = new Scene(screen);
         setStage(primaryStage, scene);
     }
@@ -204,7 +208,7 @@ public class Main extends Application{
     // Layout settings for Title Bar
     private void setTitleBar() {
         // Set properties for Title Bar
-        titleBar.setPadding(new Insets(0,0,0,10));
+        titleBar.setPadding(new Insets(0, 0, 0, 10));
         titleBar.getChildren().addAll(title, username, logOut);
         titleBar.setMinSize(WIDTH, TITLE_BAR_HEIGHT);
         titleBar.setStyle("-fx-background-color: #2196f3");
@@ -218,7 +222,7 @@ public class Main extends Application{
         username.setStyle("-fx-background-color: transparent");
         username.setMinSize(140, TITLE_BAR_HEIGHT);
         username.setFont(Font.font(20));
-        username.setGraphicTextGap(SPACING/2);
+        username.setGraphicTextGap(SPACING / 2);
 
         // Set properties for Log Out button
         logOut.setMinSize(140, TITLE_BAR_HEIGHT);
@@ -242,7 +246,7 @@ public class Main extends Application{
         button.setFont(Font.font(20));
         button.setGraphicTextGap(SPACING);
         button.setAlignment(Pos.CENTER_LEFT);
-        button.setPadding(new Insets(0,0,0,SPACING * 2));
+        button.setPadding(new Insets(0, 0, 0, SPACING * 2));
     }
 
     //------------------------------------------------------
