@@ -1,7 +1,6 @@
 package GUI;
 
 import javafx.scene.control.Tab;
-import product.Product;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -11,6 +10,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import supportClass.Product;
 
 import javax.crypto.spec.PSource;
 

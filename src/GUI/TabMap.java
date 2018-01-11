@@ -1,10 +1,9 @@
 package GUI;
 
-import javafx.application.Application;
+import csv.readCSV;
 import javafx.event.EventHandler;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
-import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -13,27 +12,16 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
-import product.Product;
 import javafx.scene.control.Label;
+import supportClass.Product;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.List;
 
-public class MapLayout extends Application {
-    private Stage window;
-    private final String WINDOW_TITLE = "MAP";
-    private static final String DATA_CSV_FILE_PATH = "product.csv";
+public class TabMap {
+    private static final String DATA_CSV_FILE_PATH = "src/database/product.csv";
 
-    private static List<Product> products = readProductsFromCSV(DATA_CSV_FILE_PATH);
-    private final int WINDOW_WIDTH = 1280;
-    private final int WINDOW_HEIGHT = 720;
+    private static ArrayList<Product> products = readCSV.readCSV_product(DATA_CSV_FILE_PATH);
+
     private final int SPACING = 15;
     private final int PADDING = 25;
 
@@ -55,19 +43,28 @@ public class MapLayout extends Application {
     private GridPane gridMap = new GridPane();
     private Image imgProduct = new Image("image/samsunggalaxys8.jpg");
     private ImageView imgVProduct = new ImageView();
+    private VBox tabMap;
+    private Label tabTitle;
 
+    public TabMap() {
+        tabMap = new VBox();
+        tabTitle = new Label("WAREHOUSE MAP");
+    }
 
-    @Override
-    public void start(Stage primaryStage) throws Exception {
+    public VBox getTabMap() {
+        tabMap.getChildren().clear();
+        clearAllLayout();
+
         // Create all layout
         createAllLayout();
 
-        // Stage
-        window = primaryStage;
-        window.setTitle(WINDOW_TITLE);
-        Scene sceneMap = new Scene(gridMap, WINDOW_WIDTH, WINDOW_HEIGHT);
-        window.setScene(sceneMap);
-        window.show();
+        tabTitle.setFont(Font.font(30));
+        tabTitle.setStyle("-fx-font-weight: bold; -fx-text-fill: #2196f3");
+
+        tabMap.getChildren().addAll(tabTitle, gridMap);
+        tabMap.setPadding(new Insets(SPACING, SPACING, SPACING, SPACING * 2));
+
+        return tabMap;
     }
 
     // Init rectangles' properties
@@ -83,7 +80,7 @@ public class MapLayout extends Application {
     // Create grid layout
     private void createGridLayout(GridPane gridPane) {
         gridPane.setHgap(SPACING);
-        gridPane.setPadding(new Insets(PADDING, PADDING, PADDING, PADDING));
+        gridPane.setPadding(new Insets(0, PADDING, PADDING, PADDING * 2));
     }
 
     // Show block info as user presses on particular rectangle
@@ -93,7 +90,6 @@ public class MapLayout extends Application {
             rectMap.get(i).setOnMouseClicked(new EventHandler<MouseEvent>() {
                 @Override
                 public void handle(MouseEvent event) {
-                    System.out.println(products.get(finalI));
                     // Clear All Layout
                     clearAllLayout();
                     // Add Data to String Array
@@ -108,54 +104,18 @@ public class MapLayout extends Application {
         }
     }
 
-    // read product data from csv file
-    private static List<Product> readProductsFromCSV(String fileName) {
-        List<Product> products = new ArrayList<>();
-        Path pathToFile = Paths.get(fileName);
-
-        try (BufferedReader br = Files.newBufferedReader(pathToFile, StandardCharsets.US_ASCII)) {
-            String line = br.readLine();
-
-            while (line != null) {
-                String[] attributes = line.split(",");
-                Product product = createProduct(attributes);
-                products.add(product);
-                line = br.readLine();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return products;
-
-    }
-
-    // Create product
-    private static Product createProduct(String[] attributes) {
-
-        String id = attributes[0];
-        String name = attributes[1];
-        String qty = (attributes[2]);
-        String desc = attributes[3];
-        String producer = attributes[4];
-        String location = attributes[5];
-        String status = attributes[6];
-        String inputDate = attributes[7];
-        String outputDate = attributes[8];
-        String image = attributes[9];
-
-        return new Product(id, name, qty, desc, producer, location, status, inputDate, outputDate,image);
-    }
-
     // Show block status
     private static void showBlockStatus(ArrayList<Rectangle> rectMap) {
         for (int i = 0; i < 30; i++) {
-            int quantity = Integer.parseInt(products.get(i).getQty());
+            int quantity = products.get(i).getQty();
             if (quantity > 0 && quantity < 10) {
                 rectMap.get(i).setFill(Color.GREENYELLOW);
             } else if (quantity >= 10 && quantity <= 20) {
                 rectMap.get(i).setFill(Color.GREEN);
             } else if (quantity > 20) {
                 rectMap.get(i).setFill(Color.RED);
+            }else if (i ==0) {
+                rectMap.get(i).setFill(Color.WHITE);
             }
         }
     }
@@ -174,7 +134,7 @@ public class MapLayout extends Application {
     private void addDataToArray(int i) {
         sBlockInfo[0] = products.get(i).getId();
         sBlockInfo[1] = products.get(i).getName();
-        sBlockInfo[2] = products.get(i).getQty();
+        sBlockInfo[2] = String.valueOf(products.get(i).getQty());
         sBlockInfo[3] = products.get(i).getDesc();
         sBlockInfo[4] = products.get(i).getProducer();
         sBlockInfo[5] = products.get(i).getLocation();
@@ -304,6 +264,5 @@ public class MapLayout extends Application {
         imgProduct = new Image(products.get(i).getImage());
         gridMap.add(imgVProduct,4,0,1,1);
     }
-
 
 }
