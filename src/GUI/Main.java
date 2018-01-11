@@ -15,6 +15,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import supportClass.User;
 
 public class Main extends Application{
     //------------------------------------------------------
@@ -22,7 +23,7 @@ public class Main extends Application{
     //------------------------------------------------------
 
     // Int constants
-    public static final int WIDTH = 1280;
+    public static final int WIDTH = 1400;
     public static final int HEIGHT = 720;
     public static final int TITLE_BAR_HEIGHT = 50;
     public static final int TAB_WIDTH = 250;
@@ -71,11 +72,13 @@ public class Main extends Application{
     // Contents
     HBox boxTabsContents = new HBox();
     Pane contents = new Pane();
+    LoginLayout loginLayout = new LoginLayout();
     TabHome tabHome = new TabHome();
     TabOrder tabOrder = new TabOrder();
     TabStatistics tabStatistics = new TabStatistics();
     TabReceiver tabReceiver = new TabReceiver();
     TabDeliver tabDeliver = new TabDeliver();
+    MapLayout tabMap = new MapLayout();
 
     //------------------------------------------------------
     // MAIN FUNCTION
@@ -83,6 +86,29 @@ public class Main extends Application{
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        screen.getChildren().clear();
+        screen.setMinSize(WIDTH, HEIGHT);
+        screen.getChildren().add(loginLayout.getScreenLogin());
+
+        loginLayout.getBtnLogin().setOnMouseClicked(event -> {
+            String userName = loginLayout.getTxtUserName().getText().toString();
+            String password = loginLayout.getTxtPassword().getText().toString();
+
+            for (User user : loginLayout.getUsers()) {
+                if (user.getUserName().equals(userName) && user.getPassword().equals(password)) {
+                    screen.getChildren().clear();
+                    screen.getChildren().addAll(titleBar, boxTabsContents);
+                    username.setText(userName);
+                    break;
+                }
+            }
+        });
+
+        logOut.setOnMouseClicked(event -> {
+            screen.getChildren().clear();
+            screen.getChildren().add(loginLayout.getScreenLogin());
+        });
+
         // Set Title Bar
         setTitleBar();
 
@@ -132,6 +158,8 @@ public class Main extends Application{
 
         map.setOnMouseClicked(event -> {
             chosenTab(map);
+            contents.getChildren().clear();
+            contents.getChildren().add(tabMap.getTabMap());
         });
 
         // Settings for HBox containing tab column and contents
@@ -139,7 +167,7 @@ public class Main extends Application{
         boxTabsContents.getChildren().addAll(tabs, contents);
 
         // Add all to Screen box
-        screen.getChildren().addAll(titleBar, boxTabsContents);
+//        screen.getChildren().addAll(titleBar, boxTabsContents);
 
         Scene scene = new Scene(screen);
         setStage(primaryStage, scene);

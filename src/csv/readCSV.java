@@ -4,6 +4,8 @@ import supportClass.Product;
 
 import supportClass.Notifications;
 import supportClass.Order;
+import supportClass.User;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -50,9 +52,8 @@ public class readCSV {
                 product.setStatus(elements[STATUS_INDEX]);
                 product.setInputDate(elements[INPUTDATE_INDEX]);
                 product.setOutputDate(elements[OUTPUTDATE_INDEX]);
+                product.setImage(elements[IMAGE_INDEX]);
                 products.add(product);
-
-                System.out.println("add sucessfully");
             }
         } catch (Exception e) {
             System.out.println("Error in CSVreader");
@@ -157,5 +158,41 @@ public class readCSV {
         }
 
         return orders;
+    }
+
+    public static ArrayList<User> readCSVtoUser(String fileName) {
+        BufferedReader fileReader = null;
+        ArrayList<User> users = new ArrayList<>();
+
+        try {
+            String line = "";
+
+            //create a file reader
+            fileReader = new BufferedReader(new FileReader(fileName));
+
+            //read the CSV header (1st line) and skip it
+            fileReader.readLine();
+
+            while ((line = fileReader.readLine()) != null) {
+                String[] elements = line.split(COMMA);
+                users.add(new User(elements[0], elements[1]));
+            }
+        }
+
+        catch (Exception e) {
+            System.out.println("Error in CSVreader");
+            e.printStackTrace();
+        }
+
+        finally {
+            try {
+                fileReader.close();
+            } catch (IOException e) {
+                System.out.println("Error while closing fileReader");
+                e.printStackTrace();
+            }
+        }
+
+        return users;
     }
 }
