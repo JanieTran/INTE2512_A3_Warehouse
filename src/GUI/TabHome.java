@@ -3,6 +3,7 @@ package GUI;
 import csv.readCSV;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
@@ -16,47 +17,63 @@ public class TabHome {
     //------------------------------------------------------
     // PROPERTIES
     //------------------------------------------------------
+
     private final String NOTIFICATIONS_FILE = "src/database/notifications.csv";
 
+    // Display elements
     private VBox tabHome;
     private Label tabTitle;
     private VBox boxNoti;
+    private Label noNoti;
 
+    // List of Notification objects to be displayed
     private ArrayList<Notifications> notifications;
-
-    private Label noNoti = new Label(NO_NOTIFICATION);
 
     //------------------------------------------------------
     // METHODS
     //------------------------------------------------------
 
+    // Initialise all properties
     public TabHome() {
         tabHome = new VBox();
         tabTitle = new Label("NOTIFICATIONS");
         boxNoti = new VBox();
+        noNoti = new Label(NO_NOTIFICATION);
+
         notifications = readCSV.readCSVtoNotifications(NOTIFICATIONS_FILE);
     }
 
+    // Prepare contents for Main scene
     public VBox getTabHome() {
+        // Each time the method is called, the contents are refreshed to avoid duplicating children
         boxNoti.getChildren().clear();
 
+        // Get grid pane of each object in the Notifications list
         for (Notifications noti : notifications) {
             GridPane gridNoti = noti.getGrid();
+
+            // Add the grid pane to the VBox displaying notifications
             boxNoti.getChildren().add(gridNoti);
+
+            // Click event listener for each notification
             setGridOnClick(gridNoti);
         }
 
+        // Spacing between notifications
         boxNoti.setSpacing(SPACING);
 
+        // Settings for message when there is no notifications
         noNoti.setFont(Font.font(20));
         noNoti.setPadding(new Insets(SPACING, SPACING, SPACING, SPACING * 2));
         noNoti.setStyle("-fx-text-fill: #ababab");
 
         updateTabHome();
 
+        // Settings for title of the tab
         tabTitle.setFont(Font.font(30));
         tabTitle.setStyle("-fx-font-weight: bold; -fx-text-fill: #2196f3");
 
+        // Settings for the tab contents display
         tabHome.setMinSize(WIDTH - TAB_WIDTH, HEIGHT - TITLE_BAR_HEIGHT);
         tabHome.setSpacing(SPACING);
         tabHome.setPadding(new Insets(SPACING, SPACING, SPACING, SPACING * 2));
@@ -64,6 +81,8 @@ public class TabHome {
         return tabHome;
     }
 
+    // When a notification is clicked, it removes itself from the list
+    // indicating that the user has resolved the notification
     private void setGridOnClick(GridPane grid) {
         grid.setOnMouseClicked(event -> {
             boxNoti.getChildren().remove(grid);
@@ -71,6 +90,8 @@ public class TabHome {
         });
     }
 
+    // If notification list is empty, show message saying no notifications,
+    // else show the list
     private void updateTabHome() {
         tabHome.getChildren().clear();
 

@@ -52,7 +52,6 @@ public class TabStatistics {
 
     public VBox getTabStatistics() {
         tabStatistics.getChildren().clear();
-//        table.getItems().clear();
         table.getColumns().clear();
 
         //---------------------CUSTOM tabTitle---------------------

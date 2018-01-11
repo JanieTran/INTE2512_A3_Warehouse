@@ -90,9 +90,14 @@ public class Main extends Application{
         setTabsColumn();
 
         // Box containing tabs column and tab contents
+        // Default tab when initialised is tab Home
         contents.getChildren().clear();
         contents.getChildren().add(tabHome.getTabHome());
         chosenTab(home);
+
+        // Event listener for each tab button
+        // When a tab is clicked, that tab is highlighted and contents is fetched from
+        // corresponding class
 
         home.setOnMouseClicked(event -> {
             chosenTab(home);
@@ -129,6 +134,7 @@ public class Main extends Application{
             chosenTab(map);
         });
 
+        // Settings for HBox containing tab column and contents
         boxTabsContents.setMinSize(WIDTH, HEIGHT - TITLE_BAR_HEIGHT);
         boxTabsContents.getChildren().addAll(tabs, contents);
 
@@ -198,11 +204,12 @@ public class Main extends Application{
     // OTHER METHODS
     //------------------------------------------------------
 
-    // Get images from resources using img name
+    // Get images from resources using image name name
     public static Image fetchImg(String imgName) {
         return new Image("file:src/image/" + imgName, ICON_DIMEN, ICON_DIMEN, true, true);
     }
 
+    // Highlight chosen tab
     private void chosenTab(Button button) {
         setTabButton(home);
         setTabButton(order);
