@@ -51,7 +51,6 @@ public class TabDeliver {
         idLabel = new Label[totalProduct];
 
         rFull = new Rectangle[totalProduct];
-
         rPercentage = new Rectangle[totalProduct];
 
         for(int row = 0; row < totalProduct; row++) {
@@ -69,7 +68,6 @@ public class TabDeliver {
             GridPane.setConstraints(rPercentage[row], 1, row);
 
             bar.getChildren().addAll(idLabel[row], rFull[row], rPercentage[row]);
-
         }
 
         //---------------------CUSTOM tabReceiver---------------------
