@@ -15,8 +15,14 @@ import static GUI.Main.fetchImg;
 public class Order {
     //properties
     private String id;
+    private String name;
     private int qty;
+    private String desc;
+    private String producerX;
+    private String location;
     private String status;
+    private String inputDate;
+    private String outputDate;
 
     private Product product;
     private String type;
@@ -32,7 +38,7 @@ public class Order {
         this.qty = qty;
     }
 
-    public Order(String name, String id, int qty, String producer, String type) {
+    public Order(String id, String name, int qty, String producer, String type) {
         this.product = new Product(name, id, qty);
         product.setProducer(producer);
 
@@ -52,6 +58,19 @@ public class Order {
             icon = new ImageView(fetchImg("ic_deliver.png"));
 
         expanded = false;
+    }
+
+    public Order(String name, String id, int qty, String desc, String producer, String location,
+                   String status, String inputDate, String outputDate,String image) {
+        this.name = name;
+        this.id = id;
+        this.qty = qty;
+        this.desc = desc;
+        this.producerX = producer;
+        this.location = location;
+        this.status = status;
+        this.inputDate = inputDate;
+        this.outputDate = outputDate;
     }
 
     public Button getAccept() {
@@ -126,11 +145,75 @@ public class Order {
     }
 
     //order
-    public String getID() {
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getId() {
         return id;
     }
 
-    public int getQty(){
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public int getQty() {
         return qty;
+    }
+
+    public void setQty(int qty) {
+        this.qty = qty;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    public String getProducer() {
+        return producerX;
+    }
+
+    public void setProducer(String producer) {
+        this.producerX = producer;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getInputDate() {
+        return inputDate;
+    }
+
+    public void setInputDate(String inputDate) {
+        this.inputDate = inputDate;
+    }
+
+    public String getOutputDate() {
+        return outputDate;
+    }
+
+    public void setOutputDate(String outputDate) {
+        this.outputDate = outputDate;
     }
 }

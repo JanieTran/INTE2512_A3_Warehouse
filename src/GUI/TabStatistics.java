@@ -35,7 +35,7 @@ public class TabStatistics {
     //--------------------TAB PROPERTIES--------------------
     private VBox tabStatistics;
     private Label tabTitle;
-    private TableView<Product> table;
+    public static TableView<Product> table;
     private TableColumn<Product, String>[] columns;
     private TextField txtSearch;
     private Button searchButton;
@@ -163,4 +163,99 @@ public class TabStatistics {
         column.setCellValueFactory(new PropertyValueFactory<>(propertyValue));
         return column;
     }
+<<<<<<< HEAD
+=======
+
+    //---------------------NEWITEMLAYOUT METHODS---------------------
+    public void addButtonClicked() {
+        Product product = new Product();
+
+        product.setId(textFields[ID_INDEX].getText());
+        product.setName(textFields[NAME_INDEX].getText());
+        product.setQty(Integer.parseInt(textFields[QTY_INDEX].getText()));
+        product.setDesc(textFields[DESC_INDEX].getText());
+        product.setProducer(textFields[PRODUCER_INDEX].getText());
+        product.setLocation(textFields[LOCATION_INDEX].getText());
+        product.setStatus(textFields[STATUS_INDEX].getText());
+        product.setInputDate(textFields[INPUTDATE_INDEX].getText());
+        product.setOutputDate(textFields[OUTPUTDATE_INDEX].getText());
+
+        table.getItems().add(product);
+        writeCSV.writeDataProduct(PRODUCT_DATA_DIR, product);
+
+        for(int i = 0; i < TOTAL_ATTRIBUTES; i++)
+            textFields[i].clear();
+    }
+
+    private void deleteButtonClicked() {
+        ObservableList<Product> productsSelected, allProducts;
+        allProducts = table.getItems();
+        productsSelected = table.getSelectionModel().getSelectedItems();
+        productsSelected.forEach(allProducts::remove);
+    }
+
+    private TextField addTextField (String hint, int width) {
+        TextField textField = new TextField();
+        textField.setPromptText(hint);
+        textField.setPrefWidth(width);
+        return textField;
+    }
+
+    private void newLayout() {
+        //---------------------CUSTOM newItemLayout---------------------
+        newItemLayout.setPadding(new Insets(SPACING/2, SPACING/2, SPACING/2, SPACING/2));
+        newItemLayout.setVgap(SPACING/4);
+        newItemLayout.setHgap(SPACING/2);
+
+        //label "Prodduct Details"
+        newItemLabel1 = new Label ("Product Details");
+        GridPane.setConstraints(newItemLabel1, 0, 0);
+        //textFields (id - name - qty - desc - producer)
+        textFields[ID_INDEX] = addTextField(PRODUCT_LABEL[ID_INDEX], ID_SPACE);
+        textFields[NAME_INDEX] = addTextField(PRODUCT_LABEL[NAME_INDEX], NAME_SPACE);
+        textFields[QTY_INDEX] = addTextField(PRODUCT_LABEL[QTY_INDEX], DEFAULT_SPACE);
+        textFields[DESC_INDEX] = addTextField(PRODUCT_LABEL[DESC_INDEX], DESC_SPACE);
+        textFields[PRODUCER_INDEX] = addTextField(PRODUCT_LABEL[PRODUCER_INDEX], PRODUCER_SPACE);
+
+        GridPane.setConstraints(textFields[ID_INDEX], 1, 0);
+        GridPane.setConstraints(textFields[NAME_INDEX], 2, 0);
+        GridPane.setConstraints(textFields[QTY_INDEX], 3, 0);
+        GridPane.setConstraints(textFields[DESC_INDEX], 4, 0);
+        GridPane.setConstraints(textFields[PRODUCER_INDEX], 5, 0);
+
+        //label "Location/Status"
+        newItemLabel2 = new Label ("Location/Status");
+        GridPane.setConstraints(newItemLabel2, 0, 1);
+        //textFields (location - status)
+        textFields[LOCATION_INDEX] = addTextField(PRODUCT_LABEL[LOCATION_INDEX], DEFAULT_SPACE);
+        textFields[STATUS_INDEX] = addTextField(PRODUCT_LABEL[STATUS_INDEX], DEFAULT_SPACE);
+
+        GridPane.setConstraints(textFields[LOCATION_INDEX], 1, 1);
+        GridPane.setConstraints(textFields[STATUS_INDEX], 2, 1);
+
+        //label "Date"
+        newItemLabel3 = new Label ("Date");
+        GridPane.setConstraints(newItemLabel3, 0, 2);
+        //textFields (inputdate - outputdate)
+        textFields[INPUTDATE_INDEX] = addTextField(PRODUCT_LABEL[INPUTDATE_INDEX], DEFAULT_SPACE);
+        textFields[OUTPUTDATE_INDEX] = addTextField(PRODUCT_LABEL[OUTPUTDATE_INDEX], DEFAULT_SPACE);
+
+        GridPane.setConstraints(textFields[INPUTDATE_INDEX], 1, 2);
+        GridPane.setConstraints(textFields[OUTPUTDATE_INDEX], 2, 2);
+
+        //add button
+        addButton = new Button("Add");
+        addButton.setPrefWidth(BUTTON_SPACE);
+        addButton.setAlignment(Pos.CENTER);
+        addButton.setOnAction(e -> addButtonClicked());
+        GridPane.setConstraints(addButton, 5, 1);
+
+        //deletebutton
+        deleteButton = new Button("Delete");
+        deleteButton.setOnAction(e -> deleteButtonClicked());
+        deleteButton.setPrefWidth(BUTTON_SPACE);
+        deleteButton.setAlignment(Pos.CENTER);
+        GridPane.setConstraints(deleteButton, 5, 2);
+    }
+>>>>>>> TranTran
 }

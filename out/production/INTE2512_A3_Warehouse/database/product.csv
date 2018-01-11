@@ -54,6 +54,7 @@ id,name,qty,desc,producer,location,status,inputDate,outputDate,image
 29,Samsung Galaxy S8,20,Samsung Phone,Samsung,1,Good,10/01/2018,20/01/2018,image/samsunggalaxys8.jpg
 30,Samsung Galaxy S8,20,Samsung Phone,Samsung,1,Good,10/01/2018,20/01/2018,image/samsunggalaxys8.jpg
 >>>>>>> cadd281a5ba6ca07709e57282bca8bed8e81b2ea
+<<<<<<< HEAD
 =======
 02,Samsung Galaxy S8,20,Samsung Phone,Samsung,2,Good,10/01/2018,20/01/2018,image/samsunggalaxys8.jpg
 03,iPhone 8,20,iPhone,Apple,3,Good,10/01/2018,20/01/2018,image/iphone8.jpg
@@ -85,3 +86,6 @@ id,name,qty,desc,producer,location,status,inputDate,outputDate,image
 29,Samsung Galaxy S8,20,Samsung Phone,Samsung,29,Good,10/01/2018,20/01/2018,image/samsunggalaxys8.jpg
 30,Samsung Galaxy S8,20,Samsung Phone,Samsung,30,Good,10/01/2018,20/01/2018,image/samsunggalaxys8.jpg
 >>>>>>> 8158159f41dd68fb02733886e6a5800da44c2284
+=======
+null,null,0,null,null,null,null,null,nullnull,null,0,null,null,null,null,null,nullnull,null,0,null,null,null,null,null,null
+>>>>>>> TranTran
