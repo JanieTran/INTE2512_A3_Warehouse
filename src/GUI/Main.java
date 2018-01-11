@@ -210,7 +210,6 @@ public class Main extends Application{
         setTabButton(deliver);
         setTabButton(statistics);
         setTabButton(map);
-
         button.setStyle("-fx-background-color: #c0c0c0");
     }
 

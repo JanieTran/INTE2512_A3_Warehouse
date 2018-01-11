@@ -13,6 +13,11 @@ import static GUI.Main.SPACING;
 import static GUI.Main.fetchImg;
 
 public class Order {
+    //properties
+    private String id;
+    private int qty;
+    private String status;
+
     private Product product;
     private String type;
     private boolean expanded;
@@ -21,6 +26,11 @@ public class Order {
     private ImageView icon;
     private Button accept, decline;
     private Label productID, timestamp, producer, quantity, productName;
+
+    public Order(String id, int qty) {
+        this.id = id;
+        this.qty = qty;
+    }
 
     public Order(String name, String id, int qty, String producer, String type) {
         this.product = new Product(name, id, qty);
@@ -113,5 +123,14 @@ public class Order {
         gridOrder.add(productName, 1, 2, 1, 1);
         gridOrder.add(quantity, 1, 3, 1, 1);
         gridOrder.add(producer, 1, 4, 1, 1);
+    }
+
+    //order
+    public String getID() {
+        return id;
+    }
+
+    public int getQty(){
+        return qty;
     }
 }

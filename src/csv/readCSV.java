@@ -8,6 +8,10 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Objects;
+
+import static GUI.TabStatistics.ORDER_DATA_DIR;
+import static GUI.TabStatistics.PRODUCT_DATA_DIR;
 import static supportClass.Product.*;
 import static supportClass.Product.INPUTDATE_INDEX;
 import static supportClass.Product.OUTPUTDATE_INDEX;
@@ -51,8 +55,6 @@ public class readCSV {
                 product.setInputDate(elements[INPUTDATE_INDEX]);
                 product.setOutputDate(elements[OUTPUTDATE_INDEX]);
                 products.add(product);
-
-                System.out.println("add sucessfully");
             }
         } catch (Exception e) {
             System.out.println("Error in CSVreader");
@@ -81,8 +83,7 @@ public class readCSV {
             //read the CSV header (1st line) and skip it
             fileReader.readLine();
 
-            while ((line = fileReader.readLine()) != null ||
-                    (line = fileReader.readLine()) == FILE_HEADER) {
+            while ((line = fileReader.readLine()) != null){
                 count += 1;
             }
         } catch (Exception e) {
@@ -127,7 +128,7 @@ public class readCSV {
         return notifications;
     }
 
-    public static ArrayList<Order> readCSVtoOrder(String fileName) {
+    public static ArrayList<Order> readCSVvtoOrder(String fileName) {
         BufferedReader fileReader = null;
         ArrayList<Order> orders = new ArrayList<>();
 
@@ -142,7 +143,8 @@ public class readCSV {
 
             while ((line = fileReader.readLine()) != null) {
                 String[] elements = line.split(COMMA);
-                orders.add(new Order(elements[0], elements[1], Integer.parseInt(elements[2]), elements[3], elements[4]));
+//                orders.add(new Order(elements[0], elements[1], Integer.parseInt(elements[2]),
+//                        elements[3], elements[4]));
             }
         } catch (Exception e) {
             System.out.println("Error in CSVreader");
@@ -157,5 +159,74 @@ public class readCSV {
         }
 
         return orders;
+    }
+
+    public static ArrayList<Order> readCSV_receiver(String fileName) {
+        BufferedReader fileReader = null;
+        ArrayList<Order> receiver = new ArrayList<>();
+
+        try {
+            String line = "";
+            //create a file reader
+            fileReader = new BufferedReader(new FileReader(fileName));
+            //read the CSV header (1st line) and skip it
+            fileReader.readLine();
+            while ((line = fileReader.readLine()) != null) {
+                String[] elements = line.split(COMMA);
+                //receiver input
+                if(elements[6].equals("input")) {
+                    receiver.add(new Order(elements[0], Integer.parseInt(elements[2])));
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Error in CSVreader");
+            e.printStackTrace();
+        } finally {
+            try {
+                fileReader.close();
+            } catch (IOException e) {
+                System.out.println("Error while closing fileReader");
+                e.printStackTrace();
+            }
+        }
+        return receiver;
+    }
+
+    public static ArrayList<Order> readCSV_deliver(String fileName) {
+        BufferedReader fileReader = null;
+        ArrayList<Order> deliver = new ArrayList<>();
+
+        try {
+            String line = "";
+            //create a file reader
+            fileReader = new BufferedReader(new FileReader(fileName));
+            //read the CSV header (1st line) and skip it
+            fileReader.readLine();
+            while ((line = fileReader.readLine()) != null) {
+                String[] elements = line.split(COMMA);
+                //receiver input
+                if(elements[6].equals("output")) {
+                    deliver.add(new Order(elements[0], Integer.parseInt(elements[2])));
+                } 
+            }
+        } catch (Exception e) {
+            System.out.println("Error in CSVreader");
+            e.printStackTrace();
+        } finally {
+            try {
+                fileReader.close();
+            } catch (IOException e) {
+                System.out.println("Error while closing fileReader");
+                e.printStackTrace();
+            }
+        }
+        return deliver;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(count(ORDER_DATA_DIR));
+        System.out.println(readCSV_receiver(PRODUCT_DATA_DIR).get(0).getQty());
+        System.out.println(readCSV_receiver(PRODUCT_DATA_DIR).get(1).getQty());
+
     }
 }

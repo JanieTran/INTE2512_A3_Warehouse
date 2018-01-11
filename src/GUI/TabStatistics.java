@@ -30,6 +30,7 @@ public class TabStatistics {
     private static final int BUTTON_SPACE = 100;
 
     public static final String PRODUCT_DATA_DIR = "src/database/product.csv";
+    public final static String ORDER_DATA_DIR = "src/database/orders.csv";
     private static final String TAB_NAME = "STATISTICS";
 
     //--------------------TAB PROPERTIES--------------------
@@ -76,7 +77,6 @@ public class TabStatistics {
             columns[i] = addStringColumn(PRODUCT_LABEL[i], colMinWidth, PRODUCT_PROPERTIES[i]);
         }
 
-//        table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
         table.setItems(getProduct());
         table.getColumns().addAll(columns);
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);

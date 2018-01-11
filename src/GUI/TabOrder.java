@@ -2,17 +2,24 @@ package GUI;
 
 import csv.readCSV;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import supportClass.Order;
+import supportClass.Product;
 
 import java.util.ArrayList;
 
 import static GUI.Main.*;
+import static GUI.TabStatistics.ORDER_DATA_DIR;
 
 public class TabOrder {
+    //--------------------CONSTANT--------------------
+
+
+
     //------------------------------------------------------
     // PROPERTIES
     //------------------------------------------------------
@@ -30,7 +37,7 @@ public class TabOrder {
         boxOrder = new VBox();
         tabTitle = new Label("ORDERS");
         noOrder = new Label(NO_ORDER);
-        orders = readCSV.readCSVtoOrder(ORDER_FILE);
+        orders = readCSV.readCSVvtoOrder(ORDER_FILE);
     }
 
     public VBox getTabOrder() {
@@ -78,4 +85,6 @@ public class TabOrder {
         else
             tabOrder.getChildren().addAll(tabTitle, boxOrder);
     }
+
+
 }
