@@ -1,0 +1,4 @@
+NAME,ID,QUANTITY,PRODUCER,TYPE
+KABYLAKE,ABC2345,1000,Intel,input
+iPhone X,XYZ2345,500,Apple,output
+Galaxy S9,ABC3456,800,Samsung,input
