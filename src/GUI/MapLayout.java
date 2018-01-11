@@ -2,23 +2,21 @@ package GUI;
 
 import javafx.application.Application;
 import javafx.event.EventHandler;
+import javafx.geometry.HPos;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
-import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import product.Product;
+import javafx.scene.control.Label;
 
-import java.awt.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -26,7 +24,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 public class MapLayout extends Application {
@@ -44,21 +41,20 @@ public class MapLayout extends Application {
     private final int RECT_WIDTH = 150;
     private final int RECT_HEIGHT = 40;
 
-    // Rectangle
     private static ArrayList<Rectangle> rectMap = new ArrayList<>();
     private ArrayList<VBox> vbMap = new ArrayList<>();
 
-    // Title
     private ArrayList<Text> txtTitle = new ArrayList<>();
     private String[] sTitle = {"Product ID:", "Product Name:", "Quantity:", "Description:", "Producer:", "Location:", "Status:", "InputDate:", "OutputDate:"};
     private VBox vbTitle = new VBox();
 
-    // Data
     private ArrayList<Text> txtBlockInfo = new ArrayList<>();
     private String[] sBlockInfo = {"Product ID:", "Product Name:", "Quantity:", "Description:", "Producer:", "Location:", "Status:", "InputDate:", "OutputDate:"};
-    private VBox vbBlockInf = new VBox();
 
+    private VBox vbBlockInf = new VBox();
     private GridPane gridMap = new GridPane();
+    private Image imgProduct = new Image("image/samsunggalaxys8.jpg");
+    private ImageView imgVProduct = new ImageView();
 
 
     @Override
@@ -72,7 +68,6 @@ public class MapLayout extends Application {
         Scene sceneMap = new Scene(gridMap, WINDOW_WIDTH, WINDOW_HEIGHT);
         window.setScene(sceneMap);
         window.show();
-
     }
 
     // Init rectangles' properties
@@ -82,65 +77,16 @@ public class MapLayout extends Application {
         rectMap.setFill(Color.WHITE);
         rectMap.setStroke(Color.GRAY);
         rectMap.setStrokeWidth(STROKE_WIDTH);
-    }
 
-    // Create VBoxes containing rectangles
-    private void createVBMap(ArrayList<VBox> vbMap) {
-        for (int i = 0; i < 6; i++) {
-            vbMap.add(new VBox());
-            vbMap.get(i).setPadding(new Insets(0, PADDING, 0, 0));
-        }
-    }
-
-    // Create rectangles
-    private void addRectToVMap(ArrayList<Rectangle> rectMap) {
-        for (int j = 0; j < 30; j++) {
-            int i = 0;
-            rectMap.add(new Rectangle());
-            initRect(rectMap.get(j));
-            if (j <= 4) {
-                vbMap.get(0).getChildren().add(rectMap.get(j));
-
-            } else if (j >= 5 && j < 10) {
-                vbMap.get(1).getChildren().add(rectMap.get(j));
-
-            } else if (j >= 10 && j < 15) {
-                vbMap.get(2).getChildren().add(rectMap.get(j));
-
-            } else if (j >= 15 && j < 20) {
-                vbMap.get(3).getChildren().add(rectMap.get(j));
-
-            } else if (j >= 20 && j < 25) {
-                vbMap.get(4).getChildren().add(rectMap.get(j));
-
-            } else {
-                vbMap.get(5).getChildren().add(rectMap.get(j));
-            }
-        }
-    }
-
-    // Create Grid pane containing VBoxes on map
-    private void addVMapToGridMap(GridPane gridMap, ArrayList<VBox> vbMap) {
-        int col = 0;
-        int row = 0;
-        for (int i = 0; i < 6; i++) {
-            gridMap.add(vbMap.get(i), col, row);
-            col++;
-            if (i == 2) {
-                col = 0;
-                row = 1;
-            }
-        }
     }
 
     // Create grid layout
     private void createGridLayout(GridPane gridPane) {
-        gridPane.setAlignment(Pos.CENTER);
-//        gridPane.setHgap(SPACING);
-        gridPane.setVgap(SPACING);
+        gridPane.setHgap(SPACING);
         gridPane.setPadding(new Insets(PADDING, PADDING, PADDING, PADDING));
     }
 
+    // Show block info as user presses on particular rectangle
     private void showRectInfo(ArrayList<Rectangle> rectMap, ArrayList<Text> txtBlockInfo) {
         for (int i = 0; i < 30; i++) {
             int finalI = i;
@@ -155,13 +101,14 @@ public class MapLayout extends Application {
                     // Add Data to Text Array
                     addDataToText(txtBlockInfo);
                     // Update All Layout
+                    setProductImage(finalI);
                     createAllLayout();
-
                 }
             });
         }
     }
 
+    // read product data from csv file
     private static List<Product> readProductsFromCSV(String fileName) {
         List<Product> products = new ArrayList<>();
         Path pathToFile = Paths.get(fileName);
@@ -178,11 +125,11 @@ public class MapLayout extends Application {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         return products;
 
     }
 
+    // Create product
     private static Product createProduct(String[] attributes) {
 
         String id = attributes[0];
@@ -194,10 +141,12 @@ public class MapLayout extends Application {
         String status = attributes[6];
         String inputDate = attributes[7];
         String outputDate = attributes[8];
+        String image = attributes[9];
 
-        return new Product(id, name, qty, desc, producer, location, status, inputDate, outputDate);
+        return new Product(id, name, qty, desc, producer, location, status, inputDate, outputDate,image);
     }
 
+    // Show block status
     private static void showBlockStatus(ArrayList<Rectangle> rectMap) {
         for (int i = 0; i < 30; i++) {
             int quantity = Integer.parseInt(products.get(i).getQty());
@@ -211,14 +160,17 @@ public class MapLayout extends Application {
         }
     }
 
+    // Init block title
     private void initTitle(ArrayList<Text> txtTitle, String[] sTitle) {
-        for (int j = 0; j < 9; j++) {
-            txtTitle.add(new Text(sTitle[j]));
-            txtTitle.get(j).setFont(Font.font(15));
-            vbTitle.getChildren().add(txtTitle.get(j));
+        for (int i = 0; i < 9; i++) {
+            txtTitle.add(new Text(sTitle[i]));
+            txtTitle.get(i).setFont(Font.font(15));
+            txtTitle.get(i).setStyle("-fx-font-weight: bold");
+            vbTitle.getChildren().add(txtTitle.get(i));
         }
     }
 
+    // Add Data to array
     private void addDataToArray(int i) {
         sBlockInfo[0] = products.get(i).getId();
         sBlockInfo[1] = products.get(i).getName();
@@ -231,6 +183,7 @@ public class MapLayout extends Application {
         sBlockInfo[8] = products.get(i).getOutputDate();
     }
 
+    // Add Data to text array
     private void addDataToText(ArrayList<Text> txtBlockInfo) {
         vbBlockInf.getChildren().clear();
         for (int j = 0; j < 9; j++) {
@@ -240,25 +193,83 @@ public class MapLayout extends Application {
         }
     }
 
+    // Create VBox for block information
     private void createVBox(VBox vb) {
-        vb.setSpacing(10);
-        vb.setPadding(new Insets(PADDING));
-        vb.setAlignment(Pos.TOP_LEFT);
-        vb.setStyle("-fx-background-color: #A9A9A9");
+        vb.setSpacing(3);
     }
 
+    // Add rectangles to grid pane
+    private void addRectToGrid() {
+        ArrayList<String> sBlockNumber = new ArrayList<>();
+        ArrayList<Text> txtBlockNumber = new ArrayList<>();
+        for (int i = 1; i < 31; i++) {
+            sBlockNumber.add("" + i);
+        }
+        int col = 0;
+        int row = 1;
+        for (int i = 0; i < 30; i++) {
+            rectMap.add(new Rectangle());
+            initRect(rectMap.get(i));
+
+            txtBlockNumber.add(new Text(sBlockNumber.get(i)));
+            if (i == 5) {
+                row = 1;
+                col = 1;
+            } else if (i == 10) {
+                row = 1;
+                col = 2;
+            } else if (i == 15) {
+                row = 7;
+                col = 0;
+            } else if (i == 20) {
+                row = 7;
+                col = 1;
+            } else if (i == 25) {
+                row = 7;
+                col = 2;
+            }
+
+            gridMap.add(rectMap.get(i), col, row);
+            gridMap.add(txtBlockNumber.get(i), col, row);
+            gridMap.setHalignment(txtBlockNumber.get(i), HPos.CENTER);
+
+            row++;
+
+
+        }
+    }
+
+    // Create block name
+    private void createBlockName() {
+        int col = 0;
+        int row = 0;
+        String[] blockName = {"A", "B", "C", "D", "E", "F"};
+        ArrayList<Label> lblBlockName = new ArrayList<>();
+
+        for (int i = 0; i < 6; i++) {
+            lblBlockName.add(new Label(blockName[i]));
+            lblBlockName.get(i).setFont(Font.font(20));
+            lblBlockName.get(i).setPadding(new Insets(PADDING));
+            gridMap.add(lblBlockName.get(i), col, row, 1, 1);
+            gridMap.setHalignment(lblBlockName.get(i), HPos.CENTER);
+
+            col++;
+            if (i == 2) {
+                col = 0;
+                row = 6;
+            }
+        }
+    }
+
+    // Create all layout
     private void createAllLayout() {
         // Create Grid Layout
         createGridLayout(gridMap);
 
-        // Create VBox Map
-        createVBMap(vbMap);
+        // Add rect to grid
+        addRectToGrid();
 
-        // Add rectangles to VBox Map
-        addRectToVMap(rectMap);
-
-        // Add VBox map to grid map
-        addVMapToGridMap(gridMap, vbMap);
+        createBlockName();
 
         // Show information of rect
         showRectInfo(rectMap, txtBlockInfo);
@@ -274,17 +285,24 @@ public class MapLayout extends Application {
 
         showBlockStatus(rectMap);
 
-        gridMap.add(vbTitle, 4, 0,1,2);
-        gridMap.add(vbBlockInf, 5, 0,1,2);
+        LoginLayout.createImageView(imgVProduct,imgProduct,80,80);
 
+        gridMap.add(vbTitle, 4, 1, 1, 5);
+        gridMap.add(vbBlockInf, 5, 1, 1, 5);
     }
 
+    // Clear all layout
     private void clearAllLayout() {
         gridMap.getChildren().clear();
         vbMap.clear();
         vbTitle.getChildren().clear();
         vbBlockInf.getChildren().clear();
         txtBlockInfo.clear();
+    }
+
+    private void setProductImage(int i){
+        imgProduct = new Image(products.get(i).getImage());
+        gridMap.add(imgVProduct,4,0,1,1);
     }
 
 

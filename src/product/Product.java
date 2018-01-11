@@ -1,7 +1,5 @@
 package product;
 
-import java.util.Date;
-
 public class Product {
     private String name;
     private String id;
@@ -12,6 +10,7 @@ public class Product {
     private String status;
     private String inputDate;
     private String outputDate;
+    private String image;
 
     public Product() {
         this.name = "unknown";
@@ -23,6 +22,7 @@ public class Product {
         this.status = "unknown";
         this.inputDate = null;
         this.outputDate = null;
+        this.image = null;
     }
 
     public Product(String name, String id, String qty) {
@@ -31,7 +31,7 @@ public class Product {
         this.qty = qty;
     }
 
-    public Product( String id,String name, String qty, String desc, String producer, String location, String status, String inputDate, String outputDate) {
+    public Product( String id,String name, String qty, String desc, String producer, String location, String status, String inputDate, String outputDate,String image) {
         this.id = id;
         this.name = name;
         this.qty = qty;
@@ -41,6 +41,7 @@ public class Product {
         this.status = status;
         this.inputDate = inputDate;
         this.outputDate = outputDate;
+        this.image = image;
     }
 
 
@@ -118,7 +119,15 @@ public class Product {
         this.outputDate = outputDate;
     }
 
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
     @Override public String toString()
-    { return "Book [id=" + id + ", name=" + name + ", quantity=" + qty + ", desc=" + desc +", producer=" + producer +", location=" + location +", status=" + status +", inputdate=" + inputDate +", outputdate=" + outputDate + "]"; }
+    { return "Book [id=" + id + ", name=" + name + ", quantity=" + qty + ", desc=" + desc +", producer=" + producer +", location=" + location +", status=" + status +", inputdate=" + inputDate +", outputdate=" + outputDate +" , image=" + image +"]"; }
 
 }

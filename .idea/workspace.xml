@@ -13,47 +13,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MapLayout.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MapLayout.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GUI/MapLayout.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="107">
-              <caret line="141" column="5" lean-forward="true" selection-start-line="141" selection-start-column="5" selection-end-line="141" selection-end-column="5" />
+            <state relative-caret-position="159">
+              <caret line="99" column="43" lean-forward="false" selection-start-line="99" selection-start-column="43" selection-end-line="99" selection-end-column="43" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="method#initRect#0;class#MapLayout#0" expanded="false" />
-                <element signature="method#createVBMap#0;class#MapLayout#0" expanded="false" />
-                <element signature="method#addRectToVMap#0;class#MapLayout#0" expanded="false" />
-                <element signature="method#addVMapToGridMap#0;class#MapLayout#0" expanded="false" />
-                <element signature="method#showRectInfo#0;class#MapLayout#0" expanded="false" />
+                <element signature="method#createGridLayout#0;class#MapLayout#0" expanded="false" />
                 <element signature="method#readProductsFromCSV#0;class#MapLayout#0" expanded="false" />
                 <element signature="method#createProduct#0;class#MapLayout#0" expanded="false" />
                 <element signature="method#showBlockStatus#0;class#MapLayout#0" expanded="false" />
+                <element signature="method#initTitle#0;class#MapLayout#0" expanded="false" />
                 <element signature="method#addDataToArray#0;class#MapLayout#0" expanded="false" />
                 <element signature="method#addDataToText#0;class#MapLayout#0" expanded="false" />
-                <element signature="method#createVBox#0;class#MapLayout#0" expanded="false" />
+                <element signature="method#addRectToGrid#0;class#MapLayout#0" expanded="false" />
+                <element signature="method#createBlockName#0;class#MapLayout#0" expanded="false" />
                 <element signature="method#createAllLayout#0;class#MapLayout#0" expanded="false" />
                 <element signature="method#clearAllLayout#0;class#MapLayout#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Product.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/product/Product.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="22" column="23" lean-forward="true" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="product.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/product.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="45" lean-forward="false" selection-start-line="0" selection-start-column="45" selection-end-line="0" selection-end-column="45" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -84,10 +62,10 @@
         <option value="$PROJECT_DIR$/src/GUI/Main.java" />
         <option value="$PROJECT_DIR$/src/product/ProductBlock.java" />
         <option value="$PROJECT_DIR$/src/GUI/StatisticsLayout.java" />
-        <option value="$PROJECT_DIR$/src/product/Product.java" />
-        <option value="$PROJECT_DIR$/src/GUI/LoginLayout.java" />
-        <option value="$PROJECT_DIR$/product.csv" />
         <option value="$PROJECT_DIR$/src/GUI/BlockInfo.java" />
+        <option value="$PROJECT_DIR$/src/GUI/LoginLayout.java" />
+        <option value="$PROJECT_DIR$/src/product/Product.java" />
+        <option value="$PROJECT_DIR$/product.csv" />
         <option value="$PROJECT_DIR$/src/GUI/MapLayout.java" />
       </list>
     </option>
@@ -98,7 +76,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="133" />
     <option name="y" value="105" />
     <option name="width" value="1386" />
@@ -138,7 +116,7 @@
               <item name="INTE2512_A3_Warehouse" type="b2602c69:ProjectViewProjectNode" />
               <item name="INTE2512_A3_Warehouse" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="image" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="INTE2512_A3_Warehouse" type="b2602c69:ProjectViewProjectNode" />
@@ -380,38 +358,38 @@
       <workItem from="1515636569303" duration="849000" />
       <workItem from="1515639975119" duration="5414000" />
       <workItem from="1515645459527" duration="407000" />
-      <workItem from="1515645900105" duration="4404000" />
+      <workItem from="1515645900105" duration="13948000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60660000" />
+    <option name="totallyTimeSpent" value="70204000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23366013" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.119281046" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1860817" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39915523" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -428,7 +406,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="26" />
+      <option name="time" value="33" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -438,18 +416,16 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#initRect#0;class#MapLayout#0" expanded="false" />
-            <element signature="method#createVBMap#0;class#MapLayout#0" expanded="false" />
-            <element signature="method#addRectToVMap#0;class#MapLayout#0" expanded="false" />
-            <element signature="method#addVMapToGridMap#0;class#MapLayout#0" expanded="false" />
-            <element signature="method#showRectInfo#0;class#MapLayout#0" expanded="false" />
+            <element signature="method#createGridLayout#0;class#MapLayout#0" expanded="false" />
             <element signature="method#readProductsFromCSV#0;class#MapLayout#0" expanded="false" />
             <element signature="method#createProduct#0;class#MapLayout#0" expanded="false" />
             <element signature="method#showBlockStatus#0;class#MapLayout#0" expanded="false" />
+            <element signature="method#initTitle#0;class#MapLayout#0" expanded="false" />
             <element signature="method#addDataToArray#0;class#MapLayout#0" expanded="false" />
             <element signature="method#addDataToText#0;class#MapLayout#0" expanded="false" />
-            <element signature="method#createVBox#0;class#MapLayout#0" expanded="false" />
+            <element signature="method#addRectToGrid#0;class#MapLayout#0" expanded="false" />
+            <element signature="method#createBlockName#0;class#MapLayout#0" expanded="false" />
             <element signature="method#createAllLayout#0;class#MapLayout#0" expanded="false" />
             <element signature="method#clearAllLayout#0;class#MapLayout#0" expanded="false" />
           </folding>
@@ -469,18 +445,16 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#initRect#0;class#MapLayout#0" expanded="false" />
-            <element signature="method#createVBMap#0;class#MapLayout#0" expanded="false" />
-            <element signature="method#addRectToVMap#0;class#MapLayout#0" expanded="false" />
-            <element signature="method#addVMapToGridMap#0;class#MapLayout#0" expanded="false" />
-            <element signature="method#showRectInfo#0;class#MapLayout#0" expanded="false" />
+            <element signature="method#createGridLayout#0;class#MapLayout#0" expanded="false" />
             <element signature="method#readProductsFromCSV#0;class#MapLayout#0" expanded="false" />
             <element signature="method#createProduct#0;class#MapLayout#0" expanded="false" />
             <element signature="method#showBlockStatus#0;class#MapLayout#0" expanded="false" />
+            <element signature="method#initTitle#0;class#MapLayout#0" expanded="false" />
             <element signature="method#addDataToArray#0;class#MapLayout#0" expanded="false" />
             <element signature="method#addDataToText#0;class#MapLayout#0" expanded="false" />
-            <element signature="method#createVBox#0;class#MapLayout#0" expanded="false" />
+            <element signature="method#addRectToGrid#0;class#MapLayout#0" expanded="false" />
+            <element signature="method#createBlockName#0;class#MapLayout#0" expanded="false" />
             <element signature="method#createAllLayout#0;class#MapLayout#0" expanded="false" />
             <element signature="method#clearAllLayout#0;class#MapLayout#0" expanded="false" />
           </folding>
@@ -500,18 +474,16 @@
         <state relative-caret-position="799">
           <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#initRect#0;class#MapLayout#0" expanded="false" />
-            <element signature="method#createVBMap#0;class#MapLayout#0" expanded="false" />
-            <element signature="method#addRectToVMap#0;class#MapLayout#0" expanded="false" />
-            <element signature="method#addVMapToGridMap#0;class#MapLayout#0" expanded="false" />
-            <element signature="method#showRectInfo#0;class#MapLayout#0" expanded="false" />
+            <element signature="method#createGridLayout#0;class#MapLayout#0" expanded="false" />
             <element signature="method#readProductsFromCSV#0;class#MapLayout#0" expanded="false" />
             <element signature="method#createProduct#0;class#MapLayout#0" expanded="false" />
             <element signature="method#showBlockStatus#0;class#MapLayout#0" expanded="false" />
+            <element signature="method#initTitle#0;class#MapLayout#0" expanded="false" />
             <element signature="method#addDataToArray#0;class#MapLayout#0" expanded="false" />
             <element signature="method#addDataToText#0;class#MapLayout#0" expanded="false" />
-            <element signature="method#createVBox#0;class#MapLayout#0" expanded="false" />
+            <element signature="method#addRectToGrid#0;class#MapLayout#0" expanded="false" />
+            <element signature="method#createBlockName#0;class#MapLayout#0" expanded="false" />
             <element signature="method#createAllLayout#0;class#MapLayout#0" expanded="false" />
             <element signature="method#clearAllLayout#0;class#MapLayout#0" expanded="false" />
           </folding>
@@ -672,30 +644,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/LoginLayout.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1530">
-          <caret line="90" column="22" lean-forward="true" selection-start-line="90" selection-start-column="22" selection-end-line="90" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#createImageView#0;class#LoginLayout#0" expanded="false" />
-            <element signature="method#createGridLayout#0;class#LoginLayout#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="107" column="26" lean-forward="false" selection-start-line="107" selection-start-column="26" selection-end-line="107" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/product.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="45" lean-forward="false" selection-start-line="0" selection-start-column="45" selection-end-line="0" selection-end-column="45" />
           <folding />
         </state>
       </provider>
@@ -708,34 +660,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/MapLayout.java">
+    <entry file="file://$PROJECT_DIR$/src/GUI/LoginLayout.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="141" column="5" lean-forward="true" selection-start-line="141" selection-start-column="5" selection-end-line="141" selection-end-column="5" />
+        <state relative-caret-position="-289">
+          <caret line="38" column="29" lean-forward="false" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#initRect#0;class#MapLayout#0" expanded="false" />
-            <element signature="method#createVBMap#0;class#MapLayout#0" expanded="false" />
-            <element signature="method#addRectToVMap#0;class#MapLayout#0" expanded="false" />
-            <element signature="method#addVMapToGridMap#0;class#MapLayout#0" expanded="false" />
-            <element signature="method#showRectInfo#0;class#MapLayout#0" expanded="false" />
-            <element signature="method#readProductsFromCSV#0;class#MapLayout#0" expanded="false" />
-            <element signature="method#createProduct#0;class#MapLayout#0" expanded="false" />
-            <element signature="method#showBlockStatus#0;class#MapLayout#0" expanded="false" />
-            <element signature="method#addDataToArray#0;class#MapLayout#0" expanded="false" />
-            <element signature="method#addDataToText#0;class#MapLayout#0" expanded="false" />
-            <element signature="method#createVBox#0;class#MapLayout#0" expanded="false" />
-            <element signature="method#createAllLayout#0;class#MapLayout#0" expanded="false" />
-            <element signature="method#clearAllLayout#0;class#MapLayout#0" expanded="false" />
+            <element signature="method#createGridLayout#0;class#LoginLayout#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/product/Product.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="22" column="23" lean-forward="true" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+        <state relative-caret-position="17">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/product.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="100" lean-forward="true" selection-start-line="13" selection-start-column="100" selection-end-line="13" selection-end-column="100" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/MapLayout.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="99" column="43" lean-forward="false" selection-start-line="99" selection-start-column="43" selection-end-line="99" selection-end-column="43" />
+          <folding>
+            <element signature="method#initRect#0;class#MapLayout#0" expanded="false" />
+            <element signature="method#createGridLayout#0;class#MapLayout#0" expanded="false" />
+            <element signature="method#readProductsFromCSV#0;class#MapLayout#0" expanded="false" />
+            <element signature="method#createProduct#0;class#MapLayout#0" expanded="false" />
+            <element signature="method#showBlockStatus#0;class#MapLayout#0" expanded="false" />
+            <element signature="method#initTitle#0;class#MapLayout#0" expanded="false" />
+            <element signature="method#addDataToArray#0;class#MapLayout#0" expanded="false" />
+            <element signature="method#addDataToText#0;class#MapLayout#0" expanded="false" />
+            <element signature="method#addRectToGrid#0;class#MapLayout#0" expanded="false" />
+            <element signature="method#createBlockName#0;class#MapLayout#0" expanded="false" />
+            <element signature="method#createAllLayout#0;class#MapLayout#0" expanded="false" />
+            <element signature="method#clearAllLayout#0;class#MapLayout#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -18,7 +18,6 @@ import javafx.stage.Stage;
 public class LoginLayout extends Application {
     private Stage window;
 
-    //Constant variables
     private final int WINDOW_WIDTH = 400;
     private final int WINDOW_HEIGHT = 400;
     private final int SPACING = 15;
@@ -31,7 +30,6 @@ public class LoginLayout extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        // Login Layout
         // Images
         Image imgUser = new Image("image/ic_user.png");
         Image imgPassword = new Image("image/ic_password.png");
@@ -47,7 +45,7 @@ public class LoginLayout extends Application {
         createImageView(imgVLogin, imgLogin, 100, 100);
 
 
-        // Grid layout
+        // Grid pane
         GridPane gridLogin = new GridPane();
         createGridLayout(gridLogin);
 
@@ -95,9 +93,8 @@ public class LoginLayout extends Application {
         launch(args);
     }
 
-
     // Create Image View
-    private void createImageView(ImageView imgView, Image img, int width, int height) {
+    static void createImageView(ImageView imgView, Image img, int width, int height) {
         imgView.setImage(img);
         imgView.setFitWidth(width);
         imgView.setFitHeight(height);
@@ -106,7 +103,7 @@ public class LoginLayout extends Application {
         imgView.setCache(true);
     }
 
-    // Create grid layout
+    // Create grid pane
     private void createGridLayout(GridPane gridPane) {
         gridPane.setAlignment(Pos.CENTER);
         gridPane.setHgap(SPACING);
