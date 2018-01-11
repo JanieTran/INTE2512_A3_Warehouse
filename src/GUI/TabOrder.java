@@ -1,10 +1,31 @@
+/*
+  RMIT University Vietnam
+  Course: INTE2512 Object-Oriented Programming
+  Semester: 2017C
+  Assignment: 3 - Warehouse Management Application
+
+  Authors:
+    - Nguyen Tan Thanh          s3580014
+    - Tran le Nha Tran          s3533562
+    - Tran Thi Hong Phuong      s3623385
+
+  Created date: 04/01/2018
+
+  Description: This app gives the overview and statistics of a warehouse so that
+  the manager can monitor and control the delivery of packages inside that warehouse.
+
+  Acknowledgement:
+  - https://www.youtube.com/watch?v=FLkOX4Eez6o&list=PL6gx4Cwl9DGBzfXLWLSYVy8EbTdpGbUIG
+  - https://stackoverflow.com/
+
+*/
+
 package GUI;
 
 import csv.readCSV;
 import csv.writeCSV;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -13,16 +34,13 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import supportClass.Order;
 import supportClass.Product;
-
 import java.util.ArrayList;
 
 import static GUI.Main.*;
-
 import static GUI.TabStatistics.PRODUCT_DATA_DIR;
 import static supportClass.Product.*;
 import static supportClass.Product.OUTPUTDATE_INDEX;
 import static supportClass.Product.TOTAL_ATTRIBUTES;
-import static GUI.TabStatistics.*;
 
 
 public class TabOrder {
@@ -63,7 +81,7 @@ public class TabOrder {
         newItemLayout = new GridPane();
         textFields = new TextField[TOTAL_ATTRIBUTES];
 
-        orders = readCSV.readCSVvtoOrder(ORDER_FILE);
+        orders = readCSV.readCSV_order(ORDER_FILE);
     }
 
     public VBox getTabOrder() {

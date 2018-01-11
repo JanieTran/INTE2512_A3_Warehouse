@@ -1,3 +1,24 @@
+/*
+  RMIT University Vietnam
+  Course: INTE2512 Object-Oriented Programming
+  Semester: 2017C
+  Assignment: 3 - Warehouse Management Application
+
+  Authors:
+    - Nguyen Tan Thanh          s3580014
+    - Tran le Nha Tran          s3533562
+    - Tran Thi Hong Phuong      s3623385
+
+  Created date: 04/01/2018
+
+  Description: This app gives the overview and statistics of a warehouse so that
+  the manager can monitor and control the delivery of packages inside that warehouse.
+
+  Acknowledgement:
+  - https://www.youtube.com/watch?v=FLkOX4Eez6o&list=PL6gx4Cwl9DGBzfXLWLSYVy8EbTdpGbUIG
+  - https://stackoverflow.com/
+
+*/
 
 package GUI;
 
@@ -13,7 +34,6 @@ import javafx.scene.text.Font;
 
 import java.util.ArrayList;
 import java.util.Random;
-
 import static GUI.Main.*;
 import static GUI.Main.SPACING;
 import static GUI.TabStatistics.PRODUCT_DATA_DIR;
@@ -54,9 +74,12 @@ public class TabReceiver {
         bar.setPadding(new Insets(30, 30, 30, 30));
         bar.setHgap(10);
         bar.setVgap(10);
-        int size = 0;
 
+        //total number of input
+        int size = 0;
         size = readCSV.readCSV_receiver(PRODUCT_DATA_DIR).size();
+
+        //rectangle
         rFull = new Rectangle[size];
         rPercentage = new Rectangle[size];
 

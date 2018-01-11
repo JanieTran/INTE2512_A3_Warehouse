@@ -1,3 +1,25 @@
+/*
+  RMIT University Vietnam
+  Course: INTE2512 Object-Oriented Programming
+  Semester: 2017C
+  Assignment: 3 - Warehouse Management Application
+
+  Authors:
+    - Nguyen Tan Thanh          s3580014
+    - Tran le Nha Tran          s3533562
+    - Tran Thi Hong Phuong      s3623385
+
+  Created date: 04/01/2018
+
+  Description: This app gives the overview and statistics of a warehouse so that
+  the manager can monitor and control the delivery of packages inside that warehouse.
+
+  Acknowledgement:
+  - https://www.youtube.com/watch?v=FLkOX4Eez6o&list=PL6gx4Cwl9DGBzfXLWLSYVy8EbTdpGbUIG
+  - https://stackoverflow.com/
+
+*/
+
 package GUI;
 
 import csv.readCSV;
@@ -39,7 +61,7 @@ public class TabHome {
         boxNoti = new VBox();
         noNoti = new Label(NO_NOTIFICATION);
 
-        notifications = readCSV.readCSVtoNotifications(NOTIFICATIONS_FILE);
+        notifications = readCSV.readCSV_notifications(NOTIFICATIONS_FILE);
     }
 
     // Prepare contents for Main scene
