@@ -44,6 +44,14 @@ public class Order {
         expanded = false;
     }
 
+    public Button getAccept() {
+        return accept;
+    }
+
+    public Button getDecline() {
+        return decline;
+    }
+
     public GridPane getGridOrder() {
         productID.setStyle("-fx-font-weight: bold");
         productID.setFont(Font.font(20));

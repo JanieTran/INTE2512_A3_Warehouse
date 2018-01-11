@@ -33,6 +33,7 @@ public class Main extends Application{
     // String constants
     static final String APP_TITLE = "Warehouse Management";
     static final String NO_NOTIFICATION = "There is currently no notification";
+    static final String NO_ORDER = "There is currently no order";
 
     // Screen box
     VBox screen = new VBox();

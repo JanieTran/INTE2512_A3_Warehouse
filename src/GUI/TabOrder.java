@@ -21,9 +21,7 @@ public class TabOrder {
 
     private VBox tabOrder;
     private VBox boxOrder;
-    private Label tabTitle;
-    private Order kabylake;
-    private GridPane gpOrder;
+    private Label tabTitle, noOrder;
 
     private ArrayList<Order> orders;
 
@@ -31,8 +29,7 @@ public class TabOrder {
         tabOrder = new VBox();
         boxOrder = new VBox();
         tabTitle = new Label("ORDERS");
-//        kabylake = new Order("KABYLAKE", "ABC2345", 1000, "Intel", "input");
-//        gpOrder = kabylake.getGridOrder();
+        noOrder = new Label(NO_ORDER);
         orders = readCSV.readCSVtoOrder(ORDER_FILE);
     }
 
@@ -43,18 +40,42 @@ public class TabOrder {
         for (Order order : orders) {
             GridPane gridOrder = order.getGridOrder();
             boxOrder.getChildren().add(gridOrder);
+
+            order.getAccept().setOnMouseClicked(event -> {
+                boxOrder.getChildren().remove(gridOrder);
+                updateTabOrder();
+            });
+
+            order.getDecline().setOnMouseClicked(event -> {
+                boxOrder.getChildren().remove(gridOrder);
+                updateTabOrder();
+            });
         }
+
+        updateTabOrder();
 
         boxOrder.setSpacing(SPACING);
 
         tabTitle.setFont(Font.font(30));
         tabTitle.setStyle("-fx-font-weight: bold; -fx-text-fill: #2196f3");
 
-        tabOrder.getChildren().addAll(tabTitle, boxOrder);
+        noOrder.setFont(Font.font(20));
+        noOrder.setPadding(new Insets(SPACING, SPACING, SPACING, SPACING * 2));
+        noOrder.setStyle("-fx-text-fill: #ababab");
+
         tabOrder.setMinSize(WIDTH - TAB_WIDTH, HEIGHT - TITLE_BAR_HEIGHT);
         tabOrder.setSpacing(SPACING);
         tabOrder.setPadding(new Insets(SPACING, SPACING, SPACING, SPACING * 2));
 
         return tabOrder;
+    }
+
+    private void updateTabOrder() {
+        tabOrder.getChildren().clear();
+
+        if (boxOrder.getChildren().isEmpty())
+            tabOrder.getChildren().addAll(tabTitle, noOrder);
+        else
+            tabOrder.getChildren().addAll(tabTitle, boxOrder);
     }
 }
