@@ -13,6 +13,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import product.Product;
@@ -62,8 +63,9 @@ public class MapLayout extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-
+        // Create all layout
         createAllLayout();
+
         // Stage
         window = primaryStage;
         window.setTitle(WINDOW_TITLE);
@@ -212,6 +214,7 @@ public class MapLayout extends Application {
     private void initTitle(ArrayList<Text> txtTitle, String[] sTitle) {
         for (int j = 0; j < 9; j++) {
             txtTitle.add(new Text(sTitle[j]));
+            txtTitle.get(j).setFont(Font.font(15));
             vbTitle.getChildren().add(txtTitle.get(j));
         }
     }
@@ -232,6 +235,7 @@ public class MapLayout extends Application {
         vbBlockInf.getChildren().clear();
         for (int j = 0; j < 9; j++) {
             txtBlockInfo.add(new Text(sBlockInfo[j]));
+            txtBlockInfo.get(j).setFont(Font.font(15));
             vbBlockInf.getChildren().add(txtBlockInfo.get(j));
         }
     }

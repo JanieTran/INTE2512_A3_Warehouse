@@ -13,26 +13,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MapLayout.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MapLayout.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUI/MapLayout.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="217" column="0" lean-forward="true" selection-start-line="217" selection-start-column="0" selection-end-line="217" selection-end-column="0" />
+            <state relative-caret-position="107">
+              <caret line="141" column="5" lean-forward="true" selection-start-line="141" selection-start-column="5" selection-end-line="141" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#initRect#0;class#MapLayout#0" expanded="false" />
+                <element signature="method#createVBMap#0;class#MapLayout#0" expanded="false" />
                 <element signature="method#addRectToVMap#0;class#MapLayout#0" expanded="false" />
                 <element signature="method#addVMapToGridMap#0;class#MapLayout#0" expanded="false" />
                 <element signature="method#showRectInfo#0;class#MapLayout#0" expanded="false" />
                 <element signature="method#readProductsFromCSV#0;class#MapLayout#0" expanded="false" />
                 <element signature="method#createProduct#0;class#MapLayout#0" expanded="false" />
                 <element signature="method#showBlockStatus#0;class#MapLayout#0" expanded="false" />
-                <element signature="method#initTitle#0;class#MapLayout#0" expanded="false" />
                 <element signature="method#addDataToArray#0;class#MapLayout#0" expanded="false" />
                 <element signature="method#addDataToText#0;class#MapLayout#0" expanded="false" />
+                <element signature="method#createVBox#0;class#MapLayout#0" expanded="false" />
                 <element signature="method#createAllLayout#0;class#MapLayout#0" expanded="false" />
                 <element signature="method#clearAllLayout#0;class#MapLayout#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Product.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/product/Product.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="22" column="23" lean-forward="true" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -57,7 +68,10 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="WARN_ABOUT_CRLF" value="false" />
+    <option name="WARN_ABOUT_DETACHED_HEAD" value="false" />
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -150,6 +164,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -365,12 +380,12 @@
       <workItem from="1515636569303" duration="849000" />
       <workItem from="1515639975119" duration="5414000" />
       <workItem from="1515645459527" duration="407000" />
-      <workItem from="1515645900105" duration="3089000" />
+      <workItem from="1515645900105" duration="4404000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59345000" />
+    <option name="totallyTimeSpent" value="60660000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
@@ -425,15 +440,16 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#initRect#0;class#MapLayout#0" expanded="false" />
+            <element signature="method#createVBMap#0;class#MapLayout#0" expanded="false" />
             <element signature="method#addRectToVMap#0;class#MapLayout#0" expanded="false" />
             <element signature="method#addVMapToGridMap#0;class#MapLayout#0" expanded="false" />
             <element signature="method#showRectInfo#0;class#MapLayout#0" expanded="false" />
             <element signature="method#readProductsFromCSV#0;class#MapLayout#0" expanded="false" />
             <element signature="method#createProduct#0;class#MapLayout#0" expanded="false" />
             <element signature="method#showBlockStatus#0;class#MapLayout#0" expanded="false" />
-            <element signature="method#initTitle#0;class#MapLayout#0" expanded="false" />
             <element signature="method#addDataToArray#0;class#MapLayout#0" expanded="false" />
             <element signature="method#addDataToText#0;class#MapLayout#0" expanded="false" />
+            <element signature="method#createVBox#0;class#MapLayout#0" expanded="false" />
             <element signature="method#createAllLayout#0;class#MapLayout#0" expanded="false" />
             <element signature="method#clearAllLayout#0;class#MapLayout#0" expanded="false" />
           </folding>
@@ -455,15 +471,16 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#initRect#0;class#MapLayout#0" expanded="false" />
+            <element signature="method#createVBMap#0;class#MapLayout#0" expanded="false" />
             <element signature="method#addRectToVMap#0;class#MapLayout#0" expanded="false" />
             <element signature="method#addVMapToGridMap#0;class#MapLayout#0" expanded="false" />
             <element signature="method#showRectInfo#0;class#MapLayout#0" expanded="false" />
             <element signature="method#readProductsFromCSV#0;class#MapLayout#0" expanded="false" />
             <element signature="method#createProduct#0;class#MapLayout#0" expanded="false" />
             <element signature="method#showBlockStatus#0;class#MapLayout#0" expanded="false" />
-            <element signature="method#initTitle#0;class#MapLayout#0" expanded="false" />
             <element signature="method#addDataToArray#0;class#MapLayout#0" expanded="false" />
             <element signature="method#addDataToText#0;class#MapLayout#0" expanded="false" />
+            <element signature="method#createVBox#0;class#MapLayout#0" expanded="false" />
             <element signature="method#createAllLayout#0;class#MapLayout#0" expanded="false" />
             <element signature="method#clearAllLayout#0;class#MapLayout#0" expanded="false" />
           </folding>
@@ -485,15 +502,16 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#initRect#0;class#MapLayout#0" expanded="false" />
+            <element signature="method#createVBMap#0;class#MapLayout#0" expanded="false" />
             <element signature="method#addRectToVMap#0;class#MapLayout#0" expanded="false" />
             <element signature="method#addVMapToGridMap#0;class#MapLayout#0" expanded="false" />
             <element signature="method#showRectInfo#0;class#MapLayout#0" expanded="false" />
             <element signature="method#readProductsFromCSV#0;class#MapLayout#0" expanded="false" />
             <element signature="method#createProduct#0;class#MapLayout#0" expanded="false" />
             <element signature="method#showBlockStatus#0;class#MapLayout#0" expanded="false" />
-            <element signature="method#initTitle#0;class#MapLayout#0" expanded="false" />
             <element signature="method#addDataToArray#0;class#MapLayout#0" expanded="false" />
             <element signature="method#addDataToText#0;class#MapLayout#0" expanded="false" />
+            <element signature="method#createVBox#0;class#MapLayout#0" expanded="false" />
             <element signature="method#createAllLayout#0;class#MapLayout#0" expanded="false" />
             <element signature="method#clearAllLayout#0;class#MapLayout#0" expanded="false" />
           </folding>
@@ -533,9 +551,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="3" lean-forward="false" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -571,9 +587,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1360">
           <caret line="80" column="7" lean-forward="true" selection-start-line="80" selection-start-column="7" selection-end-line="80" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -670,24 +684,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/product/Product.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/BlockInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -704,25 +700,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/BlockInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/MapLayout.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="217" column="0" lean-forward="true" selection-start-line="217" selection-start-column="0" selection-end-line="217" selection-end-column="0" />
+        <state relative-caret-position="107">
+          <caret line="141" column="5" lean-forward="true" selection-start-line="141" selection-start-column="5" selection-end-line="141" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#initRect#0;class#MapLayout#0" expanded="false" />
+            <element signature="method#createVBMap#0;class#MapLayout#0" expanded="false" />
             <element signature="method#addRectToVMap#0;class#MapLayout#0" expanded="false" />
             <element signature="method#addVMapToGridMap#0;class#MapLayout#0" expanded="false" />
             <element signature="method#showRectInfo#0;class#MapLayout#0" expanded="false" />
             <element signature="method#readProductsFromCSV#0;class#MapLayout#0" expanded="false" />
             <element signature="method#createProduct#0;class#MapLayout#0" expanded="false" />
             <element signature="method#showBlockStatus#0;class#MapLayout#0" expanded="false" />
-            <element signature="method#initTitle#0;class#MapLayout#0" expanded="false" />
             <element signature="method#addDataToArray#0;class#MapLayout#0" expanded="false" />
             <element signature="method#addDataToText#0;class#MapLayout#0" expanded="false" />
+            <element signature="method#createVBox#0;class#MapLayout#0" expanded="false" />
             <element signature="method#createAllLayout#0;class#MapLayout#0" expanded="false" />
             <element signature="method#clearAllLayout#0;class#MapLayout#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/product/Product.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="22" column="23" lean-forward="true" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
