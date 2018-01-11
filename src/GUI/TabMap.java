@@ -47,20 +47,24 @@ public class TabMap {
     private Label tabTitle;
 
     public TabMap() {
+        // Init nodes
         tabMap = new VBox();
         tabTitle = new Label("WAREHOUSE MAP");
     }
 
     public VBox getTabMap() {
+        // Clear all layout
         tabMap.getChildren().clear();
         clearAllLayout();
 
         // Create all layout
         createAllLayout();
 
+        // Tab title
         tabTitle.setFont(Font.font(30));
         tabTitle.setStyle("-fx-font-weight: bold; -fx-text-fill: #2196f3");
 
+        // Tab Map
         tabMap.getChildren().addAll(tabTitle, gridMap);
         tabMap.setPadding(new Insets(SPACING, SPACING, SPACING, SPACING * 2));
 
@@ -74,7 +78,6 @@ public class TabMap {
         rectMap.setFill(Color.WHITE);
         rectMap.setStroke(Color.GRAY);
         rectMap.setStrokeWidth(STROKE_WIDTH);
-
     }
 
     // Create grid layout
@@ -104,7 +107,7 @@ public class TabMap {
         }
     }
 
-    // Show block status
+    // Show block status according to product's quantity
     private static void showBlockStatus(ArrayList<Rectangle> rectMap) {
         for (int i = 0; i < 30; i++) {
             int quantity = products.get(i).getQty();
@@ -120,7 +123,7 @@ public class TabMap {
         }
     }
 
-    // Init block title
+    // Init block info title
     private void initTitle(ArrayList<Text> txtTitle, String[] sTitle) {
         for (int i = 0; i < 9; i++) {
             txtTitle.add(new Text(sTitle[i]));
@@ -130,7 +133,7 @@ public class TabMap {
         }
     }
 
-    // Add Data to array
+    // Add Data to block info string array
     private void addDataToArray(int i) {
         sBlockInfo[0] = products.get(i).getId();
         sBlockInfo[1] = products.get(i).getName();
@@ -143,7 +146,7 @@ public class TabMap {
         sBlockInfo[8] = products.get(i).getOutputDate();
     }
 
-    // Add Data to text array
+    // Add Data to block info text array
     private void addDataToText(ArrayList<Text> txtBlockInfo) {
         vbBlockInf.getChildren().clear();
         for (int j = 0; j < 9; j++) {
@@ -162,15 +165,17 @@ public class TabMap {
     private void addRectToGrid() {
         ArrayList<String> sBlockNumber = new ArrayList<>();
         ArrayList<Text> txtBlockNumber = new ArrayList<>();
+        // Init block number
         for (int i = 1; i < 31; i++) {
             sBlockNumber.add("" + i);
         }
         int col = 0;
         int row = 1;
         for (int i = 0; i < 30; i++) {
+            // Init rectangle arraylist
             rectMap.add(new Rectangle());
             initRect(rectMap.get(i));
-
+            // Add 5 rectangles and their number to each column
             txtBlockNumber.add(new Text(sBlockNumber.get(i)));
             if (i == 5) {
                 row = 1;
@@ -205,7 +210,7 @@ public class TabMap {
         int row = 0;
         String[] blockName = {"A", "B", "C", "D", "E", "F"};
         ArrayList<Label> lblBlockName = new ArrayList<>();
-
+        // Add name to each rectangle
         for (int i = 0; i < 6; i++) {
             lblBlockName.add(new Label(blockName[i]));
             lblBlockName.get(i).setFont(Font.font(20));
@@ -243,10 +248,13 @@ public class TabMap {
         // Create VBox Block Info
         createVBox(vbBlockInf);
 
+        // Show blocks status according to their product quantity
         showBlockStatus(rectMap);
 
+        // Create product image view
         LoginLayout.createImageView(imgVProduct,imgProduct,80,80);
 
+        // Add block info title and block data to grid pane
         gridMap.add(vbTitle, 4, 1, 1, 5);
         gridMap.add(vbBlockInf, 5, 1, 1, 5);
     }
@@ -260,6 +268,7 @@ public class TabMap {
         txtBlockInfo.clear();
     }
 
+    // Set image to Grid Pane
     private void setProductImage(int i){
         imgProduct = new Image(products.get(i).getImage());
         gridMap.add(imgVProduct,4,0,1,1);

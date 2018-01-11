@@ -37,20 +37,21 @@ public class LoginLayout {
     private ArrayList<User> users;
 
     public LoginLayout() {
+        // init variables
         screenLogin = new VBox();
         btnLogin = new Button("Sign in");
         txtUserName = new TextField();
         txtUserName.setText("admin");
         txtPassword = new PasswordField();
         txtPassword.setText("admin");
-
         users = readCSV.readCSVtoUser(USERS_FILE);
     }
 
     public VBox getScreenLogin() {
+        // clear login screen
         screenLogin.getChildren().clear();
 
-        // Images
+        // Image views
         Image imgUser = new Image("image/ic_user.png");
         Image imgPassword = new Image("image/ic_password.png");
         Image imgLogin = new Image("image/ic_login.png");
@@ -71,7 +72,6 @@ public class LoginLayout {
         // Rectangle
         Rectangle rect = new Rectangle(200, 200);
         rect.setFill(Color.LIGHTGREY);
-
         gridLogin.add(rect, 0, 0, 3, 14);
 
         // Login Icon
@@ -82,13 +82,11 @@ public class LoginLayout {
 
         // User name
         gridLogin.add(imgVUser, 0, 4);
-
         txtUserName.setPromptText(USER_NAME_HINT);
         gridLogin.add(txtUserName, 1, 4);
 
         // User password
         gridLogin.add(imgVPassword, 0, 5);
-
         txtPassword.setPromptText(USER_PASSWORD_HINT);
         gridLogin.add(txtPassword, 1, 5);
 
