@@ -61,8 +61,8 @@ public class TabReceiver {
         rPercentage = new Rectangle[size];
 
         for(int row = 0; row < size; row++) {
-            idLabel.add(new Label(readCSV.readCSV_receiver(PRODUCT_DATA_DIR).get(row).getID()));
-            idLabel.set(row, new Label(readCSV.readCSV_receiver(PRODUCT_DATA_DIR).get(row).getID()));
+            idLabel.add(new Label(readCSV.readCSV_receiver(PRODUCT_DATA_DIR).get(row).getId()));
+            idLabel.set(row, new Label(readCSV.readCSV_receiver(PRODUCT_DATA_DIR).get(row).getId()));
             idLabel.get(row).setPrefWidth(100);
             idLabel.get(row).setFont(Font.font(20));
             GridPane.setConstraints(idLabel.get(row), 0, row);

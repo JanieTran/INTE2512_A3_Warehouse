@@ -146,8 +146,8 @@ public class readCSV {
 
             while ((line = fileReader.readLine()) != null) {
                 String[] elements = line.split(COMMA);
-//                orders.add(new Order(elements[0], elements[1], Integer.parseInt(elements[2]),
-//                        elements[3], elements[4]));
+                orders.add(new Order(elements[0], elements[1], Integer.parseInt(elements[2]),
+                        elements[3], elements[4]));
             }
         } catch (Exception e) {
             System.out.println("Error in CSVreader");
@@ -164,7 +164,6 @@ public class readCSV {
         return orders;
     }
 
-<<<<<<< HEAD
     public static ArrayList<Order> readCSV_receiver(String fileName) {
         BufferedReader fileReader = null;
         ArrayList<Order> receiver = new ArrayList<>();
@@ -209,16 +208,25 @@ public class readCSV {
             while ((line = fileReader.readLine()) != null) {
                 String[] elements = line.split(COMMA);
                 //receiver input
-                if(elements[6].equals("output")) {
+                if (elements[6].equals("output")) {
                     deliver.add(new Order(elements[0], Integer.parseInt(elements[2])));
-                } 
+                }
             }
         } catch (Exception e) {
             System.out.println("Error in CSVreader");
             e.printStackTrace();
         } finally {
-=======
-    public static ArrayList<User> readCSVtoUser(String fileName) {
+            try {
+                fileReader.close();
+            } catch (IOException e) {
+                System.out.println("Error while closing fileReader");
+                e.printStackTrace();
+            }
+        }
+        return deliver;
+    }
+
+    public static ArrayList<User> readCSVtoUser (String fileName) {
         BufferedReader fileReader = null;
         ArrayList<User> users = new ArrayList<>();
 
@@ -243,7 +251,6 @@ public class readCSV {
         }
 
         finally {
->>>>>>> cadd281a5ba6ca07709e57282bca8bed8e81b2ea
             try {
                 fileReader.close();
             } catch (IOException e) {
@@ -251,18 +258,7 @@ public class readCSV {
                 e.printStackTrace();
             }
         }
-<<<<<<< HEAD
-        return deliver;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(count(ORDER_DATA_DIR));
-        System.out.println(readCSV_receiver(PRODUCT_DATA_DIR).get(0).getQty());
-        System.out.println(readCSV_receiver(PRODUCT_DATA_DIR).get(1).getQty());
-
-=======
 
         return users;
->>>>>>> cadd281a5ba6ca07709e57282bca8bed8e81b2ea
     }
 }

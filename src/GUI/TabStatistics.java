@@ -37,7 +37,7 @@ public class TabStatistics {
     //--------------------TAB PROPERTIES--------------------
     private VBox tabStatistics;
     private Label tabTitle;
-    private TableView<Product> table;
+    public static TableView<Product> table;
     private TableColumn<Product, String>[] columns;
     private GridPane newItemLayout;
     private Label newItemLabel1, newItemLabel2, newItemLabel3;
@@ -157,7 +157,7 @@ public class TabStatistics {
     }
 
     //---------------------NEWITEMLAYOUT METHODS---------------------
-    private void addButtonClicked() {
+    public void addButtonClicked() {
         Product product = new Product();
 
         product.setId(textFields[ID_INDEX].getText());
@@ -171,7 +171,7 @@ public class TabStatistics {
         product.setOutputDate(textFields[OUTPUTDATE_INDEX].getText());
 
         table.getItems().add(product);
-        writeCSV.writeData(PRODUCT_DATA_DIR, product);
+        writeCSV.writeDataProduct(PRODUCT_DATA_DIR, product);
 
         for(int i = 0; i < TOTAL_ATTRIBUTES; i++)
             textFields[i].clear();

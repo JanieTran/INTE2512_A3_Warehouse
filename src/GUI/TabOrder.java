@@ -4,10 +4,8 @@ import csv.readCSV;
 import csv.writeCSV;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-<<<<<<< HEAD
-=======
+
 import javafx.scene.control.Button;
->>>>>>> cadd281a5ba6ca07709e57282bca8bed8e81b2ea
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
@@ -19,18 +17,16 @@ import supportClass.Product;
 import java.util.ArrayList;
 
 import static GUI.Main.*;
-<<<<<<< HEAD
-import static GUI.TabStatistics.ORDER_DATA_DIR;
-=======
+
 import static GUI.TabStatistics.PRODUCT_DATA_DIR;
 import static supportClass.Product.*;
 import static supportClass.Product.OUTPUTDATE_INDEX;
 import static supportClass.Product.TOTAL_ATTRIBUTES;
->>>>>>> cadd281a5ba6ca07709e57282bca8bed8e81b2ea
+import static GUI.TabStatistics.*;
+
 
 public class TabOrder {
     //--------------------CONSTANT--------------------
-
 
 
     //------------------------------------------------------
@@ -63,14 +59,11 @@ public class TabOrder {
         boxOrder = new VBox();
         tabTitle = new Label("ORDERS");
         noOrder = new Label(NO_ORDER);
-<<<<<<< HEAD
-        orders = readCSV.readCSVvtoOrder(ORDER_FILE);
-=======
+
         newItemLayout = new GridPane();
         textFields = new TextField[TOTAL_ATTRIBUTES];
 
-        orders = readCSV.readCSVtoOrder(ORDER_FILE);
->>>>>>> cadd281a5ba6ca07709e57282bca8bed8e81b2ea
+        orders = readCSV.readCSVvtoOrder(ORDER_FILE);
     }
 
     public VBox getTabOrder() {
@@ -135,13 +128,13 @@ public class TabOrder {
         product.setInputDate(textFields[INPUTDATE_INDEX].getText());
         product.setOutputDate(textFields[OUTPUTDATE_INDEX].getText());
 
-        writeCSV.writeData(PRODUCT_DATA_DIR, product);
+        writeCSV.writeDataProduct(PRODUCT_DATA_DIR, product);
 
-        for(int i = 0; i < TOTAL_ATTRIBUTES; i++)
+        for (int i = 0; i < TOTAL_ATTRIBUTES; i++)
             textFields[i].clear();
     }
 
-    private TextField addTextField (String hint, int width) {
+    private TextField addTextField(String hint, int width) {
         TextField textField = new TextField();
         textField.setPromptText(hint);
         textField.setPrefWidth(width);
@@ -149,12 +142,12 @@ public class TabOrder {
     }
 
     private void settingAddNew() {
-        newItemLayout.setPadding(new Insets(SPACING/2, SPACING/2, SPACING/2, SPACING/2));
-        newItemLayout.setVgap(SPACING/4);
-        newItemLayout.setHgap(SPACING/2);
+        newItemLayout.setPadding(new Insets(SPACING / 2, SPACING / 2, SPACING / 2, SPACING / 2));
+        newItemLayout.setVgap(SPACING / 4);
+        newItemLayout.setHgap(SPACING / 2);
 
         //label "Prodduct Details"
-        newItemLabel1 = new Label ("Product Details");
+        newItemLabel1 = new Label("Product Details");
         GridPane.setConstraints(newItemLabel1, 0, 0);
         //textFields (id - name - qty - desc - producer)
         textFields[ID_INDEX] = addTextField(PRODUCT_LABEL[ID_INDEX], ID_SPACE);
@@ -170,7 +163,7 @@ public class TabOrder {
         GridPane.setConstraints(textFields[PRODUCER_INDEX], 5, 0);
 
         //label "Location/Status"
-        newItemLabel2 = new Label ("Location/Status");
+        newItemLabel2 = new Label("Location/Status");
         GridPane.setConstraints(newItemLabel2, 0, 1);
         //textFields (location - status)
         textFields[LOCATION_INDEX] = addTextField(PRODUCT_LABEL[LOCATION_INDEX], DEFAULT_SPACE);
@@ -180,7 +173,7 @@ public class TabOrder {
         GridPane.setConstraints(textFields[STATUS_INDEX], 2, 1);
 
         //label "Date"
-        newItemLabel3 = new Label ("Date");
+        newItemLabel3 = new Label("Date");
         GridPane.setConstraints(newItemLabel3, 0, 2);
         //textFields (inputdate - outputdate)
         textFields[INPUTDATE_INDEX] = addTextField(PRODUCT_LABEL[INPUTDATE_INDEX], DEFAULT_SPACE);
@@ -201,10 +194,4 @@ public class TabOrder {
         for (int i = 0; i < TOTAL_ATTRIBUTES; i++)
             newItemLayout.getChildren().addAll(textFields[i]);
     }
-<<<<<<< HEAD
-
-
 }
-=======
-}
->>>>>>> cadd281a5ba6ca07709e57282bca8bed8e81b2ea

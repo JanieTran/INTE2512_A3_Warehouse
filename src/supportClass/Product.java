@@ -159,20 +159,5 @@ public class Product {
         this.image = image;
     }
 
-    public int getCurrentInput() {
-        return currentInput;
-    }
-
-    public void setCurrentInput(int currentInput) {
-        this.currentInput = currentInput;
-    }
-
-    public int getCurrentOutput() {
-        return currentOutput;
-    }
-
-    public void setCurrentOutput(int currentOutput) {
-        this.currentOutput = currentOutput;
-    }
 
 }

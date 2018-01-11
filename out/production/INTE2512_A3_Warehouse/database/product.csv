@@ -53,3 +53,4 @@ id,name,qty,desc,producer,location,status,inputDate,outputDate,image
 29,Samsung Galaxy S8,20,Samsung Phone,Samsung,1,Good,10/01/2018,20/01/2018,image/samsunggalaxys8.jpg
 30,Samsung Galaxy S8,20,Samsung Phone,Samsung,1,Good,10/01/2018,20/01/2018,image/samsunggalaxys8.jpg
 >>>>>>> cadd281a5ba6ca07709e57282bca8bed8e81b2ea
+null,null,0,null,null,null,null,null,nullnull,null,0,null,null,null,null,null,nullnull,null,0,null,null,null,null,null,null
