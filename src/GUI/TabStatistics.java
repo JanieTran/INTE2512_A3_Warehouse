@@ -1,5 +1,6 @@
 package GUI;
 
+import csv.readCSV;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Pos;
@@ -12,6 +13,9 @@ import javafx.scene.layout.HBox;
 import supportClass.Product;
 import javafx.scene.layout.VBox;
 import csv.writeCSV;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 import static GUI.Main.*;
 import static supportClass.Product.*;
@@ -27,6 +31,9 @@ public class TabStatistics {
     private static final int DEFAULT_SPACE = 100;
     private static final int BUTTON_SPACE = 100;
 
+    public static final String PRODUCT_DATA_DIR = "src/database/product.csv";
+    private static final String TAB_NAME = "STATISTICS";
+
     //--------------------TAB PROPERTIES--------------------
     private VBox tabStatistics;
     private Label tabTitle;
@@ -34,13 +41,12 @@ public class TabStatistics {
     private TableColumn<Product, String>[] columns;
     private GridPane newItemLayout;
     private Label newItemLabel1, newItemLabel2, newItemLabel3;
-    private HBox newItemTextField;
     private TextField[] textFields;
     private Button addButton, deleteButton;
 
     public TabStatistics() {
         tabStatistics = new VBox();
-        tabTitle = new Label("STATISTICS");
+        tabTitle = new Label(TAB_NAME);
         table = new TableView<>();
         newItemLayout = new GridPane();
         textFields = new TextField[TOTAL_ATTRIBUTES];
@@ -69,6 +75,7 @@ public class TabStatistics {
             }
             columns[i] = addStringColumn(PRODUCT_LABEL[i], colMinWidth, PRODUCT_PROPERTIES[i]);
         }
+
 //        table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
         table.setItems(getProduct());
         table.getColumns().addAll(columns);
@@ -78,11 +85,11 @@ public class TabStatistics {
         newItemLayout.setPadding(new Insets(SPACING/2, SPACING/2, SPACING/2, SPACING/2));
         newItemLayout.setVgap(SPACING/4);
         newItemLayout.setHgap(SPACING/2);
-        //newItemLabel - Product Details
+
+        //label "Prodduct Details"
         newItemLabel1 = new Label ("Product Details");
         GridPane.setConstraints(newItemLabel1, 0, 0);
-
-        //add textFields
+        //textFields (id - name - qty - desc - producer)
         textFields[ID_INDEX] = addTextField(PRODUCT_LABEL[ID_INDEX], ID_SPACE);
         textFields[NAME_INDEX] = addTextField(PRODUCT_LABEL[NAME_INDEX], NAME_SPACE);
         textFields[QTY_INDEX] = addTextField(PRODUCT_LABEL[QTY_INDEX], DEFAULT_SPACE);
@@ -95,33 +102,34 @@ public class TabStatistics {
         GridPane.setConstraints(textFields[DESC_INDEX], 4, 0);
         GridPane.setConstraints(textFields[PRODUCER_INDEX], 5, 0);
 
-        //newItemLabel2 - Location/Status
+        //label "Location/Status"
         newItemLabel2 = new Label ("Location/Status");
         GridPane.setConstraints(newItemLabel2, 0, 1);
-        //add textFields
+        //textFields (location - status)
         textFields[LOCATION_INDEX] = addTextField(PRODUCT_LABEL[LOCATION_INDEX], DEFAULT_SPACE);
         textFields[STATUS_INDEX] = addTextField(PRODUCT_LABEL[STATUS_INDEX], DEFAULT_SPACE);
 
         GridPane.setConstraints(textFields[LOCATION_INDEX], 1, 1);
         GridPane.setConstraints(textFields[STATUS_INDEX], 2, 1);
 
-        //newItemLabel3 - Date
+        //label "Date"
         newItemLabel3 = new Label ("Date");
         GridPane.setConstraints(newItemLabel3, 0, 2);
-        //add textFields
+        //textFields (inputdate - outputdate)
         textFields[INPUTDATE_INDEX] = addTextField(PRODUCT_LABEL[INPUTDATE_INDEX], DEFAULT_SPACE);
-        textFields[OUTPUDATE_INDEX] = addTextField(PRODUCT_LABEL[OUTPUDATE_INDEX], DEFAULT_SPACE);
+        textFields[OUTPUTDATE_INDEX] = addTextField(PRODUCT_LABEL[OUTPUTDATE_INDEX], DEFAULT_SPACE);
 
         GridPane.setConstraints(textFields[INPUTDATE_INDEX], 1, 2);
-        GridPane.setConstraints(textFields[OUTPUDATE_INDEX], 2, 2);
+        GridPane.setConstraints(textFields[OUTPUTDATE_INDEX], 2, 2);
 
-        //add Add/Delete button
+        //add button
         addButton = new Button("Add");
         addButton.setPrefWidth(BUTTON_SPACE);
         addButton.setAlignment(Pos.CENTER);
         addButton.setOnAction(e -> addButtonClicked());
         GridPane.setConstraints(addButton, 5, 1);
 
+        //deletebutton
         deleteButton = new Button("Delete");
         deleteButton.setOnAction(e -> deleteButtonClicked());
         deleteButton.setPrefWidth(BUTTON_SPACE);
@@ -144,10 +152,9 @@ public class TabStatistics {
 
     //---------------------TABLE METHODS---------------------
     private ObservableList<Product> getProduct() {
-        ObservableList<Product> products = FXCollections.observableArrayList();
-        products.add(new Product("KABY LAKE", "ABC2345", 1000));
-        products.add(new Product("SAMSUNG NOTE 8", "SSN2345", 2000));
-        products.add(new Product("IPHONE X", "IPX2345", 500));
+        ArrayList<Product> productsList = readCSV.readCSV_product(PRODUCT_DATA_DIR);
+        ObservableList<Product> products = FXCollections.observableArrayList(productsList);
+
         return products;
     }
 
@@ -169,9 +176,11 @@ public class TabStatistics {
         product.setProducer(textFields[PRODUCER_INDEX].getText());
         product.setLocation(textFields[LOCATION_INDEX].getText());
         product.setStatus(textFields[STATUS_INDEX].getText());
+        product.setInputDate(textFields[INPUTDATE_INDEX].getText());
+        product.setOutputDate(textFields[OUTPUTDATE_INDEX].getText());
 
         table.getItems().add(product);
-        writeCSV.writeData("file:src/data.csv", product);
+        writeCSV.writeData(PRODUCT_DATA_DIR, product);
 
         for(int i = 0; i < TOTAL_ATTRIBUTES; i++)
             textFields[i].clear();

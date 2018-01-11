@@ -70,6 +70,8 @@ public class Main extends Application{
     TabHome tabHome = new TabHome();
     TabOrder tabOrder = new TabOrder();
     TabStatistics tabStatistics = new TabStatistics();
+    TabReceiver tabReceiver = new TabReceiver();
+    TabDeliver tabDeliver = new TabDeliver();
 
     //------------------------------------------------------
     // MAIN FUNCTION
@@ -102,11 +104,15 @@ public class Main extends Application{
 
         receiver.setOnMouseClicked(event -> {
             chosenTab(receiver);
+            contents.getChildren().clear();
+            contents.getChildren().add(tabReceiver.getTabReceiver());
 
         });
 
         deliver.setOnMouseClicked(event -> {
             chosenTab(deliver);
+            contents.getChildren().clear();
+            contents.getChildren().add(tabDeliver.getTabReceiver());
         });
 
         statistics.setOnMouseClicked(event -> {

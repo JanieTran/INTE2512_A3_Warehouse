@@ -6,36 +6,53 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import static GUI.TabStatistics.PRODUCT_DATA_DIR;
+import static supportClass.Product.*;
+import static supportClass.Product.INPUTDATE_INDEX;
+import static supportClass.Product.OUTPUTDATE_INDEX;
 
 public class readCSV {
     //delimiter used in CSV file
-    private static final String SEMICOLON = ";";
+    private static final String SEMICOLON = ",";
+    private static final String FILE_HEADER = "id,name,qty,desc,producer,location,status,inputDate,outputDate";
 
-//    public static String[] elements;
+    public static int total_product = 0;
 
     //read csv file functions
-    public static void readCSV(String fileName) {
+    public static ArrayList<Product> readCSV_product(String fileName) {
+        //create a new list of products to be filled by CSV file data
+        ArrayList<Product> products = new ArrayList<>();
+        Product product;
+
         BufferedReader fileReader = null;
+        String line = "";
 
         try {
-            //create a new list of products to be filled by CSV file data
-            ArrayList<Product> products = new ArrayList<>();
-
-            String line = "";
-
             //create a file reader
             fileReader = new BufferedReader(new FileReader(fileName));
 
             //read the CSV header (1st line) and skip it
             fileReader.readLine();
 
-            System.out.println("testing");
             while ((line = fileReader.readLine()) != null) {
+
                 //split by semicolon
                 String[] elements = line.split(SEMICOLON);
-                for (int i = 0; i < elements.length; i++) {
-                    System.out.println("The element is: " + elements[i]);
-                }
+
+                product = new Product();
+                product.setId(elements[ID_INDEX]);
+                product.setName(elements[NAME_INDEX]);
+                product.setQty(Integer.parseInt(elements[QTY_INDEX]));
+                product.setDesc(elements[DESC_INDEX]);
+                product.setProducer(elements[PRODUCER_INDEX]);
+                product.setLocation(elements[LOCATION_INDEX]);
+                product.setStatus(elements[STATUS_INDEX]);
+                product.setInputDate(elements[INPUTDATE_INDEX]);
+                product.setOutputDate(elements[OUTPUTDATE_INDEX]);
+
+
+                products.add(product);
+                System.out.println("add sucessfully");
             }
         } catch (Exception e) {
             System.out.println("Error in CSVreader");
@@ -48,10 +65,31 @@ public class readCSV {
                 e.printStackTrace();
             }
         }
+        return products;
     }
 
-    public static void main(String[] args) {
-        readCSV("data.csv");
+    public static int count(String fileName) {
+        int count = 0;
+
+        BufferedReader fileReader = null;
+        String line = "";
+
+        try {
+            //create a file reader
+            fileReader = new BufferedReader(new FileReader(fileName));
+
+            //read the CSV header (1st line) and skip it
+            fileReader.readLine();
+
+            while ((line = fileReader.readLine()) != null ||
+                    (line = fileReader.readLine()) == FILE_HEADER) {
+                count += 1;
+
+            }
+        } catch (Exception e) {
+            System.out.println("Error in readCSV");
+        }
+        return count;
     }
 
 }
