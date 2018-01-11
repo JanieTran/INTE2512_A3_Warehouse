@@ -6,6 +6,7 @@ import javafx.collections.ObservableList;
 import javafx.geometry.Pos;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
 import javafx.geometry.Insets;
 import javafx.scene.control.*;
@@ -18,7 +19,6 @@ import java.util.ArrayList;
 import static GUI.Main.*;
 import static supportClass.Product.*;
 
-
 public class TabStatistics {
     //--------------------CONSTANTS--------------------
     private static final int ID_SPACE = 80;
@@ -29,6 +29,7 @@ public class TabStatistics {
     private static final int DEFAULT_SPACE = 100;
     private static final int BUTTON_SPACE = 100;
 
+    private final String SEARCH_BY_NAME = "Search product name";
     public static final String PRODUCT_DATA_DIR = "src/database/product.csv";
     private static final String TAB_NAME = "STATISTICS";
 
@@ -40,7 +41,11 @@ public class TabStatistics {
     private GridPane newItemLayout;
     private Label newItemLabel1, newItemLabel2, newItemLabel3;
     private TextField[] textFields;
-    private Button addButton, deleteButton;
+    private TextField txtSearch;
+    private Button addButton, deleteButton, searchButton;
+    private HBox hbSearch;
+
+    private ArrayList<Product> productList;
 
     public TabStatistics() {
         tabStatistics = new VBox();
@@ -48,6 +53,9 @@ public class TabStatistics {
         table = new TableView<>();
         newItemLayout = new GridPane();
         textFields = new TextField[TOTAL_ATTRIBUTES];
+        txtSearch = new TextField();
+        searchButton = new Button("Search");
+        hbSearch = new HBox();
     }
 
     public VBox getTabStatistics() {
@@ -80,6 +88,110 @@ public class TabStatistics {
         table.getColumns().addAll(columns);
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
+        txtSearch.setPromptText(SEARCH_BY_NAME);
+
+        hbSearch.getChildren().clear();
+        hbSearch.getChildren().addAll(txtSearch, searchButton);
+        hbSearch.setSpacing(SPACING);
+
+        searchButton.setOnMouseClicked(event -> {
+            table.getItems().clear();
+            table.setItems(searchProduct());
+            table.getColumns().clear();
+            table.getColumns().addAll(columns);
+            table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+
+            updateTab();
+        });
+
+//        //add elements
+//        newItemLayout.getChildren().addAll(newItemLabel1, newItemLabel2, newItemLabel3, addButton, deleteButton);
+//        for (int i = 0; i < TOTAL_ATTRIBUTES; i++)
+//            newItemLayout.getChildren().addAll(textFields[i]);
+
+        //---------------------CUSTOM tabStatistics---------------------
+//        tabStatistics.setMinSize(WIDTH - TAB_WIDTH, HEIGHT - TITLE_BAR_HEIGHT);
+//        tabStatistics.setSpacing(SPACING);
+//        tabStatistics.setPadding(new Insets(SPACING, SPACING, SPACING, SPACING));
+//        tabStatistics.getChildren().addAll(tabTitle, table, hbSearch);
+
+        updateTab();
+
+        return tabStatistics;
+    }
+
+    private ObservableList<Product> searchProduct() {
+        String sProductName = txtSearch.getText().toString().trim();
+        ArrayList<Product> searchResults = new ArrayList<>();
+
+        for (Product product : productList) {
+            if (product.getName().contains(sProductName)) {
+                searchResults.add(product);
+            }
+        }
+
+        return FXCollections.observableArrayList(productList);
+    }
+
+    private void updateTab() {
+        tabStatistics.getChildren().clear();
+        tabStatistics.setMinSize(WIDTH - TAB_WIDTH, HEIGHT - TITLE_BAR_HEIGHT);
+        tabStatistics.setSpacing(SPACING);
+        tabStatistics.setPadding(new Insets(SPACING, SPACING, SPACING, SPACING));
+        tabStatistics.getChildren().addAll(tabTitle, table, hbSearch);
+    }
+
+    //---------------------TABLE METHODS---------------------
+    private ObservableList<Product> getProduct() {
+        productList = readCSV.readCSV_product(PRODUCT_DATA_DIR);
+        ObservableList<Product> products = FXCollections.observableArrayList(productList);
+
+        return products;
+    }
+
+    private TableColumn<Product, String> addStringColumn(String colName, int minWidth, String propertyValue) {
+        TableColumn<Product, String> column = new TableColumn<>(colName);
+        column.setMinWidth(minWidth);
+        column.setCellValueFactory(new PropertyValueFactory<>(propertyValue));
+        return column;
+    }
+
+    //---------------------NEWITEMLAYOUT METHODS---------------------
+    private void addButtonClicked() {
+        Product product = new Product();
+
+        product.setId(textFields[ID_INDEX].getText());
+        product.setName(textFields[NAME_INDEX].getText());
+        product.setQty(Integer.parseInt(textFields[QTY_INDEX].getText()));
+        product.setDesc(textFields[DESC_INDEX].getText());
+        product.setProducer(textFields[PRODUCER_INDEX].getText());
+        product.setLocation(textFields[LOCATION_INDEX].getText());
+        product.setStatus(textFields[STATUS_INDEX].getText());
+        product.setInputDate(textFields[INPUTDATE_INDEX].getText());
+        product.setOutputDate(textFields[OUTPUTDATE_INDEX].getText());
+
+        table.getItems().add(product);
+        writeCSV.writeData(PRODUCT_DATA_DIR, product);
+
+        for(int i = 0; i < TOTAL_ATTRIBUTES; i++)
+            textFields[i].clear();
+    }
+
+    private void deleteButtonClicked() {
+        ObservableList<Product> productsSelected, allProducts;
+        allProducts = table.getItems();
+        productsSelected = table.getSelectionModel().getSelectedItems();
+        productsSelected.forEach(allProducts::remove);
+    }
+
+    private TextField addTextField (String hint, int width) {
+        TextField textField = new TextField();
+        textField.setPromptText(hint);
+        textField.setPrefWidth(width);
+        return textField;
+    }
+
+    private void newLayout() {
         //---------------------CUSTOM newItemLayout---------------------
         newItemLayout.setPadding(new Insets(SPACING/2, SPACING/2, SPACING/2, SPACING/2));
         newItemLayout.setVgap(SPACING/4);
@@ -134,68 +246,5 @@ public class TabStatistics {
         deleteButton.setPrefWidth(BUTTON_SPACE);
         deleteButton.setAlignment(Pos.CENTER);
         GridPane.setConstraints(deleteButton, 5, 2);
-
-        //add elements
-        newItemLayout.getChildren().addAll(newItemLabel1, newItemLabel2, newItemLabel3, addButton, deleteButton);
-        for (int i = 0; i < TOTAL_ATTRIBUTES; i++)
-            newItemLayout.getChildren().addAll(textFields[i]);
-
-        //---------------------CUSTOM tabStatistics---------------------
-        tabStatistics.setMinSize(WIDTH - TAB_WIDTH, HEIGHT - TITLE_BAR_HEIGHT);
-        tabStatistics.setSpacing(SPACING);
-        tabStatistics.setPadding(new Insets(SPACING, SPACING, SPACING, SPACING));
-        tabStatistics.getChildren().addAll(tabTitle, table, newItemLayout);
-
-        return tabStatistics;
-    }
-
-    //---------------------TABLE METHODS---------------------
-    private ObservableList<Product> getProduct() {
-        ArrayList<Product> productsList = readCSV.readCSV_product(PRODUCT_DATA_DIR);
-        ObservableList<Product> products = FXCollections.observableArrayList(productsList);
-
-        return products;
-    }
-
-    private TableColumn<Product, String> addStringColumn(String colName, int minWidth, String propertyValue) {
-        TableColumn<Product, String> column = new TableColumn<>(colName);
-        column.setMinWidth(minWidth);
-        column.setCellValueFactory(new PropertyValueFactory<>(propertyValue));
-        return column;
-    }
-
-    //---------------------NEWITEMLAYOUT METHODS---------------------
-    private void addButtonClicked() {
-        Product product = new Product();
-
-        product.setId(textFields[ID_INDEX].getText());
-        product.setName(textFields[NAME_INDEX].getText());
-        product.setQty(Integer.parseInt(textFields[QTY_INDEX].getText()));
-        product.setDesc(textFields[DESC_INDEX].getText());
-        product.setProducer(textFields[PRODUCER_INDEX].getText());
-        product.setLocation(textFields[LOCATION_INDEX].getText());
-        product.setStatus(textFields[STATUS_INDEX].getText());
-        product.setInputDate(textFields[INPUTDATE_INDEX].getText());
-        product.setOutputDate(textFields[OUTPUTDATE_INDEX].getText());
-
-        table.getItems().add(product);
-        writeCSV.writeData(PRODUCT_DATA_DIR, product);
-
-        for(int i = 0; i < TOTAL_ATTRIBUTES; i++)
-            textFields[i].clear();
-    }
-
-    private void deleteButtonClicked() {
-        ObservableList<Product> productsSelected, allProducts;
-        allProducts = table.getItems();
-        productsSelected = table.getSelectionModel().getSelectedItems();
-        productsSelected.forEach(allProducts::remove);
-    }
-
-    private TextField addTextField (String hint, int width) {
-        TextField textField = new TextField();
-        textField.setPromptText(hint);
-        textField.setPrefWidth(width);
-        return textField;
     }
 }

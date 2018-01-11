@@ -1,11 +1,9 @@
 package GUI;
 
 import csv.readCSV;
-import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
-import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -14,29 +12,16 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
 import javafx.scene.control.Label;
 import supportClass.Product;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.List;
 
-public class MapLayout {
-    private Stage window;
-    private final String WINDOW_TITLE = "MAP";
+public class TabMap {
     private static final String DATA_CSV_FILE_PATH = "src/database/product.csv";
 
-//    private static List<Product> products = readProductsFromCSV(DATA_CSV_FILE_PATH);
     private static ArrayList<Product> products = readCSV.readCSV_product(DATA_CSV_FILE_PATH);
 
-    private final int WINDOW_WIDTH = 1280;
-    private final int WINDOW_HEIGHT = 720;
     private final int SPACING = 15;
     private final int PADDING = 25;
 
@@ -59,21 +44,25 @@ public class MapLayout {
     private Image imgProduct = new Image("image/samsunggalaxys8.jpg");
     private ImageView imgVProduct = new ImageView();
     private VBox tabMap;
+    private Label tabTitle;
 
-    public MapLayout() {
+    public TabMap() {
         tabMap = new VBox();
-
+        tabTitle = new Label("WAREHOUSE MAP");
     }
 
     public VBox getTabMap() {
-
         tabMap.getChildren().clear();
         clearAllLayout();
 
         // Create all layout
         createAllLayout();
 
-        tabMap.getChildren().add(gridMap);
+        tabTitle.setFont(Font.font(30));
+        tabTitle.setStyle("-fx-font-weight: bold; -fx-text-fill: #2196f3");
+
+        tabMap.getChildren().addAll(tabTitle, gridMap);
+        tabMap.setPadding(new Insets(SPACING, SPACING, SPACING, SPACING * 2));
 
         return tabMap;
     }
@@ -91,7 +80,7 @@ public class MapLayout {
     // Create grid layout
     private void createGridLayout(GridPane gridPane) {
         gridPane.setHgap(SPACING);
-        gridPane.setPadding(new Insets(PADDING, PADDING, PADDING, PADDING));
+        gridPane.setPadding(new Insets(0, PADDING, PADDING, PADDING * 2));
     }
 
     // Show block info as user presses on particular rectangle
@@ -101,7 +90,6 @@ public class MapLayout {
             rectMap.get(i).setOnMouseClicked(new EventHandler<MouseEvent>() {
                 @Override
                 public void handle(MouseEvent event) {
-                    System.out.println(products.get(finalI));
                     // Clear All Layout
                     clearAllLayout();
                     // Add Data to String Array
@@ -115,8 +103,6 @@ public class MapLayout {
             });
         }
     }
-
-
 
     // Show block status
     private static void showBlockStatus(ArrayList<Rectangle> rectMap) {
@@ -278,6 +264,5 @@ public class MapLayout {
         imgProduct = new Image(products.get(i).getImage());
         gridMap.add(imgVProduct,4,0,1,1);
     }
-
 
 }

@@ -1,7 +1,25 @@
+/*
+  RMIT University Vietnam
+  Course: INTE2512 Object-Oriented Programming
+  Semester: 2017C
+  Assignment: 3 - Warehouse Management Application
+
+  Authors:
+    - Nguyen Tan Thanh          s3580014
+    - Tran le Nha Tran          s3533562
+    - Tran Thi Hong Phuong      s3623385
+
+  Created date: 04/01/2018
+
+  Description: This app gives the overview and statistics of a warehouse so that
+  the manager can monitor and control the delivery of packages inside that warehouse.
+
+  Acknowledgement:
+*/
+
 package GUI;
 
 import javafx.application.Application;
-import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -9,7 +27,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -78,7 +95,7 @@ public class Main extends Application{
     TabStatistics tabStatistics = new TabStatistics();
     TabReceiver tabReceiver = new TabReceiver();
     TabDeliver tabDeliver = new TabDeliver();
-    MapLayout tabMap = new MapLayout();
+    TabMap tabMap = new TabMap();
 
     //------------------------------------------------------
     // MAIN FUNCTION

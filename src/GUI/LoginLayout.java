@@ -1,7 +1,6 @@
 package GUI;
 
 import csv.readCSV;
-import javafx.application.Application;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -12,11 +11,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
-import javafx.stage.Stage;
 import supportClass.User;
 
 import java.util.ArrayList;
@@ -25,17 +22,12 @@ import static GUI.Main.HEIGHT;
 import static GUI.Main.WIDTH;
 
 public class LoginLayout {
-    private Stage window;
-
     private final String USERS_FILE = "src/database/users.csv";
 
-    private final int WINDOW_WIDTH = 400;
-    private final int WINDOW_HEIGHT = 400;
     private final int SPACING = 15;
     private final int PADDING = 25;
     private final String USER_NAME_HINT = "Enter your name";
     private final String USER_PASSWORD_HINT = "Password";
-    private final String WINDOW_TITLE = "LOGIN";
 
     private VBox screenLogin;
     private Button btnLogin;
@@ -48,7 +40,9 @@ public class LoginLayout {
         screenLogin = new VBox();
         btnLogin = new Button("Sign in");
         txtUserName = new TextField();
+        txtUserName.setText("admin");
         txtPassword = new PasswordField();
+        txtPassword.setText("admin");
 
         users = readCSV.readCSVtoUser(USERS_FILE);
     }
@@ -69,7 +63,6 @@ public class LoginLayout {
 
         ImageView imgVLogin = new ImageView();
         createImageView(imgVLogin, imgLogin, 100, 100);
-
 
         // Grid pane
         GridPane gridLogin = new GridPane();
